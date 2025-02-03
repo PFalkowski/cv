@@ -36,8 +36,8 @@ const CV = () => {
 const ContactInfo = () => (
   <div className="contact-info">
     {[
-      { icon: "phone", img: "phone.png" },
-      { icon: "envelope", img: "email.png" },
+      { icon: "phone", img: phoneIcon },
+      { icon: "envelope", img: emailIcon },
       { icon: "cube", link: "https://nuget.org/profiles/PFalkowski", text: "nuget.org/profiles/PFalkowski" },
       { icon: "github", link: "https://github.com/PFalkowski", text: "github.com/PFalkowski" },
       { icon: "stack-overflow", link: "https://stackoverflow.com/users/3922292", text: "stackoverflow.com/users/3922292" },
