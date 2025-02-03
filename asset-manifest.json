@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pfalkowski-cv/static/css/main.c2e5339e.css",
+    "main.js": "/pfalkowski-cv/static/js/main.222cde18.js",
+    "static/js/488.2cdc2d81.chunk.js": "/pfalkowski-cv/static/js/488.2cdc2d81.chunk.js",
+    "index.html": "/pfalkowski-cv/index.html",
+    "main.c2e5339e.css.map": "/pfalkowski-cv/static/css/main.c2e5339e.css.map",
+    "main.222cde18.js.map": "/pfalkowski-cv/static/js/main.222cde18.js.map",
+    "488.2cdc2d81.chunk.js.map": "/pfalkowski-cv/static/js/488.2cdc2d81.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2e5339e.css",
+    "static/js/main.222cde18.js"
+  ]
+}
