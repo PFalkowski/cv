@@ -2,10 +2,9 @@ import phoneIcon from "./assets/images/phone.png";
 import emailIcon from "./assets/images/email.png";
 
 import './App.css';
-
-import React from "react";
-
-const CV = () => {
+import React from 'react';
+document.title = "Piotr Falkowski CV";
+const App = () => {
   return (
     <div className="container">
       <aside className="sidebar">
@@ -45,7 +44,7 @@ const ContactInfo = () => (
     ].map((item, index) => (
       <div className="contact-item" key={index}>
         <i className={`fas fa-${item.icon}`}></i>
-        {item.img ? <img src={`${item.img}`} alt="Contact" /> : <a href={item.link} target="_blank" rel="noopener noreferrer">{item.text}</a>}
+        {item.img ? <img src={`${item.img}`} alt={item.icon} /> : <a href={item.link} target="_blank" rel="noopener noreferrer">{item.text}</a>}
       </div>
     ))}
   </div>
@@ -55,14 +54,23 @@ const TechnicalSkills = () => {
   const currentYear = new Date().getFullYear();
   const csharpYears = currentYear - 2014;
   const azureYears = currentYear - 2017;
+  const noSqlYears = currentYear - 2018;
+  const mlYears = currentYear - 2018;
 
   return (
     <Section id="skills" title="Technical Skills">
       {[
-        { name: "C#", level: 100, years: csharpYears },
-        { name: "Azure", level: 70, years: azureYears },
+        { name: "C#", level: Math.min((csharpYears * 10), 100), years: csharpYears },
+        { name: "Azure", level:  Math.min((azureYears * 10), 100), years: azureYears },
         { name: "ASP.NET", level: 50, years: 5 },
         { name: "SQL", level: 50, years: 5 },
+        { name: 'Entity Framework', years: 4, level: 40 },
+        { name: 'C++', years: 4, level: 40 },
+        { name: 'NoSQL (CosmosDB, Mongo)', years: noSqlYears, level: Math.min((noSqlYears * 10), 100) },
+        { name: 'WPF in MVVM', years: 4, level: 40 },
+        { name: 'Python', years: 2, level: 20 },
+        { name: 'Ruby', years: 1, level: 10 },
+        { name: 'ML (ML.NET, Accord.NET, Keras, GPT API)', years: mlYears, level: Math.min((mlYears * 10), 100)  }
       ].map((skill, index) => (
         <div className="skill" key={index}>
           <div>{skill.name}</div>
@@ -84,7 +92,7 @@ const Section = ({ id, title, children }) => (
 const SoftSkills = () => (
   <Section id="soft-skills" title="Soft Skills">
     <ul>
-      {['Autonomy', 'Persistence', 'Creativity', 'Focus', 'Integrity'].map((skill, index) => (
+      {['Integrity', 'Persistence', 'Autonomy', 'Creativity', 'Deep Focus'].map((skill, index) => (
         <li key={index}>{skill}</li>
       ))}
     </ul>
@@ -149,4 +157,4 @@ const ConsentSection = () => (
   </div>
 );
 
-export default CV;
+export default App;
