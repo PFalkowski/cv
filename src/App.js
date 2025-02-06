@@ -2,11 +2,43 @@ import phoneIcon from "./assets/images/phone.png";
 import emailIcon from "./assets/images/email.png";
 
 import './App.css';
-import React from 'react';
+import React, { useState, createContext, useContext } from "react";
+const translations = {
+  en: {
+    aboutMe: "About Me",
+    technologies: "Technologies of choice",
+    softSkills: "Soft Skills",
+    education: "Formal Education",
+    workExperience: "Work Experience",
+    languages: "Languages",
+    conferences: "Conferences",
+    additionalInfo: "Additional Information",
+    otherProjects: "Other Projects",
+    consent: "I hereby agree for processing the following personal information strictly for the purposes of recruitment processes...",
+  },
+  pl: {
+    aboutMe: "O mnie",
+    technologies: "Technologie, których używam",
+    softSkills: "Umiejętności miękkie",
+    education: "Edukacja",
+    workExperience: "Doświadczenie zawodowe",
+    languages: "Języki",
+    conferences: "Konferencje",
+    additionalInfo: "Dodatkowe informacje",
+    otherProjects: "Inne projekty",
+    consent: "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu procesów rekrutacyjnych...",
+  },
+};
+const LanguageContext = createContext();
 
 const App = () => {
+  const [language, setLanguage] = useState("en");
+  const toggleLanguage = (lang) => setLanguage(lang);
+
   return (
+    <LanguageContext.Provider value={{ language, toggleLanguage }}>      
     <div className="container">
+      <LanguageSwitcher currentLanguage={language} toggleLanguage={setLanguage}/>
       <aside className="sidebar">
         <h1>Piotr Falkowski</h1>
         <p>Senior Backend Software Developer with 10+ years of experience.</p>
@@ -33,8 +65,31 @@ const App = () => {
         <ConsentSection />
       </main>
     </div>
+    </LanguageContext.Provider>
   );
 };
+
+const LanguageSwitcher = ({ currentLanguage, toggleLanguage }) => {
+  return (
+    <div className="language-switcher">
+      <div 
+        className={`item ${currentLanguage === "en" ? "active" : ""}`} 
+        data-value="en" 
+        onClick={() => toggleLanguage("en")}
+      >
+        <span className="flag-icon flag-icon-us"></span>
+      </div>
+      <div 
+        className={`item ${currentLanguage === "pl" ? "active" : ""}`} 
+        data-value="pl" 
+        onClick={() => toggleLanguage("pl")}
+      >
+        <span className="flag-icon flag-icon-pl"></span>
+      </div>
+    </div>
+  );
+};
+
 
 const ContactInfo = () => (
   <div className="contact-info">
@@ -50,7 +105,7 @@ const ContactInfo = () => (
         <i className={item.className}></i>
         {item.img ? 
           <img src={`${item.img}`} alt = ""/>
-          : <span><ExternalLink url={item.link}>{item.text}</ExternalLink>)</span>}
+          : <span><ExternalLink url={item.link}>{item.text}</ExternalLink></span>}
       </div>
     ))}
   </div>
@@ -84,9 +139,14 @@ const TechnicalSkills = () => {
   );
 };
 
-const Section = ({ id, title, children }) => (
+const useTranslation = (key) => {
+  const { language } = useContext(LanguageContext);
+  return translations[language][key];
+};
+
+const Section = ({ id, children }) => (
   <div className="section" id={id}>
-    <h2>{title}</h2>
+    <h2>{useTranslation(id)}</h2>
     {children}
   </div>
 );
@@ -118,9 +178,9 @@ const Education = () => (
 
 const WorkExperience = () => (
   <Section id="work-experience" title="Work Experience">
-    <p><strong>IGE+XAO - Internship (C++)</strong> - 2014</p>
+    <p><strong>IGE+XAO - Intern</strong> - 2014</p>
     <p>I was tasked with database-wide undo feature implementation which I accomplished by developing a T-SQL generator based on table schema which allowed a generation of undo procedure for each of hundreds of tables. Other tasks were related to C++ codebase refactoring and bugfixing.</p>
-    <p><strong>Transactor Poland - Software Developer</strong> - 2014 to 2017</p>
+    <p><strong>Transactor Poland - (Junior) Software Developer</strong> - 2014 to 2017</p>
     <p>I started as a Junior Developer and was promoted to Regular Developer after successfully delivering first project — a WPF business intelligence application that aggregated data from multiple APIs, providing significant value to the customer at a low cost.
     Following this, I worked in an Agile team on an end-to-end insurance lifetime management system, handling development, refactoring, bug fixing, and unit testing. A major part of my role involved working with T-SQL stored procedures, WCF services, ASP.NET APIs, WPF, Windows Forms, XSLT, XSD, VB.NET, and SQLite.
     I participated in multiple third-party integrations, including payment providers and data enrichment services, ensuring interoperability between systems. Throughout this role, I gained experience in wide range of technologies like performance and SQL profiling, WCF, WWF, XSLTs, SOAP and many more.</p>
@@ -128,12 +188,15 @@ const WorkExperience = () => (
     <p>Continuation of previous employment under different brand. More focus on newer technologies, we used ASP.NET Core over WCF, RabbitMQ instead of WWF, more Azure over on premise, 
     MongoDB over MS SQL. A significant challenge was modernizing an archaic VB6 application, which we successfully achieved by splitting and migrating logic into WPF-based microservices while heavilly unit - testing existing functionality.
     </p>
-    <p><strong>Jagiellonian University</strong> - 2019 to 2020</p>
+    <p><strong>Jagiellonian University - Researcher</strong> - 2019 to 2020</p>
     <p>I participated in a grant-funded research  where I developed a classifier for monkey EEG brain activity and an Arduino-based tactile stimulator. 
       The stimulator is programmable via COM and featured 2 gloves with 5 tactile stimulators, each controllable separately 
       [<a href="https://github.com/PFalkowski/HapticStimulatorPCA9685" target="_blank" rel="noopener noreferrer">source</a>].
        I classified the monkey awake states in Python's Keras with accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [<a href="https://github.com/PFalkowski/KerasClassifierEeg" target="_blank" rel="noopener noreferrer">source</a>]. </p>
-    <p><strong>Seville More Helory Polska - Senior Software Developer</strong> - 2020 to Present</p>
+    <p><strong>Seville More Helory Polska - Senior Software Developer</strong> - since 2020</p>
+    <p>In my current role, I have been responsible for planning and implementing the architecture of a bespoke process for a key client. As the lead developer, I had to make critical design choices early on without having the full scope of requirements. My approach ensured flexibility, allowing us to adapt seamlessly as the project evolved.
+       Beyond development, I played a key role in preventing misguided technical decisions at the management level. When leadership pushed for excessive encoding layers to resolve data exchange issues between the front end and back end, I took a step back, investigated the root cause, and resolved the issue by removing just a few lines of code, avoiding unnecessary complexity.
+      My tech stack includes C# with CosmosDB, along with Azure services such as Service Bus, Redis Cache, and AI Search. Over the years, I have designed and executed multiple database migrations, refining my expertise in agile NoSQL architecture—ensuring models remain adaptable to changing requirements while remaining efficient and easy to migrate.</p>
   </Section>
 );
 
@@ -222,7 +285,7 @@ const OtherProjects = () => (
     <p>
       These and other packages are available on <a href="https://www.nuget.org/profiles/PFalkowski" target="_blank" rel="noopener noreferrer">NuGet.org</a>.
     </p>
-    <p>My GitHub activity <span style={{ visibility: "hidden" }}>just because this CV needs a litle bit of green and I'm no Front-End developer:</span></p>
+    <p>My GitHub activity <span style={{ visibility: "hidden" }}>just because this CV needs a litle bit of green :)</span></p>
     <img src="http://ghchart.rshah.org/PFalkowski" alt="GitHub activity chart" />
   </Section>
 );
