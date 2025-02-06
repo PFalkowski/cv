@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Glow filter -->
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+      <feComposite in="blur" in2="SourceGraphic" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- P letter -->
+  <path 
+    d="M8 8 L8 24 L10 24 L10 17 L14 17 C17 17 19 15 19 12.5 C19 10 17 8 14 8 Z M10 10 L14 10 C15.5 10 17 11 17 12.5 C17 14 15.5 15 14 15 L10 15 Z"
+    fill="none"
+    stroke="#00cc66"
+    stroke-width="1"
+    filter="url(#glow)"
+  />
+  
+  <!-- F letter -->
+  <path 
+    d="M21 8 L21 24 L23 24 L23 17 L27 17 M23 15 L27 15 M23 10 L28 10"
+    fill="none"
+    stroke="#00cc66"
+    stroke-width="1"
+    filter="url(#glow)"
+  />
+  
+  <!-- Circuit elements -->
+  <circle cx="14" cy="12.5" r="1" fill="#00cc66" filter="url(#glow)"/>
+  <circle cx="27" cy="10" r="1" fill="#00cc66" filter="url(#glow)"/>
+  <circle cx="27" cy="17" r="1" fill="#00cc66" filter="url(#glow)"/>
+</svg>

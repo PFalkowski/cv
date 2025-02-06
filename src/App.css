@@ -6,7 +6,10 @@ body {
     margin: 0;
     padding: 0;
 }
-
+ .content a {
+    color: #333; 
+    font-weight: bold;
+}
 .container {
     display: flex;
     flex-direction: column;

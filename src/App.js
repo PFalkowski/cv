@@ -3,7 +3,7 @@ import emailIcon from "./assets/images/email.png";
 
 import './App.css';
 import React from 'react';
-document.title = "Piotr Falkowski CV";
+
 const App = () => {
   return (
     <div className="container">
@@ -14,18 +14,22 @@ const App = () => {
       </aside>
       <main className="content">
         <Section id="about-me" title="About Me">
-          <p>I started learning C++ to build a stock prediction system leveraging artificial neural networks.</p>
-          <p>My exposure to legacy systems codebase led me to shift towards radical simplicity in development.</p>
-          <p>In my free time, I maintain 10+ open source C# libraries available on NuGet.org.</p>
+          <p>I learned C++ to build a stock market prediction system using artificial neural networks.
+             While this is a project I still support and use, it led me to unique jurney through brighter and darker sides of software development.
+             My exposure to legacy systems codebase led me to shift towards radical simplicity.</p>
+          <p>Beyond work, I actively develop <a href='https://stockinsight.pl'>Stockinsight.pl</a>,
+           an automated stock market analysis tool, serve as CTO of <a href='https://squizzu.com'>Squizzu.com</a>,
+            a tech quiz platform and maintain many open-source C# libraries on NuGet,
+             covering areas such as logging, statistics, serialization and developer productivity.</p>
         </Section>
         <TechnicalSkills />
         <SoftSkills />
         <Education />
         <WorkExperience />
+        <OtherProjects />
         <Languages />
         <Conferences />
         <AdditionalInfo />
-        <GitHubActivity />
         <ConsentSection />
       </main>
     </div>
@@ -35,16 +39,18 @@ const App = () => {
 const ContactInfo = () => (
   <div className="contact-info">
     {[
-      { icon: "phone", img: phoneIcon },
-      { icon: "envelope", img: emailIcon },
-      { icon: "cube", link: "https://nuget.org/profiles/PFalkowski", text: "nuget.org/profiles/PFalkowski" },
-      { icon: "github", link: "https://github.com/PFalkowski", text: "github.com/PFalkowski" },
-      { icon: "stack-overflow", link: "https://stackoverflow.com/users/3922292", text: "stackoverflow.com/users/3922292" },
-      { icon: "linkedin", link: "https://pl.linkedin.com/in/piotrfalkowski", text: "pl.linkedin.com/in/piotrfalkowski" },
+      { className: "fas fa-phone", img: phoneIcon },
+      { className: "fas fa-envelope", img: emailIcon },
+      { className: "fas fa-cube", link: "https://nuget.org/profiles/pfalkowski", text: "nuget.org/profiles/pfalkowski" },
+      { className: "fab fa-github", link: "https://github.com/pfalkowski", text: "github.com/pfalkowski" },
+      { className: "fab fa-stack-overflow", link: "https://stackoverflow.com/users/3922292", text: "stackoverflow.com/users/3922292" },
+      { className: "fab fa-linkedin", link: "https://pl.linkedin.com/in/piotrfalkowski", text: "pl.linkedin.com/in/piotrfalkowski" },
     ].map((item, index) => (
       <div className="contact-item" key={index}>
-        <i className={`fas fa-${item.icon}`}></i>
-        {item.img ? <img src={`${item.img}`} alt={item.icon} /> : <a href={item.link} target="_blank" rel="noopener noreferrer">{item.text}</a>}
+        <i className={item.className}></i>
+        {item.img ? 
+          <img src={`${item.img}`} alt = ""/>
+          : <span><ExternalLink url={item.link}>{item.text}</ExternalLink>)</span>}
       </div>
     ))}
   </div>
@@ -58,18 +64,14 @@ const TechnicalSkills = () => {
   const mlYears = currentYear - 2018;
 
   return (
-    <Section id="skills" title="Technical Skills">
+    <Section id="skills" title="Technologies of choice">
       {[
         { name: "C#", level: Math.min((csharpYears * 10), 100), years: csharpYears },
         { name: "Azure", level:  Math.min((azureYears * 10), 100), years: azureYears },
-        { name: "ASP.NET", level: 50, years: 5 },
-        { name: "SQL", level: 50, years: 5 },
-        { name: 'Entity Framework', years: 4, level: 40 },
-        { name: 'C++', years: 4, level: 40 },
+        { name: "ASP.NET Web API", level: 60, years: 6 },
+        { name: "SQL + EF", level: 50, years: 5 },
         { name: 'NoSQL (CosmosDB, Mongo)', years: noSqlYears, level: Math.min((noSqlYears * 10), 100) },
         { name: 'WPF in MVVM', years: 4, level: 40 },
-        { name: 'Python', years: 2, level: 20 },
-        { name: 'Ruby', years: 1, level: 10 },
         { name: 'ML (ML.NET, Accord.NET, Keras, GPT API)', years: mlYears, level: Math.min((mlYears * 10), 100)  }
       ].map((skill, index) => (
         <div className="skill" key={index}>
@@ -88,6 +90,14 @@ const Section = ({ id, title, children }) => (
     {children}
   </div>
 );
+
+const ExternalLink = ({ url, children, className }) => {
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer" className={className}>
+      {children}
+    </a>
+  );
+};
 
 const SoftSkills = () => (
   <Section id="soft-skills" title="Soft Skills">
@@ -109,8 +119,20 @@ const Education = () => (
 const WorkExperience = () => (
   <Section id="work-experience" title="Work Experience">
     <p><strong>IGE+XAO - Internship (C++)</strong> - 2014</p>
+    <p>I was tasked with database-wide undo feature implementation which I accomplished by developing a T-SQL generator based on table schema which allowed a generation of undo procedure for each of hundreds of tables. Other tasks were related to C++ codebase refactoring and bugfixing.</p>
     <p><strong>Transactor Poland - Software Developer</strong> - 2014 to 2017</p>
+    <p>I started as a Junior Developer and was promoted to Regular Developer after successfully delivering first project — a WPF business intelligence application that aggregated data from multiple APIs, providing significant value to the customer at a low cost.
+    Following this, I worked in an Agile team on an end-to-end insurance lifetime management system, handling development, refactoring, bug fixing, and unit testing. A major part of my role involved working with T-SQL stored procedures, WCF services, ASP.NET APIs, WPF, Windows Forms, XSLT, XSD, VB.NET, and SQLite.
+    I participated in multiple third-party integrations, including payment providers and data enrichment services, ensuring interoperability between systems. Throughout this role, I gained experience in wide range of technologies like performance and SQL profiling, WCF, WWF, XSLTs, SOAP and many more.</p>
     <p><strong>Open GI - Software Developer</strong> - 2017 to 2019</p>
+    <p>Continuation of previous employment under different brand. More focus on newer technologies, we used ASP.NET Core over WCF, RabbitMQ instead of WWF, more Azure over on premise, 
+    MongoDB over MS SQL. A significant challenge was modernizing an archaic VB6 application, which we successfully achieved by splitting and migrating logic into WPF-based microservices while heavilly unit - testing existing functionality.
+    </p>
+    <p><strong>Jagiellonian University</strong> - 2019 to 2020</p>
+    <p>I participated in a grant-funded research  where I developed a classifier for monkey EEG brain activity and an Arduino-based tactile stimulator. 
+      The stimulator is programmable via COM and featured 2 gloves with 5 tactile stimulators, each controllable separately 
+      [<a href="https://github.com/PFalkowski/HapticStimulatorPCA9685" target="_blank" rel="noopener noreferrer">source</a>].
+       I classified the monkey awake states in Python's Keras with accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [<a href="https://github.com/PFalkowski/KerasClassifierEeg" target="_blank" rel="noopener noreferrer">source</a>]. </p>
     <p><strong>Seville More Helory Polska - Senior Software Developer</strong> - 2020 to Present</p>
   </Section>
 );
@@ -131,6 +153,7 @@ const Conferences = () => (
       <li>.NET DeveloperDays 2018</li>
       <li>MEGA Sekurak Hacking Party 2019</li>
       <li>AzureDay 2020</li>
+      <li>MEGA Sekurak Hacking Party 2020</li>
     </ul>
   </Section>
 );
@@ -140,13 +163,66 @@ const AdditionalInfo = () => (
     <ul>
       <li>Category B driving license.</li>
       <li>Knowledge in psychology.</li>
-      <li>Hobbies: board games, running, gym.</li>
+      <li>Hobbies: economy (personal finance and quantitative analysis), board games, running, gym.</li>
     </ul>
   </Section>
 );
 
-const GitHubActivity = () => (
+const OtherProjects = () => (
   <Section id="github-activity" title="Other Projects">
+    <p>
+      I am actively developing a stock market analysis tool designed to provide daily updated insights for both speculative trading and long-term investing. 
+      The backend, built in C#, is responsible for fetching market data, performing quantitative and fundamental analysis, generating report 
+      and pushing the results to a GitHub repository. A GitHub Action then triggers the deployment of a static website to Azure, enabling 
+      cost-effective hosting with full automation. The website with latest analysis results <a href="https://stockinsight.pl" target="_blank" rel="noopener noreferrer">StockInsight.pl</a>
+    </p>
+    <p>
+      I serve as the CTO of <a href="https://squizzu.com" target="_blank" rel="noopener noreferrer">Squizzu.com</a>, 
+      a tech quiz platform biult in React / C#. I architected most of the data model, implemented most of it, set the CosmosDB, KeyVault on Azure and integrated with them.
+    </p>
+    <p>
+      Throughout my journey, I have also explored other startup ventures, including Drwal.it, an online course platform, 
+      and a calendar tool built with PowerApps. While these projects didn’t achieve long-term success, they provided 
+      valuable lessons and skills like proficiency in PowerPlatform.
+    </p>
+    <p>
+      I actively develop and maintain several NuGet packages that enhance developer productivity.
+      Here are a few notable ones:
+    </p>
+    <ul>
+      <li>
+        <strong>
+          <a href="https://www.nuget.org/packages/LoggerLite" target="_blank" rel="noopener noreferrer">
+            LoggerLite
+          </a>
+        </strong> - A lightweight logging framework supporting JSON, XML, YAML, and console output, with built-in passive debouncing.
+      </li>
+      <li>
+        <strong>
+          <a href="https://www.nuget.org/packages/OnTheFlyStats" target="_blank" rel="noopener noreferrer">
+            OnTheFlyStats
+          </a>
+        </strong> - Allows on-the-fly computation of statistics such as means, variance allowing O(1) access.
+      </li>
+      <li>
+        <strong>
+          <a href="https://www.nuget.org/packages/Extensions.Standard" target="_blank" rel="noopener noreferrer">
+            Extensions.Standard
+          </a>
+        </strong> - A collection of extension methods for common programming tasks such as interpolation, partitioning, and softmax calculations.
+      </li>
+      <li>
+        <strong>
+          <a href="https://www.nuget.org/packages/ProgressReporting" target="_blank" rel="noopener noreferrer">
+            ProgressReporting
+          </a>
+        </strong> - A helper library for estimating remaining time and reporting progress in iterative or data-transfer scenarios.
+      </li>
+    </ul>
+    <p>
+      These and other packages are available on <a href="https://www.nuget.org/profiles/PFalkowski" target="_blank" rel="noopener noreferrer">NuGet.org</a>.
+    </p>
+    <p>My GitHub activity <span style={{ visibility: "hidden" }}>just because this CV needs a litle bit of green and I'm no Front-End developer:</span></p>
     <img src="http://ghchart.rshah.org/PFalkowski" alt="GitHub activity chart" />
   </Section>
 );
