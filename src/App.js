@@ -3,70 +3,32 @@ import emailIcon from "./assets/images/email.png";
 
 import './App.css';
 import React, { useState, createContext, useContext } from "react";
+
 const translations = {
   en: {
-    aboutMe: "About Me",
-    technologies: "Technologies of choice",
-    softSkills: "Soft Skills",
+    "about-me": "About Me",
+    skills: "Technologies of choice",
+    "soft-skills": "Soft Skills",
     education: "Formal Education",
-    workExperience: "Work Experience",
+    "work-experience": "Work Experience",
     languages: "Languages",
     conferences: "Conferences",
-    additionalInfo: "Additional Information",
-    otherProjects: "Other Projects",
-    consent: "I hereby agree for processing the following personal information strictly for the purposes of recruitment processes...",
+    "additional-info": "Additional Information",
+    "other-projects": "Other Projects",
+    consent: "I hereby agree for processing the following personal information strictly for the purposes of recruitment processes in accordance with Art. 6 paragraph 1 letter a of the Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).",
   },
   pl: {
-    aboutMe: "O mnie",
-    technologies: "Technologie, których używam",
-    softSkills: "Umiejętności miękkie",
+    "about-me": "O mnie",
+    skills: "Technologie, których używam",
+    "soft-skills": "Umiejętności miękkie",
     education: "Edukacja",
-    workExperience: "Doświadczenie zawodowe",
+    "work-experience": "Doświadczenie zawodowe",
     languages: "Języki",
     conferences: "Konferencje",
-    additionalInfo: "Dodatkowe informacje",
-    otherProjects: "Inne projekty",
-    consent: "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu procesów rekrutacyjnych...",
+    "additional-info": "Dodatkowe informacje",
+    "other-projects": "Inne projekty",
+    consent: "Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).",
   },
-};
-const LanguageContext = createContext();
-
-const App = () => {
-  const [language, setLanguage] = useState("en");
-  const toggleLanguage = (lang) => setLanguage(lang);
-
-  return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>      
-    <div className="container">
-      <LanguageSwitcher currentLanguage={language} toggleLanguage={setLanguage}/>
-      <aside className="sidebar">
-        <h1>Piotr Falkowski</h1>
-        <p>Senior Backend Software Developer with 10+ years of experience.</p>
-        <ContactInfo />
-      </aside>
-      <main className="content">
-        <Section id="about-me" title="About Me">
-          <p>I learned C++ to build a stock market prediction system using artificial neural networks.
-             While this is a project I still support and use, it led me to unique jurney through brighter and darker sides of software development.
-             My exposure to legacy systems codebase led me to shift towards radical simplicity.</p>
-          <p>Beyond work, I actively develop <a href='https://stockinsight.pl'>Stockinsight.pl</a>,
-           an automated stock market analysis tool, serve as CTO of <a href='https://squizzu.com'>Squizzu.com</a>,
-            a tech quiz platform and maintain many open-source C# libraries on NuGet,
-             covering areas such as logging, statistics, serialization and developer productivity.</p>
-        </Section>
-        <TechnicalSkills />
-        <SoftSkills />
-        <Education />
-        <WorkExperience />
-        <OtherProjects />
-        <Languages />
-        <Conferences />
-        <AdditionalInfo />
-        <ConsentSection />
-      </main>
-    </div>
-    </LanguageContext.Provider>
-  );
 };
 
 const LanguageSwitcher = ({ currentLanguage, toggleLanguage }) => {
@@ -90,6 +52,65 @@ const LanguageSwitcher = ({ currentLanguage, toggleLanguage }) => {
   );
 };
 
+const useTranslation = (id) => {
+  const { language } = useContext(LanguageContext);
+  return translations[language]?.[id] || id;
+};
+
+const Section = ({ id, children }) => (
+  <div className="section" id={id}>
+    <h2>{useTranslation(id)}</h2>
+    {children}
+  </div>
+);
+
+const ExternalLink = ({ url, children, className }) => {
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer" className={className}>
+      {children}
+    </a>
+  );
+};
+
+const LanguageContext = createContext();
+
+const App = () => {
+  const [language, setLanguage] = useState("en");
+  const toggleLanguage = (lang) => setLanguage(lang);
+
+  return (
+    <LanguageContext.Provider value={{ language, toggleLanguage }}>      
+    <div className="container">
+      <LanguageSwitcher currentLanguage={language} toggleLanguage={setLanguage}/>
+      <aside className="sidebar">
+        <h1>Piotr Falkowski</h1>
+        <p>Senior Backend Software Developer with 10+ years of experience.</p>
+        <ContactInfo />
+      </aside>
+      <main className="content">
+        <Section id="about-me">
+          <p>I learned C++ to build a stock market prediction system using artificial neural networks.
+             While this is a project I still support and use, it led me to unique jurney through brighter and darker sides of software development.
+             My exposure to legacy systems codebase led me to shift towards radical simplicity.</p>
+          <p>Beyond work, I actively develop <ExternalLink url={'https://stockinsight.pl'}>Stockinsight.pl</ExternalLink>,
+           an automated stock market analysis tool, serve as CTO of <ExternalLink url='https://squizzu.com'>Squizzu.com</ExternalLink>,
+            a tech quiz platform and maintain many open-source C# libraries on NuGet,
+             covering areas such as logging, statistics, serialization and developer productivity.</p>
+        </Section>
+        <TechnicalSkills />
+        <SoftSkills />
+        <Education />
+        <WorkExperience />
+        <OtherProjects />
+        <Languages />
+        <Conferences />
+        <AdditionalInfo />
+        <ConsentSection />
+      </main>
+    </div>
+    </LanguageContext.Provider>
+  );
+};
 
 const ContactInfo = () => (
   <div className="contact-info">
@@ -119,7 +140,7 @@ const TechnicalSkills = () => {
   const mlYears = currentYear - 2018;
 
   return (
-    <Section id="skills" title="Technologies of choice">
+    <Section id="skills">
       {[
         { name: "C#", level: Math.min((csharpYears * 10), 100), years: csharpYears },
         { name: "Azure", level:  Math.min((azureYears * 10), 100), years: azureYears },
@@ -139,28 +160,8 @@ const TechnicalSkills = () => {
   );
 };
 
-const useTranslation = (key) => {
-  const { language } = useContext(LanguageContext);
-  return translations[language][key];
-};
-
-const Section = ({ id, children }) => (
-  <div className="section" id={id}>
-    <h2>{useTranslation(id)}</h2>
-    {children}
-  </div>
-);
-
-const ExternalLink = ({ url, children, className }) => {
-  return (
-    <a href={url} target="_blank" rel="noopener noreferrer" className={className}>
-      {children}
-    </a>
-  );
-};
-
 const SoftSkills = () => (
-  <Section id="soft-skills" title="Soft Skills">
+  <Section id="soft-skills">
     <ul>
       {['Integrity', 'Persistence', 'Autonomy', 'Creativity', 'Deep Focus'].map((skill, index) => (
         <li key={index}>{skill}</li>
@@ -170,14 +171,14 @@ const SoftSkills = () => (
 );
 
 const Education = () => (
-  <Section id="education" title="Formal Education">
+  <Section id="education" key="education" title="Formal Education">
     <p><strong>Polish/French Bilingual High School</strong> - 2004 to 2008</p>
     <p><strong>Jagiellonian University - Psychology - Master</strong> - 2009 to 2016</p>
   </Section>
 );
 
 const WorkExperience = () => (
-  <Section id="work-experience" title="Work Experience">
+  <Section id="work-experience">
     <p><strong>IGE+XAO - Intern</strong> - 2014</p>
     <p>I was tasked with database-wide undo feature implementation which I accomplished by developing a T-SQL generator based on table schema which allowed a generation of undo procedure for each of hundreds of tables. Other tasks were related to C++ codebase refactoring and bugfixing.</p>
     <p><strong>Transactor Poland - (Junior) Software Developer</strong> - 2014 to 2017</p>
@@ -186,22 +187,24 @@ const WorkExperience = () => (
     I participated in multiple third-party integrations, including payment providers and data enrichment services, ensuring interoperability between systems. Throughout this role, I gained experience in wide range of technologies like performance and SQL profiling, WCF, WWF, XSLTs, SOAP and many more.</p>
     <p><strong>Open GI - Software Developer</strong> - 2017 to 2019</p>
     <p>Continuation of previous employment under different brand. More focus on newer technologies, we used ASP.NET Core over WCF, RabbitMQ instead of WWF, more Azure over on premise, 
-    MongoDB over MS SQL. A significant challenge was modernizing an archaic VB6 application, which we successfully achieved by splitting and migrating logic into WPF-based microservices while heavilly unit - testing existing functionality.
+    MongoDB over MS SQL. A significant challenge was modernizing an archaic VB6 application, which we successfully achieved by splitting and migrating logic into WPF-based microservices while heavilly unit
+     - testing existing functionality and moving slowly by first hosting the old Windows Application over Azure Virtual Desktop and then, when all the services were stable and tested we connected a modern frontend.
     </p>
     <p><strong>Jagiellonian University - Researcher</strong> - 2019 to 2020</p>
     <p>I participated in a grant-funded research  where I developed a classifier for monkey EEG brain activity and an Arduino-based tactile stimulator. 
       The stimulator is programmable via COM and featured 2 gloves with 5 tactile stimulators, each controllable separately 
-      [<a href="https://github.com/PFalkowski/HapticStimulatorPCA9685" target="_blank" rel="noopener noreferrer">source</a>].
-       I classified the monkey awake states in Python's Keras with accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [<a href="https://github.com/PFalkowski/KerasClassifierEeg" target="_blank" rel="noopener noreferrer">source</a>]. </p>
+      [<ExternalLink url="https://github.com/PFalkowski/HapticStimulatorPCA9685">source</ExternalLink>].
+       I classified the monkey awake states in Python's Keras with accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [<ExternalLink url="https://github.com/PFalkowski/KerasClassifierEeg" >source</ExternalLink>]. </p>
     <p><strong>Seville More Helory Polska - Senior Software Developer</strong> - since 2020</p>
-    <p>In my current role, I have been responsible for planning and implementing the architecture of a bespoke process for a key client. As the lead developer, I had to make critical design choices early on without having the full scope of requirements. My approach ensured flexibility, allowing us to adapt seamlessly as the project evolved.
-       Beyond development, I played a key role in preventing misguided technical decisions at the management level. When leadership pushed for excessive encoding layers to resolve data exchange issues between the front end and back end, I took a step back, investigated the root cause, and resolved the issue by removing just a few lines of code, avoiding unnecessary complexity.
-      My tech stack includes C# with CosmosDB, along with Azure services such as Service Bus, Redis Cache, and AI Search. Over the years, I have designed and executed multiple database migrations, refining my expertise in agile NoSQL architecture—ensuring models remain adaptable to changing requirements while remaining efficient and easy to migrate.</p>
+    <p>I joined a project implementing document source control - the end goal was a Git alike experience and bespoke parsing of .docx format, allowing document modifications without Word. My main responsibility was implemeting the functionalities in C# Web.API and over time wireing Search, Service Bus and Redis, implementing custom intermediate response cache layer on CosmosDb and improving performance of multitude of workflows, which I was very successful in.
+      When the project finished, I was trusted with planning and implementing the architecture of a bespoke process for a new key client. I had to make critical design choices early on without having the full scope of requirements as well as decide on priorities o ensure smooth front-end and backend interoperability. My approach ensured flexibility, allowing us to adapt seamlessly as the project evolved.
+       Beyond development, I played a key role in preventing misguided technical decisions, ex. when leadership pushed for excessive encoding I took a step back, investigated the root cause, and resolved the issue by removing few lines of code, avoiding covering the issue with multitude of new ones.
+      My tech stack includes C# with CosmosDB, along with Azure services such as Service Bus, Redis Cache, AI Search and more. Over the years, I have designed and executed countless database migrations, refining my expertise in agile NoSQL architecture—ensuring models remain adaptable to changing requirements while remaining efficient and easy to migrate.</p>
   </Section>
 );
 
 const Languages = () => (
-  <Section id="languages" title="Languages">
+  <Section id="languages">
     <ul>
       <li>Polish - Native</li>
       <li>English - C2</li>
@@ -211,7 +214,7 @@ const Languages = () => (
 );
 
 const Conferences = () => (
-  <Section id="conferences" title="Conferences">
+  <Section id="conferences">
     <ul>
       <li>.NET DeveloperDays 2018</li>
       <li>MEGA Sekurak Hacking Party 2019</li>
@@ -222,7 +225,7 @@ const Conferences = () => (
 );
 
 const AdditionalInfo = () => (
-  <Section id="additional-info" title="Additional Information">
+  <Section id="additional-info">
     <ul>
       <li>Category B driving license.</li>
       <li>Knowledge in psychology.</li>
@@ -232,7 +235,7 @@ const AdditionalInfo = () => (
 );
 
 const OtherProjects = () => (
-  <Section id="github-activity" title="Other Projects">
+  <Section id="other-projects">
     <p>
       I am actively developing a stock market analysis tool designed to provide daily updated insights for both speculative trading and long-term investing. 
       The backend, built in C#, is responsible for fetching market data, performing quantitative and fundamental analysis, generating report 
@@ -291,8 +294,8 @@ const OtherProjects = () => (
 );
 
 const ConsentSection = () => (
-  <div className="consent-section">
-    <p><em>I hereby agree for processing the following personal information strictly for the purposes of recruitment processes under Art. 23ust 1 pkt 1 of the Personal Data Protection Act as of 29 August 1997, consolidated text: Journal of Laws 2016, item 922 as amended and under Art. 6 ust.1 lit. a of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such GDPR (Dz. U. UE. L. z 2016 r. Nr 119.)</em></p>
+  <div id="consent">
+    <p><em>{useTranslation("consent")}</em></p>
   </div>
 );
 
