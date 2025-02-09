@@ -2,59 +2,42 @@ import phoneIcon from "./assets/images/phone.png";
 import emailIcon from "./assets/images/email.png";
 
 import './App.css';
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, useEffect, useContext, createContext } from "react";
 
-const translations = {
-  en: {
-    "about-me": "About Me",
-    skills: "Technologies of choice",
-    "soft-skills": "Soft Skills",
-    education: "Formal Education",
-    "work-experience": "Work Experience",
-    languages: "Languages",
-    conferences: "Conferences",
-    "additional-info": "Additional Information",
-    "other-projects": "Other Projects",
-    consent: "I hereby agree for processing the following personal information strictly for the purposes of recruitment processes in accordance with Art. 6 paragraph 1 letter a of the Regulation of the European Parliament and of the Council (EU) 2016/679 of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).",
-  },
-  pl: {
-    "about-me": "O mnie",
-    skills: "Technologie, których używam",
-    "soft-skills": "Umiejętności miękkie",
-    education: "Edukacja",
-    "work-experience": "Doświadczenie zawodowe",
-    languages: "Języki",
-    conferences: "Konferencje",
-    "additional-info": "Dodatkowe informacje",
-    "other-projects": "Inne projekty",
-    consent: "Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).",
-  },
+import en from "./locales/en.json";
+import pl from "./locales/pl.json";
+
+// Create Language Context
+const LanguageContext = createContext();
+
+const translations = { en, pl };
+
+// Hook to get translation for a given key
+const useTranslation = (id) => {
+  const { language } = useContext(LanguageContext);
+  return translations[language]?.[id] || id;
 };
 
-const LanguageSwitcher = ({ currentLanguage, toggleLanguage }) => {
+// Language Switcher Component
+const LanguageSwitcher = () => {
+  const { language, toggleLanguage } = useContext(LanguageContext);
+
   return (
     <div className="language-switcher">
-      <div 
-        className={`item ${currentLanguage === "en" ? "active" : ""}`} 
-        data-value="en" 
+      <div
+        className={`item ${language === "en" ? "active" : ""}`}
         onClick={() => toggleLanguage("en")}
       >
         <span className="flag-icon flag-icon-us"></span>
       </div>
-      <div 
-        className={`item ${currentLanguage === "pl" ? "active" : ""}`} 
-        data-value="pl" 
+      <div
+        className={`item ${language === "pl" ? "active" : ""}`}
         onClick={() => toggleLanguage("pl")}
       >
         <span className="flag-icon flag-icon-pl"></span>
       </div>
     </div>
   );
-};
-
-const useTranslation = (id) => {
-  const { language } = useContext(LanguageContext);
-  return translations[language]?.[id] || id;
 };
 
 const Section = ({ id, children }) => (
@@ -72,16 +55,13 @@ const ExternalLink = ({ url, children, className }) => {
   );
 };
 
-const LanguageContext = createContext();
-
 const App = () => {
   const [language, setLanguage] = useState("en");
-  const toggleLanguage = (lang) => setLanguage(lang);
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage: setLanguage }}>
     <div className="container">
-      <LanguageSwitcher currentLanguage={language} toggleLanguage={setLanguage}/>
+      <LanguageSwitcher />
       <aside className="sidebar">
         <h1>Piotr Falkowski</h1>
         <p>Senior Backend Software Developer with 10+ years of experience.</p>
