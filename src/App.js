@@ -79,7 +79,7 @@ const App = () => {
   const toggleLanguage = (lang) => setLanguage(lang);
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>      
+    <LanguageContext.Provider value={{ language, toggleLanguage }}>
     <div className="container">
       <LanguageSwitcher currentLanguage={language} toggleLanguage={setLanguage}/>
       <aside className="sidebar">
