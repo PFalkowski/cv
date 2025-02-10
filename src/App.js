@@ -2,7 +2,7 @@ import phoneIcon from "./assets/images/phone.png";
 import emailIcon from "./assets/images/email.png";
 
 import './App.css';
-import React, { useState, useEffect, useContext, createContext } from "react";
+import React, { useState, useContext, createContext } from "react";
 
 import en from "./locales/en.json";
 import pl from "./locales/pl.json";
@@ -15,11 +15,48 @@ const LanguageContext = createContext({
 
 const translations = { en, pl };
 
+// Function to parse markdown-style links and convert them to JSX
+const parseMarkdownLinks = (text) => {
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+
+  // Match all links and replace them properly
+  text.replace(regex, (match, textInsideBrackets, url, index) => {
+    // Push the text before the link
+    parts.push(text.slice(lastIndex, index));
+    
+    // Push the link as an ExternalLink component
+    parts.push(
+      <ExternalLink key={url} url={url}>
+        {textInsideBrackets}
+      </ExternalLink>
+    );
+
+    // Update lastIndex to track the processed part of the string
+    lastIndex = index + match.length;
+  });
+
+  // Push any remaining text after the last match
+  parts.push(text.slice(lastIndex));
+
+  return parts;
+};
+
+
 // Hook to get translation for a given key
 const useTranslation = (id) => {
   const { language } = useContext(LanguageContext);
   return id.split('.').reduce((obj, key) => obj?.[key], translations[language]) || id;
 };
+
+const useTranslationWithMarkdown = (id) => {
+  return parseMarkdownLinks(useTranslation(id));
+};
+
+const ExternalLink = ({ url, children }) => (
+  <a href={url} target="_blank" rel="noopener noreferrer">{children}</a>
+);
 
 // Language Switcher Component
 const LanguageSwitcher = () => {
@@ -43,7 +80,6 @@ const LanguageSwitcher = () => {
   );
 };
 
-
 const App = () => {
   const [language, setLanguage] = useState("en");
   
@@ -56,13 +92,6 @@ const App = () => {
     </div>
   );
 
-  const ExternalLink = ({ url, children, className }) => {
-    return (
-      <a href={url} target="_blank" rel="noopener noreferrer" className={className}>
-        {children}
-      </a>
-    );
-  };
 
   const WorkExperience = () => (
     <Section id="workExperience">
@@ -76,12 +105,7 @@ const App = () => {
       <p>{useTranslation("workExperience.opengi.description")}</p>
       
       <p><strong>{useTranslation("workExperience.ju.title")}</strong> - {useTranslation("workExperience.ju.period")}</p>
-      <p>{useTranslation("workExperience.ju.description")
-        .replace("{sourceLink1}", 
-          <ExternalLink url="https://github.com/PFalkowski/HapticStimulatorPCA9685">[source]</ExternalLink>)
-        .replace("{sourceLink2}", 
-          <ExternalLink url="https://github.com/PFalkowski/KerasClassifierEeg">[source]</ExternalLink>)
-      }</p>
+      <p>{useTranslationWithMarkdown("workExperience.ju.description")}</p>
       
       <p><strong>{useTranslation("workExperience.smh.title")}</strong> - {useTranslation("workExperience.smh.period")}</p>
       <p>{useTranslation("workExperience.smh.description")}</p>
@@ -192,16 +216,10 @@ const App = () => {
   const OtherProjects = () => (
     <Section id="otherProjects">
       <p>
-        {useTranslation("otherProjects.stockinsight").replace(
-          "{stockinsightLink}",
-          <ExternalLink url="https://stockinsight.pl">StockInsight.pl</ExternalLink>
-        )}
+        {useTranslationWithMarkdown("otherProjects.stockinsight")}
       </p>
       <p>
-        {useTranslation("otherProjects.squizzu").replace(
-          "{squizzuLink}",
-          <ExternalLink url="https://squizzu.com">Squizzu.com</ExternalLink>
-        )}
+        {useTranslationWithMarkdown("otherProjects.squizzu")}
       </p>
       <p>{useTranslation("otherProjects.otherVentures")}</p>
       <p>{useTranslation("otherProjects.nugetIntro")}</p>
@@ -227,12 +245,7 @@ const App = () => {
           </strong> - {useTranslation("otherProjects.nugetPackages.progressReporting")}
         </li>
       </ul>
-      <p>
-        {useTranslation("otherProjects.nugetFooter").replace(
-          "{nugetLink}",
-          <ExternalLink url="https://www.nuget.org/profiles/PFalkowski">NuGet.org</ExternalLink>
-        )}
-      </p>
+      <p>{useTranslationWithMarkdown("otherProjects.nugetFooter")}</p>
       <p>{useTranslation("otherProjects.githubActivity")}</p>
       <img src="http://ghchart.rshah.org/PFalkowski" alt="GitHub activity chart" />
     </Section>
@@ -254,19 +267,8 @@ const App = () => {
 
   const AboutMeSection = () => (
     <Section id="aboutMe">
-    <p>{useTranslation("about.firstParagraph")}</p>    <p>
-      {useTranslation("about.secondParagraph")
-        .split(/({stockinsight}|{squizzu})/)
-        .map((part, index) => {
-          if (part === "{stockinsight}") {
-            return <ExternalLink key={index} url={'https://stockinsight.pl'}>Stockinsight.pl</ExternalLink>;
-          }
-          if (part === "{squizzu}") {
-            return <ExternalLink key={index} url='https://squizzu.com'>Squizzu.com</ExternalLink>;
-          }
-          return part;
-        })}
-  </p>
+    <p>{useTranslation("about.firstParagraph")}</p>
+    <p>{useTranslationWithMarkdown("about.secondParagraph")}</p>
     </Section>
   )
 
@@ -291,6 +293,5 @@ const App = () => {
     </LanguageContext.Provider>
   );
 };
-
 
 export default App;

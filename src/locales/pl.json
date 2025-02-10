@@ -18,7 +18,7 @@
 
   "about": {
     "firstParagraph": "Nauczyłem się C++ aby zbudować system predykcji giełdowej wykorzystujący sztuczne sieci neuronowe. Chociaż nadal wspieram i używam tego projektu, doprowadził mnie on do unikalnej podróży przez jaśniejsze i ciemniejsze strony rozwoju oprogramowania. Moja ekspozycja na systemy legacy doprowadziła mnie do zwrotu w kierunku radykalnej prostoty.",
-    "secondParagraph": "Poza pracą, aktywnie rozwijam {stockinsight}, zautomatyzowane narzędzie do analizy giełdowej, pełnię funkcję CTO w {squizzu}, platformie quizowej o tematyce technicznej oraz utrzymuję wiele bibliotek open-source C# na NuGet, obejmujących obszary takie jak logowanie, statystyka, serializacja i produktywność programistów."
+    "secondParagraph": "Poza pracą, aktywnie rozwijam [Stockinsight](https://stockinsight.pl), zautomatyzowane narzędzie do analizy giełdowej, pełnię funkcję CTO w [Squizzu](https://squizzu.com), platformie quizowej o tematyce technicznej oraz utrzymuję wiele bibliotek open-source C# na NuGet, obejmujących obszary takie jak logowanie, statystyka, serializacja i produktywność programistów."
   },
 
   "softSkills": {
@@ -27,7 +27,7 @@
 
   "education": {
     "highSchool": {
-      "name": "Liceum Ogólnokształcące z Oddziałami Dwujęzycznymi Polsko-Francuskimi",
+      "name": "XVII Liceum Ogólnokształcące",
       "period": "2004 do 2008"
     },
     "university": {
@@ -55,7 +55,7 @@
     "ju": {
       "title": "Uniwersytet Jagielloński - Badacz",
       "period": "2019 do 2020",
-      "description": "Uczestniczyłem w badaniu finansowanym z grantu, gdzie opracowałem klasyfikator aktywności mózgu małp z EEG oraz stymulator dotykowy oparty na Arduino. Stymulator jest programowalny przez COM i zawierał 2 rękawice z 5 stymulatorami dotykowymi, każdy kontrolowany osobno {sourceLink1}. Klasyfikowałem stany czuwania małp w Keras Pythona z dokładnością powyżej 0.8 po zastosowaniu FFT i innych transformacji do surowych szeregów czasowych EEG {sourceLink2}."
+      "description": "Uczestniczyłem w badaniu finansowanym z grantu, gdzie opracowałem klasyfikator aktywności mózgu małp z EEG oraz stymulator dotykowy oparty na Arduino. Stymulator jest programowalny przez COM i zawierał 2 rękawice z 5 stymulatorami dotykowymi, każdy kontrolowany osobno [źródło](https://github.com/PFalkowski/HapticStimulatorPCA9685). Klasyfikowałem stany czuwania małp w Keras Pythona z dokładnością powyżej 0.8 po zastosowaniu FFT i innych transformacji do surowych szeregów czasowych EEG [źródło](https://github.com/PFalkowski/KerasClassifierEeg)."
     },
     "smh": {
       "title": "Seville More Helory Polska - Senior Software Developer",
@@ -86,8 +86,8 @@
   },
 
   "otherProjects": {
-    "stockinsight": "Aktywnie rozwijam narzędzie do analizy giełdowej zaprojektowane do dostarczania codziennie aktualizowanych informacji zarówno dla handlu spekulacyjnego, jak i inwestycji długoterminowych. Backend, zbudowany w C#, odpowiada za pobieranie danych rynkowych, wykonywanie analizy ilościowej i fundamentalnej, generowanie raportów i przesyłanie wyników do repozytorium GitHub. GitHub Action następnie uruchamia wdrożenie statycznej strony internetowej do Azure, umożliwiając ekonomiczne hostowanie z pełną automatyzacją. Strona internetowa z najnowszymi wynikami analiz {stockinsightLink}",
-    "squizzu": "Pełnię funkcję CTO w {squizzuLink}, platformie quizowej zbudowanej w React / C#. Zaprojektowałem większość modelu danych, zaimplementowałem większość z nich, skonfigurowałem CosmosDB, KeyVault na Azure i zintegrowałem z nimi.",
+    "stockinsight": "Aktywnie rozwijam narzędzie do analizy giełdowej zaprojektowane do dostarczania codziennie aktualizowanych informacji zarówno dla handlu spekulacyjnego, jak i inwestycji długoterminowych. Backend, zbudowany w C#, odpowiada za pobieranie danych rynkowych, wykonywanie analizy ilościowej i fundamentalnej, generowanie raportów i przesyłanie wyników do repozytorium GitHub. GitHub Action następnie uruchamia wdrożenie statycznej strony internetowej do Azure, umożliwiając ekonomiczne hostowanie z pełną automatyzacją. Strona internetowa z najnowszymi wynikami analiz [Stockinsight](https://stockinsight.pl)",
+    "squizzu": "Pełnię funkcję CTO w [Squizzu](https://squizzu.com), platformie quizowej zbudowanej w React / C#. Zaprojektowałem większość modelu danych, zaimplementowałem większość z nich, skonfigurowałem CosmosDB, KeyVault na Azure i zintegrowałem z nimi.",
     "otherVentures": "W trakcie mojej podróży eksplorowałem również inne przedsięwzięcia startupowe, w tym Drwal.it, platformę kursów online i narzędzie kalendarzowe zbudowane z PowerApps. Chociaż te projekty nie osiągnęły długoterminowego sukcesu, dostarczyły cennych lekcji i umiejętności, takich jak biegłość w PowerPlatform.",
     "nugetIntro": "Aktywnie rozwijam i utrzymuję kilka pakietów NuGet, które zwiększają produktywność programistów. Oto kilka godnych uwagi:",
     "nugetPackages": {
@@ -96,7 +96,7 @@
       "extensionsStandard": "Kolekcja metod rozszerzających dla typowych zadań programistycznych, takich jak interpolacja, partycjonowanie i obliczenia softmax.",
       "progressReporting": "Biblioteka pomocnicza do szacowania pozostałego czasu i raportowania postępu w scenariuszach iteracyjnych lub transferu danych."
     },
-    "nugetFooter": "Te i inne pakiety są dostępne na {nugetLink}.",
+    "nugetFooter": "Te i inne pakiety są dostępne na [NuGet.org](https://www.nuget.org/profiles/PFalkowski).",
     "githubActivity": "Moja aktywność na GitHub"
   },
 

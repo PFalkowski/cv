@@ -19,7 +19,7 @@
 
   "about": {
     "firstParagraph": "I learned C++ to build a stock market prediction system using artificial neural networks. While this is a project I still support and use, it led me to unique jurney through brighter and darker sides of software development. My exposure to legacy systems codebase led me to shift towards radical simplicity.",
-    "secondParagraph": "Beyond work, I actively develop {stockinsight}, an automated stock market analysis tool, serve as CTO of {squizzu}, a tech quiz platform and maintain many open-source C# libraries on NuGet, covering areas such as logging, statistics, serialization and developer productivity."
+    "secondParagraph": "Beyond work, I actively develop [Stockinsight](https://stockinsight.pl), an automated stock market analysis tool, serve as CTO of [Squizzu](https://squizzu.com), a tech quiz platform and maintain many open-source C# libraries on NuGet, covering areas such as logging, statistics, serialization and developer productivity."
   },
 
   "softSkills": {
@@ -56,7 +56,7 @@
     "ju": {
       "title": "Jagiellonian University - Researcher",
       "period": "2019 to 2020",
-      "description": "I participated in a grant-funded research where I developed a classifier for monkey EEG brain activity and an Arduino-based tactile stimulator. The stimulator is programmable via COM and featured 2 gloves with 5 tactile stimulators, each controllable separately {sourceLink1}. I classified the monkey awake states in Python's Keras with accuracy above 0.8 after applying FFT and other transformations to raw EEG time series {sourceLink2}."
+      "description": "I participated in a grant-funded research where I developed a classifier for monkey EEG brain activity and an Arduino-based tactile stimulator. The stimulator is programmable via COM and featured 2 gloves with 5 tactile stimulators, each controllable separately [source](https://github.com/PFalkowski/HapticStimulatorPCA9685). I classified the monkey awake states in Python's Keras with accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [source](https://github.com/PFalkowski/KerasClassifierEeg)."
     },
     "smh": {
       "title": "Seville More Helory Polska - Senior Software Developer",
@@ -87,8 +87,8 @@
   },
 
   "otherProjects": {
-    "stockinsight": "I am actively developing a stock market analysis tool designed to provide daily updated insights for both speculative trading and long-term investing. The backend, built in C#, is responsible for fetching market data, performing quantitative and fundamental analysis, generating report and pushing the results to a GitHub repository. A GitHub Action then triggers the deployment of a static website to Azure, enabling cost-effective hosting with full automation. The website with latest analysis results {stockinsightLink}",
-    "squizzu": "I serve as the CTO of {squizzuLink}, a tech quiz platform biult in React / C#. I architected most of the data model, implemented most of it, set the CosmosDB, KeyVault on Azure and integrated with them.",
+    "stockinsight": "I am actively developing a stock market analysis tool designed to provide daily updated insights for both speculative trading and long-term investing. The backend, built in C#, is responsible for fetching market data, performing quantitative and fundamental analysis, generating report and pushing the results to a GitHub repository. A GitHub Action then triggers the deployment of a static website to Azure, enabling cost-effective hosting with full automation. The website with latest analysis results [Stockinsight](https://stockinsight.pl)",
+    "squizzu": "I serve as the CTO of [Squizzu](https://squizzu.com), a tech quiz platform biult in React / C#. I architected most of the data model, implemented most of it, set the CosmosDB, KeyVault on Azure and integrated with them.",
     "otherVentures": "Throughout my journey, I have also explored other startup ventures, including Drwal.it, an online course platform, and a calendar tool built with PowerApps. While these projects didn't achieve long-term success, they provided valuable lessons and skills like proficiency in PowerPlatform.",
     "nugetIntro": "I actively develop and maintain several NuGet packages that enhance developer productivity. Here are a few notable ones:",
     "nugetPackages": {
@@ -97,7 +97,7 @@
       "extensionsStandard": "A collection of extension methods for common programming tasks such as interpolation, partitioning, and softmax calculations.",
       "progressReporting": "A helper library for estimating remaining time and reporting progress in iterative or data-transfer scenarios."
     },
-    "nugetFooter": "These and other packages are available on {nugetLink}.",
+    "nugetFooter": "These and other packages are available on [NuGet.org](https://www.nuget.org/profiles/PFalkowski).",
     "githubActivity": "My GitHub activity"
   }
 }
