@@ -1,12 +1,104 @@
 {
-  "about-me": "O mnie",
-  "skills": "Technologie, których używam",
-  "soft-skills": "Umiejętności miękkie",
-  "education": "Edukacja",
-  "work-experience": "Doświadczenie zawodowe",
-  "languages": "Języki",
-  "conferences": "Konferencje",
-  "additional-info": "Dodatkowe informacje",
-  "other-projects": "Inne projekty",
-  "consent": "Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO)."
+  "sections": {
+    "aboutMe": "O mnie",
+    "technicalSkills": "Umiejętności techniczne",
+    "softSkills": "Umiejętności miękkie",
+    "educationSection": "Wykształcenie",
+    "workExperience": "Doświadczenie zawodowe",
+    "languageSection": "Języki",
+    "conferencesSection": "Konferencje",
+    "additionalInfo": "Dodatkowe informacje",
+    "otherProjects": "Inne projekty"
+  },
+
+  "header": {
+    "name": "Piotr Falkowski",
+    "title": "Senior Backend Software Developer z ponad 10-letnim doświadczeniem."
+  },
+
+  "about": {
+    "firstParagraph": "Nauczyłem się C++ aby zbudować system predykcji giełdowej wykorzystujący sztuczne sieci neuronowe. Chociaż nadal wspieram i używam tego projektu, doprowadził mnie on do unikalnej podróży przez jaśniejsze i ciemniejsze strony rozwoju oprogramowania. Moja ekspozycja na systemy legacy doprowadziła mnie do zwrotu w kierunku radykalnej prostoty.",
+    "secondParagraph": "Poza pracą, aktywnie rozwijam {stockinsight}, zautomatyzowane narzędzie do analizy giełdowej, pełnię funkcję CTO w {squizzu}, platformie quizowej o tematyce technicznej oraz utrzymuję wiele bibliotek open-source C# na NuGet, obejmujących obszary takie jak logowanie, statystyka, serializacja i produktywność programistów."
+  },
+
+  "softSkills": {
+    "list": ["Uczciwość", "Wytrwałość", "Autonomia", "Kreatywność", "Głębokie skupienie"]
+  },
+
+  "education": {
+    "highSchool": {
+      "name": "Liceum Ogólnokształcące z Oddziałami Dwujęzycznymi Polsko-Francuskimi",
+      "period": "2004 do 2008"
+    },
+    "university": {
+      "name": "Uniwersytet Jagielloński - Psychologia - Magister",
+      "period": "2009 do 2016"
+    }
+  },
+
+  "workExperience": {
+    "igexao": {
+      "title": "IGE+XAO - Stażysta",
+      "year": "2014",
+      "description": "Powierzono mi implementację funkcji cofania zmian w całej bazie danych, co zrealizowałem poprzez stworzenie generatora T-SQL opartego na schemacie tabel, który umożliwiał generowanie procedury cofania dla każdej z setek tabel. Inne zadania dotyczyły refaktoryzacji kodu C++ i naprawy błędów."
+    },
+    "transactor": {
+      "title": "Transactor Poland - (Junior) Software Developer",
+      "period": "2014 do 2017",
+      "description": "Rozpocząłem jako Junior Developer i zostałem awansowany na Regular Developera po pomyślnym dostarczeniu pierwszego projektu — aplikacji business intelligence WPF, która agregowała dane z wielu API, dostarczając znaczną wartość klientowi przy niskim koszcie. Następnie pracowałem w zespole Agile nad systemem zarządzania cyklem życia ubezpieczeń, zajmując się rozwojem, refaktoryzacją, naprawą błędów i testami jednostkowymi. Główna część mojej roli obejmowała pracę z procedurami składowanymi T-SQL, usługami WCF, API ASP.NET, WPF, Windows Forms, XSLT, XSD, VB.NET i SQLite. Uczestniczyłem w wielu integracjach z systemami zewnętrznymi, w tym dostawcami płatności i usługami wzbogacania danych, zapewniając interoperacyjność między systemami. W trakcie tej roli zdobyłem doświadczenie w szerokim zakresie technologii, takich jak profilowanie wydajności i SQL, WCF, WWF, XSLT, SOAP i wiele innych."
+    },
+    "opengi": {
+      "title": "Open GI - Software Developer",
+      "period": "2017 do 2019",
+      "description": "Kontynuacja poprzedniego zatrudnienia pod inną marką. Większy nacisk na nowsze technologie, używaliśmy ASP.NET Core zamiast WCF, RabbitMQ zamiast WWF, więcej Azure zamiast on-premise, MongoDB zamiast MS SQL. Znaczącym wyzwaniem była modernizacja archaicznej aplikacji VB6, co osiągnęliśmy poprzez podział i migrację logiki do mikroserwisów opartych na WPF, jednocześnie intensywnie testując istniejącą funkcjonalność i przechodząc powoli, najpierw hostując starą aplikację Windows przez Azure Virtual Desktop, a następnie, gdy wszystkie usługi były stabilne i przetestowane, podłączyliśmy nowoczesny frontend."
+    },
+    "ju": {
+      "title": "Uniwersytet Jagielloński - Badacz",
+      "period": "2019 do 2020",
+      "description": "Uczestniczyłem w badaniu finansowanym z grantu, gdzie opracowałem klasyfikator aktywności mózgu małp z EEG oraz stymulator dotykowy oparty na Arduino. Stymulator jest programowalny przez COM i zawierał 2 rękawice z 5 stymulatorami dotykowymi, każdy kontrolowany osobno {sourceLink1}. Klasyfikowałem stany czuwania małp w Keras Pythona z dokładnością powyżej 0.8 po zastosowaniu FFT i innych transformacji do surowych szeregów czasowych EEG {sourceLink2}."
+    },
+    "smh": {
+      "title": "Seville More Helory Polska - Senior Software Developer",
+      "period": "od 2020",
+      "description": "Dołączyłem do projektu implementującego kontrolę źródła dokumentów - celem końcowym było doświadczenie podobne do Git i specjalistyczne parsowanie formatu .docx, umożliwiające modyfikacje dokumentów bez Worda. Moją główną odpowiedzialnością była implementacja funkcjonalności w C# Web.API oraz z czasem integracja Search, Service Bus i Redis, implementacja niestandardowej warstwy cache pośredniego na CosmosDb i poprawa wydajności wielu procesów, w czym odniosłem duży sukces. Po zakończeniu projektu powierzono mi planowanie i implementację architektury dedykowanego procesu dla nowego kluczowego klienta. Musiałem podejmować krytyczne decyzje projektowe na wczesnym etapie bez pełnego zakresu wymagań oraz decydować o priorytetach, aby zapewnić płynną interoperacyjność front-endu i backendu. Moje podejście zapewniło elastyczność, pozwalając nam płynnie dostosowywać się w miarę rozwoju projektu. Poza rozwojem, odegrałem kluczową rolę w zapobieganiu błędnym decyzjom technicznym, np. gdy kierownictwo naciskało na nadmierne kodowanie, zrobiłem krok wstecz, zbadałem źródło problemu i rozwiązałem go usuwając kilka linii kodu, unikając pokrywania problemu wieloma nowymi. Mój stos technologiczny obejmuje C# z CosmosDB, wraz z usługami Azure takimi jak Service Bus, Redis Cache, AI Search i inne. Na przestrzeni lat zaprojektowałem i wykonałem niezliczone migracje baz danych, doskonaląc swoją wiedzę w zwinnej architekturze NoSQL—zapewniając, że modele pozostają adaptowalne do zmieniających się wymagań, pozostając jednocześnie wydajne i łatwe do migracji."
+    }
+  },
+
+  "languages": {
+    "polish": "Polski - Ojczysty",
+    "english": "Angielski - C2",
+    "french": "Francuski - B2"
+  },
+
+  "conferences": {
+    "list": [
+      ".NET DeveloperDays 2018",
+      "MEGA Sekurak Hacking Party 2019",
+      "AzureDay 2020",
+      "MEGA Sekurak Hacking Party 2020"
+    ]
+  },
+
+  "additionalInfo": {
+    "drivingLicense": "Prawo jazdy kategorii B.",
+    "psychology": "Wiedza z zakresu psychologii.",
+    "hobbies": "Zainteresowania: ekonomia (finanse osobiste i analiza ilościowa), gry planszowe, bieganie, siłownia."
+  },
+
+  "otherProjects": {
+    "stockinsight": "Aktywnie rozwijam narzędzie do analizy giełdowej zaprojektowane do dostarczania codziennie aktualizowanych informacji zarówno dla handlu spekulacyjnego, jak i inwestycji długoterminowych. Backend, zbudowany w C#, odpowiada za pobieranie danych rynkowych, wykonywanie analizy ilościowej i fundamentalnej, generowanie raportów i przesyłanie wyników do repozytorium GitHub. GitHub Action następnie uruchamia wdrożenie statycznej strony internetowej do Azure, umożliwiając ekonomiczne hostowanie z pełną automatyzacją. Strona internetowa z najnowszymi wynikami analiz {stockinsightLink}",
+    "squizzu": "Pełnię funkcję CTO w {squizzuLink}, platformie quizowej zbudowanej w React / C#. Zaprojektowałem większość modelu danych, zaimplementowałem większość z nich, skonfigurowałem CosmosDB, KeyVault na Azure i zintegrowałem z nimi.",
+    "otherVentures": "W trakcie mojej podróży eksplorowałem również inne przedsięwzięcia startupowe, w tym Drwal.it, platformę kursów online i narzędzie kalendarzowe zbudowane z PowerApps. Chociaż te projekty nie osiągnęły długoterminowego sukcesu, dostarczyły cennych lekcji i umiejętności, takich jak biegłość w PowerPlatform.",
+    "nugetIntro": "Aktywnie rozwijam i utrzymuję kilka pakietów NuGet, które zwiększają produktywność programistów. Oto kilka godnych uwagi:",
+    "nugetPackages": {
+      "loggerLite": "Lekki framework logowania obsługujący wyjście JSON, XML, YAML i konsolowe, z wbudowanym pasywnym debouncing.",
+      "onTheFlyStats": "Umożliwia obliczanie statystyk w locie, takich jak średnie, wariancja, umożliwiając dostęp O(1).",
+      "extensionsStandard": "Kolekcja metod rozszerzających dla typowych zadań programistycznych, takich jak interpolacja, partycjonowanie i obliczenia softmax.",
+      "progressReporting": "Biblioteka pomocnicza do szacowania pozostałego czasu i raportowania postępu w scenariuszach iteracyjnych lub transferu danych."
+    },
+    "nugetFooter": "Te i inne pakiety są dostępne na {nugetLink}.",
+    "githubActivity": "Moja aktywność na GitHub"
+  },
+
+  "consent": "Wyrażam zgodę na przetwarzanie moich danych osobowych dla celów rekrutacji."
 }
