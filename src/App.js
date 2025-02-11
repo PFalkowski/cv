@@ -247,7 +247,7 @@ const App = () => {
       </ul>
       <p>{useTranslationWithMarkdown("otherProjects.nugetFooter")}</p>
       <p>{useTranslation("otherProjects.githubActivity")}</p>
-      <img src="http://ghchart.rshah.org/PFalkowski" alt="GitHub activity chart" />
+      <img src="https://ghchart.rshah.org/PFalkowski" alt="GitHub activity chart"  loading="lazy"/>
     </Section>
   );
   

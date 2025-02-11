@@ -6,7 +6,7 @@
     "educationSection": "Education",
     "workExperience": "Work Experience",
     "languageSection": "Languages",
-    "conferencesSection": "Conferences",
+    "conferencesSection": "Conferences & Trainings",
     "additionalInfo": "Additional Information",
     "otherProjects": "Other Projects"
   },
@@ -18,8 +18,8 @@
   },
 
   "about": {
-    "firstParagraph": "I learned C++ to build a stock market prediction system using artificial neural networks. While this is a project I still support and use, it led me to unique jurney through brighter and darker sides of software development. My exposure to legacy systems codebase led me to shift towards radical simplicity.",
-    "secondParagraph": "Beyond work, I actively develop [Stockinsight](https://stockinsight.pl), an automated stock market analysis tool, serve as CTO of [Squizzu](https://squizzu.com), a tech quiz platform and maintain many open-source C# libraries on NuGet, covering areas such as logging, statistics, serialization and developer productivity."
+    "firstParagraph": "I have over 10 years of commercial experience in development and support of business applications mostly in .NET.",
+    "secondParagraph": "Beyond work, I actively develop [Stockinsight](https://stockinsight.pl), an automated stock market analysis tool, serve as CTO of [Squizzu](https://squizzu.com), a tech quiz platform and maintain many open-source C# libraries on NuGet."
   },
 
   "softSkills": {
@@ -29,11 +29,11 @@
   "education": {
     "highSchool": {
       "name": "Polish/French Bilingual High School",
-      "period": "2004 to 2008"
+      "period": "2004 - 2008"
     },
     "university": {
       "name": "Jagiellonian University - Psychology - Master",
-      "period": "2009 to 2016"
+      "period": "2009 - 2016"
     }
   },
 
@@ -41,27 +41,27 @@
     "igexao": {
       "title": "IGE+XAO - Intern",
       "year": "2014",
-      "description": "I was tasked with database-wide undo feature implementation which I accomplished by developing a T-SQL generator based on table schema which allowed a generation of undo procedure for each of hundreds of tables. Other tasks were related to C++ codebase refactoring and bugfixing."
+      "description": "Other than bugfixing and refactoring C++ codebase, I implementated database wide undo T-SQL procedure using c# code generator based on table schema."
     },
     "transactor": {
       "title": "Transactor Poland - (Junior) Software Developer",
-      "period": "2014 to 2017",
-      "description": "I started as a Junior Developer and was promoted to Regular Developer after successfully delivering first project — a WPF business intelligence application that aggregated data from multiple APIs, providing significant value to the customer at a low cost. Following this, I worked in an Agile team on an end-to-end insurance lifetime management system, handling development, refactoring, bug fixing, and unit testing. A major part of my role involved working with T-SQL stored procedures, WCF services, ASP.NET APIs, WPF, Windows Forms, XSLT, XSD, VB.NET, and SQLite. I participated in multiple third-party integrations, including payment providers and data enrichment services, ensuring interoperability between systems. Throughout this role, I gained experience in wide range of technologies like performance and SQL profiling, WCF, WWF, XSLTs, SOAP and many more."
+      "period": "2014 - 2017",
+      "description": "I started as a Junior Software Developer and was promoted to Regular after successfully delivering first project — a WPF business intelligence application that aggregated data from multiple APIs, providing significant value to the customer at a low cost. Following this, I worked in an Agile team on an end-to-end insurance lifetime management system, handling development, refactoring, bug fixing, and unit testing. A major part of my role involved working with T-SQL stored procedures, WCF services, ASP.NET APIs, WPF, Windows Forms, XSLT, XSD, VB.NET, and SQLite. I participated in multiple third-party integrations, including payment providers and data enrichment services, ensuring interoperability between systems. Throughout this role, I gained experience in wide range of technologies like performance and SQL profiling, WCF, WWF, XSLTs, SOAP and many more."
     },
     "opengi": {
       "title": "Open GI - Software Developer",
-      "period": "2017 to 2019",
-      "description": "Continuation of previous employment under different brand. More focus on newer technologies, we used ASP.NET Core over WCF, RabbitMQ instead of WWF, more Azure over on premise, MongoDB over MS SQL. A significant challenge was modernizing an archaic VB6 application, which we successfully achieved by splitting and migrating logic into WPF-based microservices while heavilly unit - testing existing functionality and moving slowly by first hosting the old Windows Application over Azure Virtual Desktop and then, when all the services were stable and tested we connected a modern frontend."
+      "period": "2017 - 2019",
+      "description": "Continuation of previous employment under different brand. More focus on newer technologies, we used ASP.NET Core over WCF, RabbitMQ instead of WWF, more Azure over on premise, MongoDB over MS SQL. A significant challenge was modernizing legacy VB6 application, which we successfully achieved by splitting and migrating logic into WPF-based microservices while heavilly unit - testing existing functionality and moving slowly by first hosting the old Windows Application over Azure Virtual Desktop and then, when all the services were stable and tested we connected a modern frontend."
     },
     "ju": {
       "title": "Jagiellonian University - Researcher",
-      "period": "2019 to 2020",
-      "description": "I participated in a grant-funded research where I developed a classifier for monkey EEG brain activity and an Arduino-based tactile stimulator. The stimulator is programmable via COM and featured 2 gloves with 5 tactile stimulators, each controllable separately [source](https://github.com/PFalkowski/HapticStimulatorPCA9685). I classified the monkey awake states in Python's Keras with accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [source](https://github.com/PFalkowski/KerasClassifierEeg)."
+      "period": "2019 - 2020",
+      "description": "For a grant-funded research I developed a classifier for monkey EEG brain activity and an Arduino-based tactile stimulator. The stimulator features 2 gloves with 5 tactile stimulators, each controllable separately via COM and  [source](https://github.com/PFalkowski/HapticStimulatorPCA9685). For classification I used Python's Keras achieving accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [source](https://github.com/PFalkowski/KerasClassifierEeg)."
     },
     "smh": {
       "title": "Seville More Helory Polska - Senior Software Developer",
       "period": "since 2020",
-      "description": "I joined a project implementing document source control - the end goal was a Git alike experience and bespoke parsing of .docx format, allowing document modifications without Word. My main responsibility was implemeting the functionalities in C# Web.API and over time wireing Search, Service Bus and Redis, implementing custom intermediate response cache layer on CosmosDb and improving performance of multitude of workflows, which I was very successful in. When the project finished, I was trusted with planning and implementing the architecture of a bespoke process for a new key client. I had to make critical design choices early on without having the full scope of requirements as well as decide on priorities o ensure smooth front-end and backend interoperability. My approach ensured flexibility, allowing us to adapt seamlessly as the project evolved. Beyond development, I played a key role in preventing misguided technical decisions, ex. when leadership pushed for excessive encoding I took a step back, investigated the root cause, and resolved the issue by removing few lines of code, avoiding covering the issue with multitude of new ones. My tech stack includes C# with CosmosDB, along with Azure services such as Service Bus, Redis Cache, AI Search and more. Over the years, I have designed and executed countless database migrations, refining my expertise in agile NoSQL architecture—ensuring models remain adaptable to changing requirements while remaining efficient and easy to migrate."
+      "description": "I joined a project implementing document version control. My main responsibility was implemeting the functionalities in C# ASP.NET API, developing solutions using Azure AI (Cognitive) Search, Azure Service Bus and Redis Cache, implementing custom intermediate response cache layer on CosmosDb and improving performance of multitude of workflows. When the project finished, I was trusted with code architecture and implementation of a bespoke process for a new key client. I had to make critical design choices early on without having the full scope of requirements as well as decide on priorities yo ensure smooth front-end and backend interoperability. My approach ensured flexibility, allowing us to adapt seamlessly as the project evolved - I written countless CosmosDB migrations, refining my expertise in NoSQL data layer architecture — ensuring models remain adaptable to changing requirements while remaining efficient. Beyond development, I played a key role in preventing misguided technical decisions, ex. when leadership pushed for excessive encoding I took a step back, investigated the root cause, and resolved the issue by removing few lines of code, avoiding covering the issue with multitude of new ones."
     }
   },
 
@@ -73,6 +73,7 @@
 
   "conferences": {
     "list": [
+      "Scrum Workshop - 2014",
       ".NET DeveloperDays 2018",
       "MEGA Sekurak Hacking Party 2019",
       "AzureDay 2020",
@@ -83,19 +84,19 @@
   "additionalInfo": {
     "drivingLicense": "Category B driving license.",
     "psychology": "Knowledge in psychology.",
-    "hobbies": "Hobbies: economy (personal finance and quantitative analysis), board games, running, gym."
+    "hobbies": "Hobbies: economics (personal finance and quantitative analysis), board games, running, bodybuilding."
   },
 
   "otherProjects": {
-    "stockinsight": "I am actively developing a stock market analysis tool designed to provide daily updated insights for both speculative trading and long-term investing. The backend, built in C#, is responsible for fetching market data, performing quantitative and fundamental analysis, generating report and pushing the results to a GitHub repository. A GitHub Action then triggers the deployment of a static website to Azure, enabling cost-effective hosting with full automation. The website with latest analysis results [Stockinsight](https://stockinsight.pl)",
-    "squizzu": "I serve as the CTO of [Squizzu](https://squizzu.com), a tech quiz platform biult in React / C#. I architected most of the data model, implemented most of it, set the CosmosDB, KeyVault on Azure and integrated with them.",
+    "stockinsight": "I am actively developing a stock market analysis tool designed to provide daily updated insights for both speculative trading and long-term investing. The C# backend fetches market data, performs quantitative and fundamental analysis, generates reports, and pushes the results to a GitHub repository. A GitHub Action then triggers the deployment of a static website to Azure, enabling cost-effective hosting with full automation. The website with latest analysis results [Stockinsight](https://stockinsight.pl).",
+    "squizzu": "I serve as the CTO of [Squizzu](https://squizzu.com), a tech quiz platform built in React / C#. I architected and implemented the majority of the data model, set up CosmosDB and KeyVault integrations and continue to take part in decisions concerning the platform.",
     "otherVentures": "Throughout my journey, I have also explored other startup ventures, including Drwal.it, an online course platform, and a calendar tool built with PowerApps. While these projects didn't achieve long-term success, they provided valuable lessons and skills like proficiency in PowerPlatform.",
-    "nugetIntro": "I actively develop and maintain several NuGet packages that enhance developer productivity. Here are a few notable ones:",
+    "nugetIntro": "Here is couple of popular NuGet packages I developped and maintain:",
     "nugetPackages": {
-      "loggerLite": "A lightweight logging framework supporting JSON, XML, YAML, and console output, with built-in passive debouncing.",
-      "onTheFlyStats": "Allows on-the-fly computation of statistics such as means, variance allowing O(1) access.",
-      "extensionsStandard": "A collection of extension methods for common programming tasks such as interpolation, partitioning, and softmax calculations.",
-      "progressReporting": "A helper library for estimating remaining time and reporting progress in iterative or data-transfer scenarios."
+      "loggerLite": "A lightweight logging framework supporting JSON, XML, YAML, and console output, with built-in debouncing.",
+      "onTheFlyStats": "Allows on-the-fly computation of statistics such as means and variance allowing O(1) access.",
+      "extensionsStandard": "A collection of extension methods for common programming tasks such as interpolation and partitioning.",
+      "progressReporting": "A library for estimating completion time and reporting progress in iterative operations and data transfers."
     },
     "nugetFooter": "These and other packages are available on [NuGet.org](https://www.nuget.org/profiles/PFalkowski).",
     "githubActivity": "My GitHub activity"
