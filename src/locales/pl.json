@@ -88,11 +88,11 @@
 
   "otherProjects": {
     "stockinsight": "Aktywnie rozwijam narzędzie do analizy serii czasowych w postaci cen akcji polskich i zagranicznych spółek z użyciem algorytmów uczenia maszynowego, statystycznych, analizie technicznej i fundamentalnej. Backend, napisany w C# odpowiada za synchronizację danych, wykonywanie analizy, generowanie raportów i przesyłanie wyników do repozytorium, gdzie GitHub Action uruchamia wdrożenie statycznej strony internetowej do Azure, dając zerowy koszt utrzymania. Strona z aktualnymi wynikami analiz [Stockinsight](https://stockinsight.pl).",
-    "squizzu": "Pełnię funkcję CTO w [Squizzu](https://squizzu.com), platformie quizowej zbudowanej w React / C#. Zaprojektowałem większość modelu danych, zaimplementowałem większość z nich, skonfigurowałem CosmosDB, KeyVault na Azure i zintegrowałem z nimi.",
-    "otherVentures": "W trakcie mojej podróży eksplorowałem również inne przedsięwzięcia startupowe, w tym Drwal.it, platformę kursów online i narzędzie kalendarzowe zbudowane z PowerApps. Chociaż te projekty nie osiągnęły długoterminowego sukcesu, dostarczyły cennych lekcji i umiejętności, takich jak biegłość w PowerPlatform.",
+    "squizzu": "Pełnię funkcję CTO w [Squizzu](https://squizzu.com), platformie quizowej budowanej w React / C#. Zaprojektowałem i zaimplementowałem model danych, skonfigurowałem i zintegrowałem usługi Azure takie jak CosmosDB czy KeyVault.",
+    "otherVentures": "Próbowałem również innych przedsięwzięć, w tym Drwal.it, platformę kursów online i narzędzie raportowania czasu pracy zbudowane w PowerApps. Chociaż te projekty nie osiągnęły długoterminowego sukcesu, dostarczyły cennych lekcji i umiejętności, takich jak znajomość PowerPlatform.",
     "nugetIntro": "Oto kilka popularniejszych bibliotek które rozwijam i utrzymuję:",
     "nugetPackages": {
-      "loggerLite": "Lekki framework do logowania, obsługujący JSON, XML, YAML, konsolę, pliki itd. z wbudowanym debouncingiem.",
+      "loggerLite": "Lekki framework do logowania, obsługujący JSON, XML, HTML, YAML, konsolę, pliki itd., z wbudowanym debouncingiem.",
       "onTheFlyStats": "Umożliwia obliczanie statystyk w locie, takich jak średnie, wariancja zapewniając dostęp w czasie O(1).",
       "extensionsStandard": "Kolekcja metod rozszerzających dla typowych zadań programistycznych, takich jak interpolacja, partycjonowanie itp.",
       "progressReporting": "Biblioteka do szacowania pozostałego czasu i raportowania postępu pętli lub transferu danych."
