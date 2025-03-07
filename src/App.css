@@ -253,3 +253,67 @@ li {
   .flag-icon-pl {
     background-image: url("https://flagcdn.com/w40/pl.png");
   }
+
+/* Add these print media query styles to your existing CSS */
+@media print {
+    /* Hide language switcher */
+    .language-switcher {
+      display: none !important;
+    }
+    
+    /* Remove all box shadows when printing */
+    .container,
+    .sidebar,
+    .content,
+    .language-switcher .item {
+      box-shadow: none !important;
+    }
+    
+    /* Force background printing for progress bars */
+    .bar {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        background-color: #eee !important;
+        border: 1px solid #999 !important;
+    }
+    
+    .progress {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        background-color: #428ddd !important;
+        position: relative;
+    }
+    
+    /* Allow contact info to fully extend */
+    .contact-item span {
+      max-width: none !important;
+      word-break: normal !important;
+    }
+    
+    /* Make sure all content is visible and not cut off */
+    .container {
+      width: 100% !important;
+      max-width: none !important;
+    }
+    
+    /* Ensure proper page breaks */
+    h2 {
+      page-break-after: avoid;
+      page-break-inside: avoid;
+    }
+    
+    .section {
+      page-break-inside: avoid;
+    }
+    
+    /* Make sure the sidebar prints properly */
+    .sidebar {
+      background-color: #f0f0f0 !important; /* Use light gray instead of blue */
+      color: #000 !important; /* Use black text instead of white */
+    }
+    
+    .sidebar a, 
+    .contact-item a {
+      color: #000 !important;
+    }
+  }
