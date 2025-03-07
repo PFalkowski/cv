@@ -27,7 +27,7 @@
 
   "education": {
     "highSchool": {
-      "name": "XVII Liceum Ogólnokształcące im. Młodej Polski",
+      "name": "XVII Liceum Ogólnokształcące im. Młodej Polski - Profil Dwujęzyczny",
       "period": "2004 - 2008"
     },
     "university": {
@@ -45,12 +45,12 @@
     "transactor": {
       "title": "Transactor Poland - (Junior) Software Developer",
       "period": "2014 - 2017",
-      "description": "Rozpocząłem pracę jako młodszy programista a po pozytywnym odbiorze przez klienta projektu, który implementowałem — aplikacji business intelligence w WPF agregującej dane z wielu API, zostałem awansowany. Następnie pracowałem w jednym z zespołów w trybie metodyk zwinnych nad systemem zarządzania cyklem życia polisy ubezpieczeniowej, zajmując się rozwojem, refaktoryzacją, naprawą błędów i testami jednostkowymi. Główne technologie, w których pracowałem to T-SQL, WCF, ASP.NET API, WPF, Windows Forms, XSLT, XSD, VB.NET i SQLite. Uczestniczyłem w wielu integracjach z systemami zewnętrznymi, w tym dostawcami płatności i usługami wzbogacania danych."
+      "description": "Rozpocząłem pracę jako młodszy programista a po pozytywnym odbiorze przez klienta projektu, który implementowałem — aplikacji business intelligence w WPF agregującej dane z wielu API, zostałem awansowany. Następnie pracowałem w jednym z zespołów w trybie metodyk zwinnych nad systemem zarządzania cyklem życia polisy ubezpieczeniowej, zajmując się rozwojem, refaktoryzacją, naprawą błędów i testami jednostkowymi. Główne technologie, w których pracowałem to T-SQL, WCF, ASP.NET API, WPF, Windows Forms, XSLT, XSD, VB.NET i SQLite. Uczestniczyłem w wielu integracjach z systemami zewnętrznymi, w tym dostawcami płatności i usługami wzbogacania danych. For project management and collaboration I used AzureDevops (VSTS at the time), Trello, Jira and Zendesk."
     },
     "opengi": {
       "title": "Open GI - Software Developer",
       "period": "2017 - 2019",
-      "description": "Kontynuacja poprzedniego zatrudnienia pod inną marką. Większy nacisk na nowsze technologie; WCF zastępowaliśmy ASP.NET Core, używaliśmy RabbitMQ zamiast WWF, Azure Cloud zamiast on-premise, MongoDB zamiast MS SQL. Znaczącym wyzwaniem była modernizacja zastanej aplikacji napisanej w VB6, co osiągnęliśmy poprzez podział i migrację do mikroserwisów, jednocześnie intensywnie testując istniejącą funkcjonalność przechodząc powoli przez hosting na VMce przez Azure Virtual Desktop, a następnie, gdy wszystkie usługi były stabilne i przetestowane, podłączyliśmy nowoczesny frontend."
+      "description": "Kontynuacja poprzedniego zatrudnienia pod inną marką. Praca w Scrumie Większy nacisk na nowsze technologie; WCF zastępowaliśmy ASP.NET Core, używaliśmy RabbitMQ zamiast WWF, Azure Cloud zamiast on-premise, MongoDB zamiast MS SQL. Znaczącym wyzwaniem była modernizacja zastanej aplikacji napisanej w VB6, co osiągnęliśmy poprzez podział i migrację do mikroserwisów, jednocześnie intensywnie testując istniejącą funkcjonalność przechodząc powoli przez hosting na VMce przez Azure Virtual Desktop, a następnie, gdy wszystkie usługi były stabilne i przetestowane, podłączyliśmy nowoczesny frontend."
     },
     "ju": {
       "title": "Uniwersytet Jagielloński - Badacz",
@@ -60,7 +60,7 @@
     "smh": {
       "title": "Seville More Helory Polska - Senior Software Developer",
       "period": "od 2020",
-      "description": "Dołączyłem do projektu implementującego wersjonowanie dokumentów. Moją główną odpowiedzialnością była implementacja funkcjonalności w C# Web.API oraz z czasem integracja z Azure AI (Cognitive) Search, Service Bus i Redis Cache, implementacja niestandardowej warstwy cache w oparciu o CosmosDb i poprawa wydajności wielu procesów. Po zakończeniu projektu powierzono mi planowanie i implementację architektury procesu dla nowego kluczowego klienta. Podejmowałem kluczowe decyzje projektowe na wczesnym etapie bez pełnego zakresu wymagań oraz decydowałem o priorytetach, zapewniając płynną pracę front-endu i backendu. W tym czasie napisałem niezliczoną ilość migracji bazy danych w CosmosDb, doskonaląc swoją wiedzę ale i wyczucie do projektowania encji, które będą łatwo adaptowalne do zmieniających się wymagań, pozostając jednocześnie wydajne i łatwe do migracji. Poza rozwojem systemu, odegrałem kluczową rolę w zapobieganiu błędnym decyzjom technicznym, np. gdy kierownictwo naciskało na nadmierne enkodowanie, zbadałem źródło problemu i rozwiązałem go usuwając kod zamiast dodawać, unikając przykrycia problemu nowymi."
+      "description": "Moją główną odpowiedzialnością była implementacja w ASP.NET Web.API parsowania i wersjonowania dokumentów, z czasem integracja z Azure AI (Cognitive) Search, Service Bus i Redis Cache, implementacja niestandardowej warstwy cache w oparciu o CosmosDb i poprawa wydajności wielu procesów. Powierzono mi planowanie i implementację architektury procesu dla nowego kluczowego klienta, podejmowałem trafne decyzje projektowe na wczesnym etapie bez pełnego zakresu wymagań oraz decydowałem o priorytetach, zapewniając płynną pracę front-endu i backendu. Przygotowana architektura byłą łatwo adaptowalne do zmieniających się wymagań, pozostając jednocześnie wydajna."
     }
   },
 
@@ -72,11 +72,12 @@
 
   "conferences": {
     "list": [
-      "Warsztaty Scrum - 2014",
-      ".NET DeveloperDays 2018",
-      "MEGA Sekurak Hacking Party 2019",
-      "AzureDay 2020",
-      "MEGA Sekurak Hacking Party 2020"
+      "2014 - Warsztaty Scrum",
+      "2018 - .NET DeveloperDays",
+      "2019 - MEGA Sekurak Hacking Party",
+      "2020 - AzureDay",
+      "2021 - MEGA Sekurak Hacking Party",
+      "2025 - Niebezpiecznik - Atakowanie i Ochrona Aplikacji Webowych"
     ]
   },
 
@@ -94,7 +95,7 @@
     "nugetPackages": {
       "loggerLite": "Lekki framework do logowania, obsługujący JSON, XML, HTML, YAML, konsolę, pliki itd., z wbudowanym debouncingiem.",
       "onTheFlyStats": "Umożliwia obliczanie statystyk w locie, takich jak średnie, wariancja zapewniając dostęp w czasie O(1).",
-      "extensionsStandard": "Kolekcja metod rozszerzających dla typowych zadań programistycznych, takich jak interpolacja, partycjonowanie itp.",
+      "extensionsStandard": "Kolekcja metod dla typowych zadań jak interpolacja, partycjonowanie itp.",
       "progressReporting": "Biblioteka do szacowania pozostałego czasu i raportowania postępu pętli lub transferu danych."
     },
     "nugetFooter": "Te i inne pakiety są dostępne na [NuGet.org](https://www.nuget.org/profiles/PFalkowski).",

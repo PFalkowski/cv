@@ -10,7 +10,6 @@
     "additionalInfo": "Additional Information",
     "otherProjects": "Other Projects"
   },
-  "consent": "I hereby agree for processing the following personal information for the purposes of recruitment processes only.",
   
   "header": {
     "name": "Piotr Falkowski",
@@ -18,9 +17,12 @@
   },
 
   "about": {
-    "firstParagraph": "I have over 10 years of commercial experience in development and support of business applications mostly in .NET.",
+    "firstParagraph": "I find passion and joy in solving problems, I'm good at C# and I have 10 years of experience to prove it.",
     "secondParagraph": "Beyond work, I actively develop [Stockinsight](https://stockinsight.pl), an automated stock market analysis tool, serve as CTO of [Squizzu](https://squizzu.com), a tech quiz platform and maintain many open-source C# libraries on NuGet."
   },
+
+  "consent": "I hereby agree for processing the following personal information for the purposes of recruitment processes only.",
+  
 
   "softSkills": {
     "list": ["Integrity", "Persistence", "Autonomy", "Creativity", "Deep Focus"]
@@ -46,7 +48,7 @@
     "transactor": {
       "title": "Transactor Poland - (Junior) Software Developer",
       "period": "2014 - 2017",
-      "description": "I started as a Junior Software Developer and was promoted to Regular after successfully delivering first project — a WPF business intelligence application that aggregated data from multiple APIs, providing significant value to the customer at a low cost. Following this, I worked in an Agile team on an end-to-end insurance lifetime management system, handling development, refactoring, bug fixing, and unit testing. A major part of my role involved working with T-SQL stored procedures, WCF services, ASP.NET APIs, WPF, Windows Forms, XSLT, XSD, VB.NET, and SQLite. I participated in multiple third-party integrations, including payment providers and data enrichment services, ensuring interoperability between systems. Throughout this role, I gained experience in a wide range of technologies like performance and SQL profiling, WCF, WWF (Windows Workflow Foundation), XSLTs, SOAP and many more."
+      "description": "I started as a Junior Software Developer and was promoted to Regular after successfully delivering first project — a WPF business intelligence application that aggregated data from multiple APIs, providing significant value to the customer at a low cost. Following this, I worked in an Agile team on an end-to-end insurance lifetime management system, handling development, refactoring, bug fixing, and unit testing. A major part of my role involved working with T-SQL stored procedures, WCF services, ASP.NET APIs, WPF, Windows Forms, XSLT, XSD, VB.NET, and SQLite. I participated in multiple third-party integrations, including payment providers and data enrichment services, ensuring interoperability between systems. Throughout this role, I gained experience in a wide range of technologies like performance and SQL profiling, WCF, WWF (Windows Workflow Foundation), XSLTs, SOAP and many more. For project management and collaboration I used AzureDevops (VSTS at the time), Trello, Jira and Zendesk."
     },
     "opengi": {
       "title": "Open GI - Software Developer",
@@ -56,12 +58,12 @@
     "ju": {
       "title": "Jagiellonian University - Researcher",
       "period": "2019 - 2020",
-      "description": "For a grant-funded research I developed a classifier for monkey electroencephalogram (EEG) brain activity and an Arduino-based tactile stimulator. The stimulator features 2 gloves with 5 tactile stimulators, each controllable separately via COM and  [source](https://github.com/PFalkowski/HapticStimulatorPCA9685). For classification I used Python's Keras achieving accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [source](https://github.com/PFalkowski/KerasClassifierEeg)."
+      "description": "For a grant-funded research I developed electroencephalogram (EEG) monkey brain activity classifier and an Arduino-based tactile stimulator. The stimulator features 2 gloves with 5 efectors, each controllable separately via COM and  [source](https://github.com/PFalkowski/HapticStimulatorPCA9685). For classification I used Python's Keras achieving accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [source](https://github.com/PFalkowski/KerasClassifierEeg)."
     },
     "smh": {
       "title": "Seville More Helory Polska - Senior Software Developer",
       "period": "since 2020",
-      "description": "I joined a project implementing document version control. My main responsibility was implemeting the functionalities in C# ASP.NET API, developing solutions using Azure AI (Cognitive) Search, Azure Service Bus and Redis Cache, implementing custom intermediate response cache layer on CosmosDb and improving performance of multitude of workflows. When the project finished, I was trusted with code architecture and implementation of a bespoke process for a new key client. I had to make critical design choices early on without having the full scope of requirements as well as decide on priorities to ensure smooth front-end and backend interoperability. My approach ensured flexibility, allowing us to adapt seamlessly as the project evolved - I wrote countless CosmosDB migrations, refining my expertise in NoSQL data layer architecture — ensuring models remain adaptable to changing requirements while remaining efficient. Beyond development, I played a key role in preventing misguided technical decisions, ex. when leadership pushed for excessive encoding I took a step back, investigated the root cause, and resolved the issue by removing few lines of code, avoiding covering the issue with new ones."
+      "description": "My main responsibility was implementing the document version control in C# ASP.NET API, developing solutions using Azure AI (Cognitive) Search, Azure Service Bus and Redis Cache, improving performance and implementing custom optimizations like intermediate cache layer on CosmosDb. Later, I was trusted with code architecture and implementation of a bespoke process for a new key client - I made correct key design choices early on with limited scope of requirements as well as decided on priorities to ensure smooth front-end and backend interoperability. My data architecture ensured flexibility, allowing us to adapt seamlessly as the project evolved, ensuring models remain adaptable to changing requirements while remaining efficient."
     }
   },
 
@@ -73,11 +75,12 @@
 
   "conferences": {
     "list": [
-      "Scrum Workshop - 2014",
-      ".NET DeveloperDays 2018",
-      "MEGA Sekurak Hacking Party 2019",
-      "AzureDay 2020",
-      "MEGA Sekurak Hacking Party 2020"
+      "2014 - Scrum Workshop",
+      "2018 - .NET DeveloperDays",
+      "2019 - MEGA Sekurak Hacking Party",
+      "2020 - AzureDay",
+      "2021 - MEGA Sekurak Hacking Party",
+      "2025 - Niebezpiecznik - Attacking and Securing Web Apps"
     ]
   },
 
