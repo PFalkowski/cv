@@ -17,7 +17,7 @@
   },
 
   "about": {
-    "firstParagraph": "Mam ponad 10 lat zawodowego doświadczenia w rozwoju i utzymaniu aplikacji biznesowych, głównie w .NET.",
+    "firstParagraph": "Pasjonat rozwiązywania problemów z ponad 10-letnim doświadczeniem zawodowym. Moja przygoda rozpoczęła się 15 lat temu od nauczenia się C++ w celu analizy cen akcji na giełdzie przy pomocy uczenia maszynowego, ostatecznie przechodząc na .NET, gdzie odnalazłem powołanie. Stawiam na jakość i prostotę kodu.",
     "secondParagraph": "Poza pracą, aktywnie rozwijam zautomatyzowane narzędzie do analizy giełdowej [Stockinsight](https://stockinsight.pl), pełnię funkcję CTO platformy quizowej o tematyce technicznej [Squizzu](https://squizzu.com) oraz utrzymuję wiele bibliotek open-source."
   },
 
