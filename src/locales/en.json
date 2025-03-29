@@ -17,8 +17,8 @@
   },
 
   "about": {
-    "firstParagraph": "Passionate problem-solver with over 10 years of professional experience. My journey began 15 years ago with self-taught C++ for stock market machine learning analysis, eventually transitioning to .NET where I found my professional calling. I prioritize code quality and simplicity.",
-    "secondParagraph": "Beyond my full-time work, I actively develop [Stockinsight](https://stockinsight.pl) (automated stock market analysis tool), serve as CTO of [Squizzu](https://squizzu.com) (tech quiz platform), and maintain several open-source C# libraries available on NuGet."
+    "firstParagraph": "I'm focused on quality and proponent of radical simplicity.",
+    "secondParagraph": "I have 10+ years to back my expertise and a team-player and problem solver attitude to quickly get the things going."
   },
 
   "consent": "I hereby agree for processing the following personal information for the purposes of recruitment processes only.",
@@ -43,12 +43,12 @@
     "igexao": {
       "title": "IGE+XAO - Intern",
       "year": "2014",
-      "description": "Other than bugfixing and refactoring C++ codebase, I implemented database wide undo T-SQL procedure using c# code generator based on table schema."
+      "description": "Implemented database wide undo in T-SQL."
     },
     "transactor": {
-      "title": "Transactor Poland - (Junior) Software Developer",
+      "title": "Transactor Poland - Junior Software Developer",
       "period": "2014 - 2017",
-      "description": "I started as a Junior Software Developer and was promoted to Regular after successfully delivering first project — a WPF business intelligence application that aggregated data from multiple APIs, providing significant value to the customer at a low cost. Following this, I worked in an Agile team on an end-to-end insurance lifetime management system, handling development, refactoring, bug fixing, and unit testing. A major part of my role involved working with T-SQL stored procedures, WCF services, ASP.NET APIs, WPF, Windows Forms, XSLT, XSD, VB.NET, and SQLite. I participated in multiple third-party integrations, including payment providers and data enrichment services, ensuring interoperability between systems. Throughout this role, I gained experience in a wide range of technologies like performance and SQL profiling, WCF, WWF (Windows Workflow Foundation), XSLTs, SOAP and many more. For project management and collaboration I used AzureDevops (VSTS at the time), Trello, Jira and Zendesk."
+      "description": "Developed WPF business intelligence application, then worked in an agile team on an end-to-end policy lifecycle management system, handling development, refactoring, bug fixing, and unit testing. Technologies: T-SQL, WCF, ASP.NET APIs, WPF, Windows Forms, XSLT, XML, SOAP, HTML, CSS, TeamCity, XSD, VB.NET, and SQLite. Throughout this role, I gained experience in a wide range of technologies like performance and SQL profiling, WCF, WWF (Windows Workflow Foundation), XSLTs, SOAP and many more. For project management and collaboration I used AzureDevops (VSTS at the time), Trello, Jira and Zendesk."
     },
     "opengi": {
       "title": "Open GI - Software Developer",
@@ -58,7 +58,7 @@
     "ju": {
       "title": "Jagiellonian University - Researcher",
       "period": "2019 - 2020",
-      "description": "For a grant-funded research I developed electroencephalogram (EEG) monkey brain activity classifier and an Arduino-based tactile stimulator. The stimulator features 2 gloves with 5 efectors, each controllable separately via COM and  [source](https://github.com/PFalkowski/HapticStimulatorPCA9685). For classification I used Python's Keras achieving accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [source](https://github.com/PFalkowski/KerasClassifierEeg)."
+      "description": "I developed electroencephalogram (EEG) monkey brain activity classifier and an Arduino-based tactile stimulator. The stimulator features 2 gloves with 5 efectors, each controllable separately via COM and  [source](https://github.com/PFalkowski/HapticStimulatorPCA9685). For classification I used Python's Keras achieving accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [source](https://github.com/PFalkowski/KerasClassifierEeg)."
     },
     "smh": {
       "title": "Seville More Helory Polska - Senior Software Developer",
@@ -91,10 +91,10 @@
   },
 
   "otherProjects": {
-    "stockinsight": "I am actively developing a stock market analysis tool designed to provide daily updated insights for both speculative trading and long-term investing. The C# backend fetches market data, performs quantitative and fundamental analysis, generates reports, and pushes the results to a GitHub repository. A GitHub Action then triggers the deployment of a static website to Azure, enabling cost-effective hosting with full automation. The website with latest analysis results [Stockinsight](https://stockinsight.pl).",
-    "squizzu": "I serve as the CTO of [Squizzu](https://squizzu.com), a tech quiz platform being built in React / C#. I architected and implemented the majority of the data model, set up CosmosDB and KeyVault integrations and continue to take part in decisions concerning the platform.",
-    "otherVentures": "Throughout my journey, I have also explored other startup ventures, including Drwal.it, an online course platform, and a calendar tool built with PowerApps. While these projects didn't achieve long-term success, they provided valuable lessons and skills like proficiency in PowerPlatform.",
-    "nugetIntro": "Here is couple of popular NuGet packages I developed and maintain:",
+    "stockinsight": "Stock market analysis tool [Stockinsight](https://stockinsight.pl). Hosting: Azure, BE: C# MsSQL ML.NET, FE: pure HTML + CSS + JS.",
+    "squizzu": "I am CTO of [Squizzu](https://squizzu.com), a tech quiz platform being built in React and C#.",
+    "otherVentures": "Throughout my journey, I have also explored other startup ventures like an online course platform, and a calendar tool built with PowerApps. While these projects didn't achieve long-term success, they provided valuable lessons and skills like proficiency in PowerPlatform.",
+    "nugetIntro": "Notable NuGet packages I maintain:",
     "nugetPackages": {
       "loggerLite": "A lightweight logging framework supporting JSON, XML, YAML, and console output, with built-in debouncing.",
       "onTheFlyStats": "Allows on-the-fly computation of statistics such as means and variance allowing O(1) access.",

@@ -1,5 +1,7 @@
 import phoneIcon from "./assets/images/phone.png";
 import emailIcon from "./assets/images/email.png";
+// import phoneIconBlack from './assets/images/phone-black.png';
+// import emailIconBlack from './assets/images/email-black.png';
 
 import './App.css';
 import React, { useState, useContext, createContext } from "react";
