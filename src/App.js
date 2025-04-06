@@ -96,21 +96,21 @@ const App = () => {
 
 
   const WorkExperience = () => (
-    <Section id="workExperience">
-      <p><strong>{useTranslation("workExperience.igexao.title")}</strong> - {useTranslation("workExperience.igexao.year")}</p>
-      <p>{useTranslation("workExperience.igexao.description")}</p>
-      
-      <p><strong>{useTranslation("workExperience.transactor.title")}</strong> - {useTranslation("workExperience.transactor.period")}</p>
-      <p>{useTranslation("workExperience.transactor.description")}</p>
-      
-      <p><strong>{useTranslation("workExperience.opengi.title")}</strong> - {useTranslation("workExperience.opengi.period")}</p>
-      <p>{useTranslation("workExperience.opengi.description")}</p>
+    <Section id="workExperience">      
+      <p><strong>{useTranslation("workExperience.smh.title")}</strong> - {useTranslation("workExperience.smh.period")}</p>
+      <p>{useTranslation("workExperience.smh.description")}</p>
       
       <p><strong>{useTranslation("workExperience.ju.title")}</strong> - {useTranslation("workExperience.ju.period")}</p>
       <p>{useTranslationWithMarkdown("workExperience.ju.description")}</p>
+
+      <p><strong>{useTranslation("workExperience.opengi.title")}</strong> - {useTranslation("workExperience.opengi.period")}</p>
+      <p>{useTranslation("workExperience.opengi.description")}</p>
       
-      <p><strong>{useTranslation("workExperience.smh.title")}</strong> - {useTranslation("workExperience.smh.period")}</p>
-      <p>{useTranslation("workExperience.smh.description")}</p>
+      <p><strong>{useTranslation("workExperience.transactor.title")}</strong> - {useTranslation("workExperience.transactor.period")}</p>
+      <p>{useTranslation("workExperience.transactor.description")}</p>
+
+      <p><strong>{useTranslation("workExperience.igexao.title")}</strong> - {useTranslation("workExperience.igexao.year")}</p>
+      <p>{useTranslation("workExperience.igexao.description")}</p>      
     </Section>
   );
   

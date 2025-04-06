@@ -13,12 +13,12 @@
   
   "header": {
     "name": "Piotr Falkowski",
-    "title": "Senior Backend Software Developer with 10+ years of experience."
+    "title": "Senior Backend Software Developer with over 10 years of experience."
   },
 
   "about": {
-    "firstParagraph": "I'm focused on quality and proponent of radical simplicity.",
-    "secondParagraph": "I have 10+ years to back my expertise and a team-player and problem solver attitude to quickly get the things going."
+    "firstParagraph": "Driven, passionate, problem solver. I taught myself C++ to analyze financial time series using ML. Then it snowballed into .NET and countless other technologies. I’ve seen a lot, maybe even too much sometimes. I drew conclusions and now I focus on radical simplicity to ensure quality and maintainability.",
+    "secondParagraph": "Beyond my full-time work, I actively develop the ML stock market prediction app. I'm also involved in the development and shape of Squizzu.com, an AI driven tech quiz platform."
   },
 
   "consent": "I hereby agree for processing the following personal information for the purposes of recruitment processes only.",
@@ -43,17 +43,17 @@
     "igexao": {
       "title": "IGE+XAO - Intern",
       "year": "2014",
-      "description": "Implemented database wide undo in T-SQL."
+      "description": "Implemented database wide undo T-SQL procedure ahead of schedule using c# code generator based on table schema. Maintained C++ CAD desktop app."
     },
     "transactor": {
       "title": "Transactor Poland - Junior Software Developer",
       "period": "2014 - 2017",
-      "description": "Developed WPF business intelligence application, then worked in an agile team on an end-to-end policy lifecycle management system, handling development, refactoring, bug fixing, and unit testing. Technologies: T-SQL, WCF, ASP.NET APIs, WPF, Windows Forms, XSLT, XML, SOAP, HTML, CSS, TeamCity, XSD, VB.NET, and SQLite. Throughout this role, I gained experience in a wide range of technologies like performance and SQL profiling, WCF, WWF (Windows Workflow Foundation), XSLTs, SOAP and many more. For project management and collaboration I used AzureDevops (VSTS at the time), Trello, Jira and Zendesk."
+      "description": "Started as a Junior Software Developer and was promoted to Regular after successfully delivering the first project — a WPF business intelligence application that aggregated data from multiple APIs, providing significant value to the customer at a low cost. C#, WPF, XSLT, XSD, SQLite, Ms SQL. Developed, refactored, bug fixed, and unit tested an end-to-end insurance lifetime management system. Participated in multiple third-party integrations, including payment providers and data enrichment services, ensuring interoperability between systems. T-SQL, WCF, ASP.NET API, WPF, Windows Forms, VB.NET, MS SQL, WWF, SignalR, SOAP, AzureDevops (VSTS at the time), Trello, Jira and Zendesk."
     },
     "opengi": {
       "title": "Open GI - Software Developer",
       "period": "2017 - 2019",
-      "description": "Continuation of previous employment under different brand. More focus on newer technologies, we used ASP.NET Core over WCF, RabbitMQ instead of WWF, more Azure over on premise, MongoDB over MS SQL. A significant challenge was modernizing legacy VB6 application, which we successfully achieved by splitting and migrating logic into WPF-based microservices while heavily unit-testing existing functionality and moving slowly by first hosting the old Windows Application over Azure Virtual Desktop and then, when all the services were stable and tested we connected a modern frontend."
+      "description": "Took part in modernizing legacy desktop monolith by splitting and migrating logic into microservices while heavily unit-testing existing functionality and moving slowly by first hosting the old Windows Application over Azure Virtual Desktop. Used ASP.NET Core, WCF, RabbitMQ, WWF, Azure IaaS, MongoDB, MS SQL, SonarQube, Docker."
     },
     "ju": {
       "title": "Jagiellonian University - Researcher",
@@ -63,7 +63,7 @@
     "smh": {
       "title": "Seville More Helory Polska - Senior Software Developer",
       "period": "since 2020",
-      "description": "My main responsibility was implementing the document version control in C# ASP.NET API, developing solutions using Azure AI (Cognitive) Search, Azure Service Bus and Redis Cache, improving performance and implementing custom optimizations like intermediate cache layer on CosmosDb. Later, I was trusted with code architecture and implementation of a bespoke process for a new key client - I made correct key design choices early on with limited scope of requirements as well as decided on priorities to ensure smooth front-end and backend interoperability. My data architecture ensured flexibility, allowing us to adapt seamlessly as the project evolved, ensuring models remain adaptable to changing requirements while remaining efficient."
+      "description": "Implemented, documented and unit tested GIT inspired document version control in C# ASP.NET / CosmosDb / Azure AI (Cognitive) Search + Azure Service Bus + Redis + SignalR + SonarCloud. /n Cut Azure Redis Cache costs by implementing an intermediate cache layer based on CosmosDb./nDesigned and implemented the backend for a bespoke process that secured a key client, increasing company revenue by over 10%. C# Web.API + CosmosDb + React."
     }
   },
 
