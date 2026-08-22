@@ -10,24 +10,24 @@
     "additionalInfo": "Additional Information",
     "otherProjects": "Other Projects"
   },
-  
   "header": {
     "name": "Piotr Falkowski",
     "title": "Senior Backend Software Developer with over 10 years of experience."
   },
-
   "about": {
-    "firstParagraph": "Driven, passionate, problem solver. I taught myself C++ to analyze financial time series using ML. Then it snowballed into .NET and countless other technologies. I’ve seen a lot, maybe even too much sometimes. I drew conclusions and now I focus on radical simplicity to ensure quality and maintainability.",
-    "secondParagraph": "Beyond my full-time work, I actively develop the ML stock market prediction app. I'm also involved in the development and shape of Squizzu.com, an AI driven tech quiz platform."
+    "firstParagraph": "Driven, passionate, problem solver. I taught myself C++ to analyze financial time series using ML. Then it snowballed into .NET and countless other technologies. I’ve seen a lot, maybe even too much sometimes. I drew conclusions and now I focus on clarity, maintainability and impact.",
+    "secondParagraph": "Beyond my full-time work I develop the stock market analysis tool [Stock-Today](https://stock-today.com), I am CTO of [Squizzu](https://squizzu.com), I maintain several open source libraries and I write [False Green](https://falsegreen.dev), a blog about verification that looked green and wasn't."
   },
-
   "consent": "I hereby agree for processing the following personal information for the purposes of recruitment processes only.",
-  
-
   "softSkills": {
-    "list": ["Integrity", "Persistence", "Autonomy", "Creativity", "Deep Focus"]
+    "list": [
+      "Integrity",
+      "Persistence",
+      "Autonomy",
+      "Creativity",
+      "Deep Focus"
+    ]
   },
-
   "education": {
     "highSchool": {
       "name": "Polish/French Bilingual High School",
@@ -38,7 +38,6 @@
       "period": "2009 - 2016"
     }
   },
-
   "workExperience": {
     "igexao": {
       "title": "IGE+XAO - Intern",
@@ -62,17 +61,25 @@
     },
     "smh": {
       "title": "Seville More Helory Polska - Senior Software Developer",
-      "period": "since 2020",
-      "description": "Implemented, documented and unit tested GIT inspired document version control in C# ASP.NET / CosmosDb / Azure AI (Cognitive) Search + Azure Service Bus + Redis + SignalR + SonarCloud. /n Cut Azure Redis Cache costs by implementing an intermediate cache layer based on CosmosDb./nDesigned and implemented the backend for a bespoke process that secured a key client, increasing company revenue by over 10%. C# Web.API + CosmosDb + React."
+      "period": "2020 - 2025",
+      "description": "Implemented, documented and unit tested GIT inspired document version control in C# ASP.NET / CosmosDb / Azure AI (Cognitive) Search + Azure Service Bus + Redis + SignalR + SonarCloud. Cut Azure Redis Cache costs by implementing an intermediate cache layer based on CosmosDb. Designed and implemented the backend for a bespoke legal Q&A, FAQ, provisions, rights and clauses lifecycle management process that secured a key client, increasing company revenue by over 10%. C# Web.API + CosmosDb + React + Service Bus."
+    },
+    "happyteam": {
+      "title": "Happy Team - Senior Software Developer",
+      "period": "2025",
+      "description": "Built the backend for a .NET MAUI mobile app from the ground up: a serverless API in Azure Functions talking to CosmosDb, a proxy service, and the whole supporting infrastructure described in Terraform. Designed for testability, ease of maintenance, performance and scalability."
+    },
+    "stonex": {
+      "title": "StoneX Financial Services - Senior Software Developer",
+      "period": "since 2025",
+      "description": "Migrating legacy client-facing cloud applications to a modular monolith in Domain-Driven Design and Clean Architecture. Removed the code review bottleneck in the team's SDLC and optimized DataGrid search by 10x. AI-first development with the emphasis on end-to-end and integration tests."
     }
   },
-
   "languages": {
     "polish": "Polish - Native",
     "english": "English - C2",
     "french": "French - B2"
   },
-
   "conferences": {
     "list": [
       "2014 - Scrum Workshop",
@@ -83,23 +90,24 @@
       "2025 - Niebezpiecznik - Attacking and Securing Web Apps"
     ]
   },
-
   "additionalInfo": {
     "drivingLicense": "Category B driving license.",
     "psychology": "Knowledge in psychology.",
-    "hobbies": "Hobbies: economics (personal finance and quantitative analysis), board games, running, bodybuilding."
+    "hobbies": "Hobbies: economics (personal finance and quantitative analysis), board games, squash, running, bodybuilding."
   },
-
   "otherProjects": {
-    "stockinsight": "Stock market analysis tool [Stockinsight](https://stockinsight.pl). Hosting: Azure, BE: C# MsSQL ML.NET, FE: pure HTML + CSS + JS.",
-    "squizzu": "I am CTO of [Squizzu](https://squizzu.com), a tech quiz platform being built in React and C#.",
+    "stockinsight": "Stock market quant and fundamental analysis tool [Stock-Today](https://stock-today.com), giving daily updated insights for both speculative trading and long-term investing. Hosting: Azure, BE: C# MsSQL ML.NET, FE: pure HTML + CSS + JS.",
+    "squizzu": "I am CTO of [Squizzu](https://squizzu.com), a tech quiz platform built with React and C# leveraging generative AI. I architected and implemented most of the data model, set up CosmosDB and KeyVault integrations and I own the Azure OpenAI integration.",
+    "falsegreen": "I write and publish [False Green](https://falsegreen.dev), a blog about verification that looked green and wasn't — each post is a real incident where a check passed while the system stayed broken. Astro static site, deployed to Azure Static Web Apps by GitHub Actions over Terraform-managed infrastructure.",
+    "skills": "I maintain a public set of [Claude Code skills](https://github.com/PFalkowski/skills) — over 30 repeatable workflows for code review, triage, handoff and release hygiene, installable as a Claude Code plugin.",
     "otherVentures": "Throughout my journey, I have also explored other startup ventures like an online course platform, and a calendar tool built with PowerApps. While these projects didn't achieve long-term success, they provided valuable lessons and skills like proficiency in PowerPlatform.",
     "nugetIntro": "Notable NuGet packages I maintain:",
     "nugetPackages": {
       "loggerLite": "A lightweight logging framework supporting JSON, XML, YAML, and console output, with built-in debouncing.",
       "onTheFlyStats": "Allows on-the-fly computation of statistics such as means and variance allowing O(1) access.",
       "extensionsStandard": "A collection of extension methods for common programming tasks such as interpolation and partitioning.",
-      "progressReporting": "A library for estimating completion time and reporting progress in iterative operations and data transfers."
+      "progressReporting": "A library for estimating completion time and reporting progress in iterative operations and data transfers.",
+      "stocksData": "A .NET Standard library for simulating stock trading strategies against historical market data. Published on NuGet as the Stocks.Data.* packages."
     },
     "nugetFooter": "These and other packages are available on [NuGet.org](https://www.nuget.org/profiles/PFalkowski).",
     "githubActivity": "My GitHub activity"

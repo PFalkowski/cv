@@ -10,21 +10,23 @@
     "additionalInfo": "Dodatkowe informacje",
     "otherProjects": "Własne projekty"
   },
-
   "header": {
     "name": "Piotr Falkowski",
-    "title": "Programista z 10-letnim doświadczeniem."
+    "title": "Programista z ponad 10-letnim doświadczeniem."
   },
-
   "about": {
-    "firstParagraph": "Pasjonat rozwiązywania problemów z ponad 10-letnim doświadczeniem zawodowym. Moja przygoda rozpoczęła się 15 lat temu od nauczenia się C++ w celu analizy cen akcji na giełdzie przy pomocy uczenia maszynowego, ostatecznie przechodząc na .NET, gdzie odnalazłem powołanie. Stawiam na jakość i prostotę kodu.",
-    "secondParagraph": "Poza pracą, aktywnie rozwijam zautomatyzowane narzędzie do analizy giełdowej [Stockinsight](https://stockinsight.pl), pełnię funkcję CTO platformy quizowej o tematyce technicznej [Squizzu](https://squizzu.com) oraz utrzymuję wiele bibliotek open-source."
+    "firstParagraph": "Pasjonat rozwiązywania problemów z ponad 10-letnim doświadczeniem zawodowym. Moja przygoda rozpoczęła się 15 lat temu od nauczenia się C++ w celu analizy cen akcji na giełdzie przy pomocy uczenia maszynowego, ostatecznie przechodząc na .NET, gdzie odnalazłem powołanie. Stawiam na przejrzystość, łatwość utrzymania i realny wpływ.",
+    "secondParagraph": "Poza pracą etatową rozwijam narzędzie do analizy giełdowej [Stock-Today](https://stock-today.com), pełnię funkcję CTO platformy quizowej [Squizzu](https://squizzu.com), utrzymuję wiele bibliotek open-source i prowadzę bloga [False Green](https://falsegreen.dev) o weryfikacji, która wyglądała na zieloną, a nią nie była."
   },
-
   "softSkills": {
-    "list": ["Uczciwość", "Wytrwałość", "Autonomia", "Kreatywność", "Skupienie"]
+    "list": [
+      "Uczciwość",
+      "Wytrwałość",
+      "Autonomia",
+      "Kreatywność",
+      "Skupienie"
+    ]
   },
-
   "education": {
     "highSchool": {
       "name": "XVII Liceum Ogólnokształcące im. Młodej Polski - Profil Dwujęzyczny",
@@ -35,22 +37,21 @@
       "period": "2009 - 2016"
     }
   },
-
   "workExperience": {
     "igexao": {
       "title": "IGE+XAO - Stażysta",
       "year": "2014",
-      "description": "Poza refaktoryzacją i naprwą błędów w C++, implementowałem operację UNDO na bazie z uzyciem procedury T-SQL, którą wcześniej wygenerowałem w C# na bazie schematu tabel. "
+      "description": "Poza refaktoryzacją i naprawą błędów w C++, implementowałem operację UNDO na bazie z użyciem procedury T-SQL, którą wcześniej wygenerowałem w C# na bazie schematu tabel."
     },
     "transactor": {
       "title": "Transactor Poland - (Junior) Software Developer",
       "period": "2014 - 2017",
-      "description": "Rozpocząłem pracę jako młodszy programista a po pozytywnym odbiorze przez klienta projektu, który implementowałem — aplikacji business intelligence w WPF agregującej dane z wielu API, zostałem awansowany. Następnie pracowałem w jednym z zespołów w trybie metodyk zwinnych nad systemem zarządzania cyklem życia polisy ubezpieczeniowej, zajmując się rozwojem, refaktoryzacją, naprawą błędów i testami jednostkowymi. Główne technologie, w których pracowałem to T-SQL, WCF, ASP.NET API, WPF, Windows Forms, XSLT, XSD, VB.NET i SQLite. Uczestniczyłem w wielu integracjach z systemami zewnętrznymi, w tym dostawcami płatności i usługami wzbogacania danych. For project management and collaboration I used AzureDevops (VSTS at the time), Trello, Jira and Zendesk."
+      "description": "Rozpocząłem pracę jako młodszy programista a po pozytywnym odbiorze przez klienta projektu, który implementowałem — aplikacji business intelligence w WPF agregującej dane z wielu API, zostałem awansowany. Następnie pracowałem w jednym z zespołów w trybie metodyk zwinnych nad systemem zarządzania cyklem życia polisy ubezpieczeniowej, zajmując się rozwojem, refaktoryzacją, naprawą błędów i testami jednostkowymi. Główne technologie, w których pracowałem to T-SQL, WCF, ASP.NET API, WPF, Windows Forms, XSLT, XSD, VB.NET i SQLite. Uczestniczyłem w wielu integracjach z systemami zewnętrznymi, w tym dostawcami płatności i usługami wzbogacania danych. Do zarządzania projektami i współpracy używałem AzureDevops (wtedy VSTS), Trello, Jira i Zendesk."
     },
     "opengi": {
       "title": "Open GI - Software Developer",
       "period": "2017 - 2019",
-      "description": "Kontynuacja poprzedniego zatrudnienia pod inną marką. Praca w Scrumie Większy nacisk na nowsze technologie; WCF zastępowaliśmy ASP.NET Core, używaliśmy RabbitMQ zamiast WWF, Azure Cloud zamiast on-premise, MongoDB zamiast MS SQL. Znaczącym wyzwaniem była modernizacja zastanej aplikacji napisanej w VB6, co osiągnęliśmy poprzez podział i migrację do mikroserwisów, jednocześnie intensywnie testując istniejącą funkcjonalność przechodząc powoli przez hosting na VMce przez Azure Virtual Desktop, a następnie, gdy wszystkie usługi były stabilne i przetestowane, podłączyliśmy nowoczesny frontend."
+      "description": "Kontynuacja poprzedniego zatrudnienia pod inną marką. Praca w Scrumie. Większy nacisk na nowsze technologie; WCF zastępowaliśmy ASP.NET Core, używaliśmy RabbitMQ zamiast WWF, Azure Cloud zamiast on-premise, MongoDB zamiast MS SQL. Znaczącym wyzwaniem była modernizacja zastanej aplikacji napisanej w VB6, co osiągnęliśmy poprzez podział i migrację do mikroserwisów, jednocześnie intensywnie testując istniejącą funkcjonalność przechodząc powoli przez hosting na VMce przez Azure Virtual Desktop, a następnie, gdy wszystkie usługi były stabilne i przetestowane, podłączyliśmy nowoczesny frontend."
     },
     "ju": {
       "title": "Uniwersytet Jagielloński - Badacz",
@@ -59,17 +60,25 @@
     },
     "smh": {
       "title": "Seville More Helory Polska - Senior Software Developer",
-      "period": "od 2020",
-      "description": "Moją główną odpowiedzialnością była implementacja w ASP.NET Web.API parsowania i wersjonowania dokumentów, z czasem integracja z Azure AI (Cognitive) Search, Service Bus i Redis Cache, implementacja niestandardowej warstwy cache w oparciu o CosmosDb i poprawa wydajności wielu procesów. Powierzono mi planowanie i implementację architektury procesu dla nowego kluczowego klienta, podejmowałem trafne decyzje projektowe na wczesnym etapie bez pełnego zakresu wymagań oraz decydowałem o priorytetach, zapewniając płynną pracę front-endu i backendu. Przygotowana architektura byłą łatwo adaptowalne do zmieniających się wymagań, pozostając jednocześnie wydajna."
+      "period": "2020 - 2025",
+      "description": "Moją główną odpowiedzialnością była implementacja w ASP.NET Web.API parsowania i wersjonowania dokumentów, z czasem integracja z Azure AI (Cognitive) Search, Service Bus i Redis Cache, implementacja niestandardowej warstwy cache w oparciu o CosmosDb i poprawa wydajności wielu procesów. Powierzono mi planowanie i implementację architektury procesu dla nowego kluczowego klienta, podejmowałem trafne decyzje projektowe na wczesnym etapie bez pełnego zakresu wymagań oraz decydowałem o priorytetach, zapewniając płynną pracę front-endu i backendu. Przygotowana architektura była łatwo adaptowalna do zmieniających się wymagań, pozostając jednocześnie wydajna."
+    },
+    "happyteam": {
+      "title": "Happy Team - Senior Software Developer",
+      "period": "2025",
+      "description": "Zbudowałem od zera backend dla aplikacji mobilnej w .NET MAUI: bezserwerowe API w Azure Functions komunikujące się z CosmosDb, serwis proxy oraz całą infrastrukturę opisaną w Terraform. Projektowałem pod kątem testowalności, łatwości utrzymania, wydajności i skalowalności."
+    },
+    "stonex": {
+      "title": "StoneX Financial Services - Senior Software Developer",
+      "period": "od 2025",
+      "description": "Migruję zastane aplikacje chmurowe udostępniane klientom do modularnego monolitu w Domain-Driven Design i Clean Architecture. Usunąłem wąskie gardło w procesie code review i przyspieszyłem wyszukiwanie w DataGrid 10-krotnie. Praca w podejściu AI-first, z naciskiem na testy e2e i integracyjne."
     }
   },
-
   "languages": {
     "polish": "Polski - Ojczysty",
     "english": "Angielski - C2",
     "french": "Francuski - B2"
   },
-
   "conferences": {
     "list": [
       "2014 - Warsztaty Scrum",
@@ -80,27 +89,27 @@
       "2025 - Niebezpiecznik - Atakowanie i Ochrona Aplikacji Webowych"
     ]
   },
-
   "additionalInfo": {
     "drivingLicense": "Prawo jazdy kategorii B.",
     "psychology": "Szeroka wiedza z zakresu psychologii.",
-    "hobbies": "Zainteresowania: ekonomia (finanse osobiste i analiza ilościowa), gry planszowe, bieganie, siłownia."
+    "hobbies": "Zainteresowania: ekonomia (finanse osobiste i analiza ilościowa), gry planszowe, squash, bieganie, siłownia."
   },
-
   "otherProjects": {
-    "stockinsight": "Aktywnie rozwijam narzędzie do analizy serii czasowych w postaci cen akcji polskich i zagranicznych spółek z użyciem algorytmów uczenia maszynowego, statystycznych, analizie technicznej i fundamentalnej. Backend, napisany w C# odpowiada za synchronizację danych, wykonywanie analizy, generowanie raportów i przesyłanie wyników do repozytorium, gdzie GitHub Action uruchamia wdrożenie statycznej strony internetowej do Azure, dając zerowy koszt utrzymania. Strona z aktualnymi wynikami analiz [Stockinsight](https://stockinsight.pl).",
-    "squizzu": "Pełnię funkcję CTO w [Squizzu](https://squizzu.com), platformie quizowej budowanej w React / C#. Zaprojektowałem i zaimplementowałem model danych, skonfigurowałem i zintegrowałem usługi Azure takie jak CosmosDB czy KeyVault.",
+    "stockinsight": "Aktywnie rozwijam narzędzie do analizy serii czasowych w postaci cen akcji polskich i zagranicznych spółek z użyciem algorytmów uczenia maszynowego, statystycznych, analizie technicznej i fundamentalnej. Backend, napisany w C# odpowiada za synchronizację danych, wykonywanie analizy, generowanie raportów i przesyłanie wyników do repozytorium, gdzie GitHub Action uruchamia wdrożenie statycznej strony internetowej do Azure, dając zerowy koszt utrzymania. Strona z aktualnymi wynikami analiz [Stock-Today](https://stock-today.com).",
+    "squizzu": "Pełnię funkcję CTO w [Squizzu](https://squizzu.com), platformie quizowej budowanej w React / C# z wykorzystaniem generatywnej AI. Zaprojektowałem i zaimplementowałem model danych, skonfigurowałem i zintegrowałem usługi Azure takie jak CosmosDB czy KeyVault, odpowiadam też za integrację z Azure OpenAI.",
+    "falsegreen": "Piszę i publikuję [False Green](https://falsegreen.dev), bloga o weryfikacji, która wyglądała na zieloną, a nią nie była — każdy wpis to prawdziwy incydent, w którym test przeszedł, a system nadal był zepsuty. Statyczna strona w Astro, wdrażana na Azure Static Web Apps przez GitHub Actions, na infrastrukturze opisanej w Terraform.",
+    "skills": "Utrzymuję publiczny zestaw [skilli do Claude Code](https://github.com/PFalkowski/skills) — ponad 30 powtarzalnych procesów do code review, triage'u, przekazywania pracy i higieny wydań, instalowalnych jako plugin Claude Code.",
     "otherVentures": "Próbowałem również innych przedsięwzięć, w tym Drwal.it, platformę kursów online i narzędzie raportowania czasu pracy zbudowane w PowerApps. Chociaż te projekty nie osiągnęły długoterminowego sukcesu, dostarczyły cennych lekcji i umiejętności, takich jak znajomość PowerPlatform.",
     "nugetIntro": "Oto kilka popularniejszych bibliotek które rozwijam i utrzymuję:",
     "nugetPackages": {
       "loggerLite": "Lekki framework do logowania, obsługujący JSON, XML, HTML, YAML, konsolę, pliki itd., z wbudowanym debouncingiem.",
       "onTheFlyStats": "Umożliwia obliczanie statystyk w locie, takich jak średnie, wariancja zapewniając dostęp w czasie O(1).",
       "extensionsStandard": "Kolekcja metod dla typowych zadań jak interpolacja, partycjonowanie itp.",
-      "progressReporting": "Biblioteka do szacowania pozostałego czasu i raportowania postępu pętli lub transferu danych."
+      "progressReporting": "Biblioteka do szacowania pozostałego czasu i raportowania postępu pętli lub transferu danych.",
+      "stocksData": "Biblioteka .NET Standard do symulowania strategii giełdowych na historycznych danych rynkowych. Na NuGet opublikowana jako pakiety Stocks.Data.*."
     },
     "nugetFooter": "Te i inne pakiety są dostępne na [NuGet.org](https://www.nuget.org/profiles/PFalkowski).",
     "githubActivity": "Moja aktywność na GitHub"
   },
-
   "consent": "Wyrażam zgodę na przetwarzanie moich danych osobowych wyłącznie do celów rekrutacji."
 }
