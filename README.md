@@ -24,10 +24,10 @@ file, not an order hard-coded in a component.
 drift apart, when a job is defined but never listed in `order`, or when a markdown link is
 malformed. A missing key can no longer render its own dotted key path into the page.
 
-The one exception is `src/data/skills.js`, which holds the numbers behind the skill bars.
-**The levels there are a self-assessment you should set by hand.** They currently reproduce what
-the old `years × 10` formula happened to output on the day of the migration, which is not the same
-thing as being right.
+The one exception is `src/data/skills.js`, which holds the numbers behind the skill bars. The
+`level` values are a self-assessment set by hand — deliberately independent of the year counts, so
+"12 years, 50%" is a valid thing for a row to say. The years themselves derive from a `since` year
+and never freeze; add `until` to close out a skill you no longer use.
 
 ## Layout
 

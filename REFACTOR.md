@@ -53,18 +53,20 @@ All done, by rebuilding on Astro rather than by refactoring the React in place.
 | Email and phone as images | **Kept as images, with alt text.** The alt text repeats exactly what the image shows, `[at]` and `[six]` substitutions included, so a screen reader user is no worse off and nothing new is exposed to a scraper. |
 | Create React App | **Replaced with Astro.** Zero JavaScript bundles ship; the only script on the page is the inline theme bootstrap. |
 
-## Still open — needs your decision
+## Decisions taken
 
-1. **The skill bar levels.** `src/data/skills.js` now holds them as plain numbers, seeded to
-   reproduce exactly what the old formula rendered on migration day. That was the honest way to
-   migrate without inventing a self-assessment, but it means the page still claims your SQL is half
-   as good as your C# and your AI-assisted work is 30%. Set them.
+1. **The skill bar levels stay as they are.** `src/data/skills.js` holds them as plain numbers
+   rather than `years × 10`. The values still happen to match what the old formula rendered on
+   migration day, but that is now a reviewed choice rather than an arithmetic side effect. Note
+   that level and years are deliberately independent: SQL + EF reads "12 years, 50%", and that is
+   the honest shape of a self-assessment.
 
-2. **Three frozen year counts.** `webapi` (6), `sqlEf` (5) and `wpf` (4) were hand-typed numbers in
-   the React version. They are kept verbatim rather than back-derived from an invented start year,
-   which means they do not advance. Give me start years and they become self-maintaining like the
-   rest.
+2. **All year counts now derive from a start year.** Nothing freezes any more. `webapi` and
+   `sqlEf` start in 2014 with Transactor; `wpf` runs 2014 to 2019, so it is closed with `until`
+   and stays at five years for good. Everything else runs to the build year.
 
-3. **The GitHub activity chart** is the one remaining external asset — `ghchart.rshah.org`. It is
-   the same class of third-party dependency as the Font Awesome CDN that was removed. It only
-   affects one decorative image, so it stayed, but it is a choice rather than an oversight.
+## Still open
+
+**The GitHub activity chart** is the one remaining external asset — `ghchart.rshah.org`. It is the
+same class of third-party dependency as the Font Awesome CDN that was removed. It only affects one
+decorative image, so it stayed, but it is a choice rather than an oversight.
