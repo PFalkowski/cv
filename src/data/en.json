@@ -23,7 +23,6 @@
   },
   "a11y": {
     "languageSwitcher": "Language",
-    "skillLevel": "self-assessed level",
     "themeToggleToDark": "Switch to dark theme",
     "themeToggleToLight": "Switch to light theme",
     "phoneImage": "Phone number, written as +48 [six]68 315 1[two]6",

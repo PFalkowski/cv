@@ -1,6 +1,6 @@
 ---
 import Section from './Section.astro';
-import { SKILLS, yearsOf } from '../data/skills.js';
+import { SKILLS, scaleSkills } from '../data/skills.js';
 
 interface Props {
 	t: any;
@@ -9,10 +9,10 @@ interface Props {
 
 const { t, currentYear } = Astro.props;
 
-const rows = SKILLS.map((skill) => ({
-	name: t.skills[skill.id],
-	level: skill.level,
-	years: yearsOf(skill, currentYear),
+const rows = scaleSkills(SKILLS, currentYear).map((row) => ({
+	name: t.skills[row.id],
+	years: row.years,
+	width: row.width,
 }));
 ---
 
@@ -22,16 +22,10 @@ const rows = SKILLS.map((skill) => ({
 			rows.map((row) => (
 				<li class="skill">
 					<span class="skill-name">{row.name}</span>
-					<span
-						class="bar"
-						role="meter"
-						aria-valuemin="0"
-						aria-valuemax="100"
-						aria-valuenow={row.level}
-						aria-valuetext={`${row.level}% ${t.a11y.skillLevel}`}
-						aria-label={row.name}
-					>
-						<span class="progress" style={`width: ${row.level}%`} />
+					{/* The bar is a picture of the years, so it carries no information
+					    of its own — the years are announced by the text beside it. */}
+					<span class="bar" aria-hidden="true">
+						<span class="progress" style={`width: ${row.width}%`} />
 					</span>
 					<span class="skill-years">
 						{row.years} {t.skills.yearsSuffix}
