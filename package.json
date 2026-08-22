@@ -1,45 +1,21 @@
 {
   "name": "cv",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "cra-template": "1.2.0",
-    "lucide-react": "^0.474.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^4.2.4"
-  },
+  "type": "module",
   "homepage": "https://pfalkowski.github.io/cv/",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "dev": "astro dev",
+    "build": "npm run check:locales && astro build && npm run check:build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check:locales": "node scripts/check-locales.mjs",
+    "check:build": "node scripts/check-build.mjs"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/plugin-transform-private-property-in-object": "^7.25.9",
-    "tailwindcss": "^3.4.17"
+  "dependencies": {
+    "astro": "^7.2.2"
   }
 }

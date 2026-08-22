@@ -1,0 +1,34 @@
+---
+import Section from './Section.astro';
+import RichText from './RichText.astro';
+
+interface Props {
+	t: any;
+}
+
+const { t } = Astro.props;
+
+// Order lives in the locale file, so adding a job is a data edit in one place
+// rather than a JSX edit that has to be kept in sync with it.
+const jobs = t.workExperience.order.map((id: string) => ({
+	id,
+	...t.workExperience.items[id],
+}));
+---
+
+<Section id="workExperience" title={t.sections.workExperience}>
+	<ol class="jobs">
+		{
+			jobs.map((job: { id: string; title: string; period: string; description: string }) => (
+				<li class="job">
+					<h3>
+						{job.title} <span class="job-period">{job.period}</span>
+					</h3>
+					<p>
+						<RichText text={job.description} />
+					</p>
+				</li>
+			))
+		}
+	</ol>
+</Section>

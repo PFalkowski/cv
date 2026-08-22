@@ -1,0 +1,214 @@
+{
+  "lang": "pl",
+  "label": "Polski",
+  "meta": {
+    "title": "Piotr Falkowski — CV",
+    "description": "Senior backend developer z ponad dekadą doświadczenia w .NET, Azure i uczeniu maszynowym. Życiorys zawodowy."
+  },
+  "sections": {
+    "aboutMe": "O mnie",
+    "technicalSkills": "Umiejętności techniczne",
+    "technology": "Technologie",
+    "softSkills": "Umiejętności miękkie",
+    "educationSection": "Wykształcenie",
+    "workExperience": "Doświadczenie zawodowe",
+    "languageSection": "Języki",
+    "conferencesSection": "Konferencje i szkolenia",
+    "additionalInfo": "Dodatkowe informacje",
+    "otherProjects": "Własne projekty"
+  },
+  "header": {
+    "name": "Piotr Falkowski",
+    "title": "Senior backend developer z ponad dekadą doświadczenia."
+  },
+  "a11y": {
+    "languageSwitcher": "Język",
+    "skillLevel": "poziom w samoocenie",
+    "themeToggleToDark": "Przełącz na motyw ciemny",
+    "themeToggleToLight": "Przełącz na motyw jasny",
+    "phoneImage": "Numer telefonu, zapisany jako +48 [six]68 315 1[two]6",
+    "emailImage": "Adres e-mail, zapisany jako piotr.falkowski.fm[at]gmail.com",
+    "skipToContent": "Przejdź do treści"
+  },
+  "about": {
+    "paragraphs": [
+      "Pasjonat rozwiązywania problemów z ponad 10-letnim doświadczeniem zawodowym. Moja przygoda rozpoczęła się 15 lat temu od nauczenia się C++ w celu analizy cen akcji na giełdzie przy pomocy uczenia maszynowego, ostatecznie przechodząc na .NET, gdzie odnalazłem powołanie. Stawiam na przejrzystość, łatwość utrzymania i realny wpływ.",
+      "Poza pracą etatową rozwijam narzędzie do analizy giełdowej [Stock-Today](https://stock-today.com), pełnię funkcję CTO platformy quizowej [Squizzu](https://squizzu.com), utrzymuję wiele bibliotek open source i prowadzę bloga [False Green](https://falsegreen.dev) o weryfikacji, która wyglądała na zieloną, a nią nie była."
+    ]
+  },
+  "consent": "Wyrażam zgodę na przetwarzanie moich danych osobowych wyłącznie do celów rekrutacji.",
+  "skills": {
+    "csharp": "C#",
+    "azure": "Azure Cloud",
+    "webapi": "ASP.NET Web API",
+    "sqlEf": "SQL + EF",
+    "nosql": "NoSQL (CosmosDB, Mongo)",
+    "wpf": "WPF w MVVM",
+    "ml": "ML (ML.NET, Accord.NET, Keras, GPT API)",
+    "ai": "Praca wspierana przez AI (Claude Code, Azure OpenAI)",
+    "yearsSuffix": "lat"
+  },
+  "technology": {
+    "groups": [
+      {
+        "label": "Ogólne",
+        "value": "OOP, mikroserwisy, monolit (modularny), SOLID, TDD, REST, Clean Architecture, DDD"
+      },
+      { "label": "Języki", "value": "C#, C++, Python, Ruby, R, JS, VB" },
+      {
+        "label": "Chmura",
+        "value": "Azure (App Services, Service Bus, Azure AI Search, Azure ML, Azure OpenAI, Key Vault, CosmosDB, Blob i File Storage, Cache for Redis), Azure DevOps, Heroku"
+      },
+      {
+        "label": "DevOps",
+        "value": "Azure DevOps (Pipelines, Releases), GitHub Actions, Docker, Terraform, Kubernetes"
+      },
+      {
+        "label": "Bazy danych",
+        "value": "MS SQL, CosmosDB, SQLite, Postgres, MongoDB + Atlas Search"
+      },
+      { "label": "Brokery wiadomości", "value": "Azure Service Bus, RabbitMQ, MSMQ" },
+      {
+        "label": "Ekosystem .NET",
+        "value": "ASP.NET Core, WPF (MVVM, Telerik), ML.NET, Entity Framework, ADO.NET, WinForms, WebForms"
+      },
+      {
+        "label": "Obserwowalność",
+        "value": "Grafana, Application Insights, OpenTelemetry, Datadog"
+      },
+      {
+        "label": "Testowanie",
+        "value": "Postman, Burp, NUnit, xUnit, MSTest, Vegeta, NBomber, Playwright"
+      },
+      { "label": "Zarządzanie projektami", "value": "Azure DevOps, Jira, Trello, Notion" },
+      {
+        "label": "Uczenie maszynowe",
+        "value": "Azure OpenAI, ML.NET, Azure Machine Learning, Accord.NET, EmguCV, Keras"
+      },
+      {
+        "label": "Low code / no code",
+        "value": "Microsoft Power Apps, Dataverse, integracje z Microsoft 365"
+      },
+      { "label": "Kontrola wersji", "value": "Git, Subversion, TFS, GitHub, Bitbucket" },
+      {
+        "label": "Preferowany stack AI",
+        "value": "Claude Code CLI, superpowers, własny zestaw skilli"
+      },
+      {
+        "label": "Inne",
+        "value": "Swagger, Zendesk, Cloud9, SonarCloud, GhostDoc, ReSharper, JSON, XSLT, XSD"
+      }
+    ]
+  },
+  "softSkills": {
+    "list": ["Uczciwość", "Wytrwałość", "Autonomia", "Kreatywność", "Skupienie"]
+  },
+  "education": {
+    "list": [
+      { "name": "Uniwersytet Jagielloński - Psychologia - Magister", "period": "2009 - 2016" },
+      {
+        "name": "XVII Liceum Ogólnokształcące im. Młodej Polski - profil dwujęzyczny",
+        "period": "2004 - 2008"
+      }
+    ]
+  },
+  "workExperience": {
+    "order": ["stonex", "happyteam", "smh", "ju", "opengi", "transactor", "igexao"],
+    "items": {
+      "stonex": {
+        "title": "StoneX Financial Services - Senior Software Developer",
+        "period": "od 2025",
+        "description": "Migruję zastane aplikacje chmurowe udostępniane klientom do modularnego monolitu w Domain-Driven Design i Clean Architecture. Usunąłem wąskie gardło w procesie code review i przyspieszyłem wyszukiwanie w DataGrid 10-krotnie. Praca w podejściu AI-first, z naciskiem na testy e2e i integracyjne."
+      },
+      "happyteam": {
+        "title": "Happy Team - Senior Software Developer",
+        "period": "2025",
+        "description": "Zbudowałem od zera backend dla aplikacji mobilnej w .NET MAUI: bezserwerowe API w Azure Functions komunikujące się z CosmosDb, serwis proxy oraz całą infrastrukturę opisaną w Terraform. Projektowałem pod kątem testowalności, łatwości utrzymania, wydajności i skalowalności."
+      },
+      "smh": {
+        "title": "Seville More Helory Polska - Senior Software Developer",
+        "period": "2020 - 2025",
+        "description": "Moją główną odpowiedzialnością była implementacja w ASP.NET Web.API parsowania i wersjonowania dokumentów, z czasem integracja z Azure AI (Cognitive) Search, Service Bus i Redis Cache, implementacja niestandardowej warstwy cache w oparciu o CosmosDb i poprawa wydajności wielu procesów. Powierzono mi planowanie i implementację architektury procesu dla nowego kluczowego klienta, podejmowałem trafne decyzje projektowe na wczesnym etapie bez pełnego zakresu wymagań oraz decydowałem o priorytetach, zapewniając płynną pracę front-endu i backendu. Przygotowana architektura była łatwo adaptowalna do zmieniających się wymagań, pozostając jednocześnie wydajna."
+      },
+      "ju": {
+        "title": "Uniwersytet Jagielloński - Badacz",
+        "period": "2019 - 2020",
+        "description": "Uczestniczyłem w badaniu finansowanym z grantu, gdzie opracowałem klasyfikator aktywności EEG mózgu małp oraz stymulator dotykowy sterowany Arduino. Stymulator składa się z 2 rękawic, każda z 5 osobno kontrolowanymi efektorami [źródło](https://github.com/PFalkowski/HapticStimulatorPCA9685). Klasyfikacja szeregów czasowych EEG po zastosowaniu FFT i innych transformacji miała dokładność powyżej 0.8 [źródło](https://github.com/PFalkowski/KerasClassifierEeg)."
+      },
+      "opengi": {
+        "title": "Open GI - Software Developer",
+        "period": "2017 - 2019",
+        "description": "Kontynuacja poprzedniego zatrudnienia pod inną marką. Praca w Scrumie, z większym naciskiem na nowsze technologie; WCF zastępowaliśmy ASP.NET Core, używaliśmy RabbitMQ zamiast WWF, Azure Cloud zamiast on-premise, MongoDB zamiast MS SQL. Znaczącym wyzwaniem była modernizacja zastanej aplikacji napisanej w VB6, co osiągnęliśmy poprzez podział i migrację do mikroserwisów, jednocześnie intensywnie testując istniejącą funkcjonalność i przechodząc powoli przez hosting na maszynie wirtualnej przez Azure Virtual Desktop. Następnie, gdy wszystkie usługi były stabilne i przetestowane, podłączyliśmy nowoczesny frontend."
+      },
+      "transactor": {
+        "title": "Transactor Poland - (Junior) Software Developer",
+        "period": "2014 - 2017",
+        "description": "Rozpocząłem pracę jako młodszy programista, a po pozytywnym odbiorze przez klienta projektu, który implementowałem — aplikacji business intelligence w WPF agregującej dane z wielu API — zostałem awansowany. Następnie pracowałem w jednym z zespołów w trybie metodyk zwinnych nad systemem zarządzania cyklem życia polisy ubezpieczeniowej, zajmując się rozwojem, refaktoryzacją, naprawą błędów i testami jednostkowymi. Główne technologie, w których pracowałem, to T-SQL, WCF, ASP.NET API, WPF, Windows Forms, XSLT, XSD, VB.NET i SQLite. Uczestniczyłem w wielu integracjach z systemami zewnętrznymi, w tym z dostawcami płatności i usługami wzbogacania danych. Do zarządzania projektami i współpracy używałem Azure DevOps (wtedy VSTS), Trello, Jiry i Zendesku."
+      },
+      "igexao": {
+        "title": "IGE+XAO - Stażysta",
+        "period": "2014",
+        "description": "Poza refaktoryzacją i naprawą błędów w C++ zaimplementowałem operację UNDO na całej bazie danych, z użyciem procedury T-SQL wygenerowanej w C# na podstawie schematu tabel."
+      }
+    }
+  },
+  "languages": {
+    "list": ["Polski - ojczysty", "Angielski - C2", "Francuski - podstawowy"]
+  },
+  "conferences": {
+    "list": [
+      "2025 - Niebezpiecznik - Atakowanie i ochrona aplikacji webowych",
+      "2021 - MEGA Sekurak Hacking Party",
+      "2020 - AzureDay",
+      "2019 - MEGA Sekurak Hacking Party",
+      "2018 - .NET DeveloperDays",
+      "2014 - Warsztaty Scrum"
+    ]
+  },
+  "additionalInfo": {
+    "list": [
+      "Prawo jazdy kategorii B.",
+      "Szeroka wiedza z zakresu psychologii.",
+      "Zainteresowania: ekonomia (finanse osobiste i analiza ilościowa), gry planszowe, squash, bieganie, siłownia."
+    ]
+  },
+  "otherProjects": {
+    "paragraphs": [
+      "Rozwijam narzędzie do analizy szeregów czasowych cen akcji polskich i zagranicznych spółek, z użyciem algorytmów uczenia maszynowego, metod statystycznych oraz analizy technicznej i fundamentalnej. Backend napisany w C# odpowiada za synchronizację danych, wykonywanie analiz, generowanie raportów i wysyłanie wyników do repozytorium, gdzie GitHub Action uruchamia wdrożenie statycznej strony do Azure, dając zerowy koszt utrzymania. Aktualne wyniki: [Stock-Today](https://stock-today.com).",
+      "Pełnię funkcję CTO w [Squizzu](https://squizzu.com), platformie quizowej budowanej w React i C# z wykorzystaniem generatywnej AI. Zaprojektowałem i zaimplementowałem model danych, skonfigurowałem integracje z CosmosDB i Key Vault, odpowiadam też za integrację z Azure OpenAI.",
+      "Piszę i publikuję [False Green](https://falsegreen.dev), bloga o weryfikacji, która wyglądała na zieloną, a nią nie była — każdy wpis to prawdziwy incydent, w którym test przeszedł, a system nadal był zepsuty. Statyczna strona w Astro, wdrażana na Azure Static Web Apps przez GitHub Actions, na infrastrukturze opisanej w Terraform.",
+      "Utrzymuję publiczny zestaw [skilli do Claude Code](https://github.com/PFalkowski/skills) — ponad 30 powtarzalnych procesów do code review, triage'u, przekazywania pracy i higieny wydań, instalowanych jako plugin Claude Code.",
+      "Próbowałem również innych przedsięwzięć, w tym platformy kursów online i narzędzia do raportowania czasu pracy zbudowanego w Power Apps. Chociaż te projekty nie osiągnęły długoterminowego sukcesu, dostarczyły cennych lekcji i umiejętności, takich jak znajomość Power Platform."
+    ],
+    "nugetIntro": "Wybrane biblioteki open source, które rozwijam i utrzymuję:",
+    "packages": [
+      {
+        "name": "LoggerLite",
+        "url": "https://www.nuget.org/packages/LoggerLite",
+        "description": "Lekki framework do logowania obsługujący JSON, XML, YAML, konsolę i pliki, z wbudowanym debouncingiem."
+      },
+      {
+        "name": "OnTheFlyStats",
+        "url": "https://www.nuget.org/packages/OnTheFlyStats",
+        "description": "Umożliwia obliczanie statystyk w locie, takich jak średnia czy wariancja, z dostępem w czasie O(1)."
+      },
+      {
+        "name": "Extensions.Standard",
+        "url": "https://www.nuget.org/packages/Extensions.Standard",
+        "description": "Kolekcja metod rozszerzających do typowych zadań, takich jak interpolacja czy partycjonowanie."
+      },
+      {
+        "name": "ProgressReporting",
+        "url": "https://www.nuget.org/packages/ProgressReporting",
+        "description": "Biblioteka do szacowania pozostałego czasu i raportowania postępu pętli lub transferu danych."
+      },
+      {
+        "name": "StocksData",
+        "url": "https://github.com/PFalkowski/StocksData",
+        "description": "Biblioteka .NET Standard do symulowania strategii giełdowych na historycznych danych rynkowych. Na NuGet opublikowana jako pakiety Stocks.Data.*."
+      }
+    ],
+    "nugetFooter": "Te i inne pakiety są dostępne na [NuGet.org](https://www.nuget.org/profiles/PFalkowski).",
+    "githubActivity": "Moja aktywność na GitHub"
+  }
+}
