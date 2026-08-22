@@ -39,7 +39,7 @@
   "skills": {
     "csharp": "C#",
     "azure": "Azure Cloud",
-    "webapi": "ASP.NET Web API",
+    "aspnet": "ASP.NET (Web API, Core)",
     "sqlEf": "SQL + EF",
     "nosql": "NoSQL (CosmosDB, Mongo)",
     "wpf": "WPF w MVVM",
