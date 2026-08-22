@@ -54,7 +54,10 @@
         "label": "Ogólne",
         "value": "OOP, mikroserwisy, monolit (modularny), SOLID, TDD, REST, Clean Architecture, DDD"
       },
-      { "label": "Języki", "value": "C#, C++, Python, Ruby, R, JS, VB" },
+      {
+        "label": "Języki",
+        "value": "C#, C++, Python, Ruby, R, JS, VB"
+      },
       {
         "label": "Chmura",
         "value": "Azure (App Services, Service Bus, Azure AI Search, Azure ML, Azure OpenAI, Key Vault, CosmosDB, Blob i File Storage, Cache for Redis), Azure DevOps, Heroku"
@@ -67,7 +70,10 @@
         "label": "Bazy danych",
         "value": "MS SQL, CosmosDB, SQLite, Postgres, MongoDB + Atlas Search"
       },
-      { "label": "Brokery wiadomości", "value": "Azure Service Bus, RabbitMQ, MSMQ" },
+      {
+        "label": "Brokery wiadomości",
+        "value": "Azure Service Bus, RabbitMQ, MSMQ"
+      },
       {
         "label": "Ekosystem .NET",
         "value": "ASP.NET Core, WPF (MVVM, Telerik), ML.NET, Entity Framework, ADO.NET, WinForms, WebForms"
@@ -80,7 +86,10 @@
         "label": "Testowanie",
         "value": "Postman, Burp, NUnit, xUnit, MSTest, Vegeta, NBomber, Playwright"
       },
-      { "label": "Zarządzanie projektami", "value": "Azure DevOps, Jira, Trello, Notion" },
+      {
+        "label": "Zarządzanie projektami",
+        "value": "Azure DevOps, Jira, Trello, Notion"
+      },
       {
         "label": "Uczenie maszynowe",
         "value": "Azure OpenAI, ML.NET, Azure Machine Learning, Accord.NET, EmguCV, Keras"
@@ -89,10 +98,13 @@
         "label": "Low code / no code",
         "value": "Microsoft Power Apps, Dataverse, integracje z Microsoft 365"
       },
-      { "label": "Kontrola wersji", "value": "Git, Subversion, TFS, GitHub, Bitbucket" },
+      {
+        "label": "Kontrola wersji",
+        "value": "Git, Subversion, TFS, GitHub, Bitbucket"
+      },
       {
         "label": "Preferowany stack AI",
-        "value": "Claude Code CLI, superpowers, własny zestaw skilli"
+        "value": "Claude Code CLI, superpowers, skille [Matta Pococka](https://github.com/mattpocock), własny zestaw skilli"
       },
       {
         "label": "Inne",
@@ -101,11 +113,20 @@
     ]
   },
   "softSkills": {
-    "list": ["Uczciwość", "Wytrwałość", "Autonomia", "Kreatywność", "Skupienie"]
+    "list": [
+      "Uczciwość",
+      "Wytrwałość",
+      "Autonomia",
+      "Kreatywność",
+      "Skupienie"
+    ]
   },
   "education": {
     "list": [
-      { "name": "Uniwersytet Jagielloński - Psychologia - Magister", "period": "2009 - 2016" },
+      {
+        "name": "Uniwersytet Jagielloński - Psychologia - Magister",
+        "period": "2009 - 2016"
+      },
       {
         "name": "XVII Liceum Ogólnokształcące im. Młodej Polski - profil dwujęzyczny",
         "period": "2004 - 2008"
@@ -113,7 +134,15 @@
     ]
   },
   "workExperience": {
-    "order": ["stonex", "happyteam", "smh", "ju", "opengi", "transactor", "igexao"],
+    "order": [
+      "stonex",
+      "happyteam",
+      "smh",
+      "ju",
+      "opengi",
+      "transactor",
+      "igexao"
+    ],
     "items": {
       "stonex": {
         "title": "StoneX Financial Services - Senior Software Developer",
@@ -153,7 +182,11 @@
     }
   },
   "languages": {
-    "list": ["Polski - ojczysty", "Angielski - C2", "Francuski - podstawowy"]
+    "list": [
+      "Polski - ojczysty",
+      "Angielski - C2",
+      "Francuski - B2"
+    ]
   },
   "conferences": {
     "list": [

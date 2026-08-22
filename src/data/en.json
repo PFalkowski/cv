@@ -54,7 +54,10 @@
         "label": "General",
         "value": "OOP, microservices, (modular) monolith, SOLID, TDD, REST, Clean Architecture, DDD"
       },
-      { "label": "Languages", "value": "C#, C++, Python, Ruby, R, JS, VB" },
+      {
+        "label": "Languages",
+        "value": "C#, C++, Python, Ruby, R, JS, VB"
+      },
       {
         "label": "Cloud",
         "value": "Azure (App Services, Service Bus, Azure AI Search, Azure ML, Azure OpenAI, Key Vault, CosmosDB, Blob and File Storage, Cache for Redis), Azure DevOps, Heroku"
@@ -67,7 +70,10 @@
         "label": "Databases",
         "value": "MS SQL, CosmosDB, SQLite, Postgres, MongoDB + Atlas Search"
       },
-      { "label": "Message brokers", "value": "Azure Service Bus, RabbitMQ, MSMQ" },
+      {
+        "label": "Message brokers",
+        "value": "Azure Service Bus, RabbitMQ, MSMQ"
+      },
       {
         "label": ".NET ecosystem",
         "value": "ASP.NET Core, WPF (MVVM, Telerik), ML.NET, Entity Framework, ADO.NET, WinForms, WebForms"
@@ -80,7 +86,10 @@
         "label": "Testing",
         "value": "Postman, Burp, NUnit, xUnit, MSTest, Vegeta, NBomber, Playwright"
       },
-      { "label": "Project management", "value": "Azure DevOps, Jira, Trello, Notion" },
+      {
+        "label": "Project management",
+        "value": "Azure DevOps, Jira, Trello, Notion"
+      },
       {
         "label": "Machine learning",
         "value": "Azure OpenAI, ML.NET, Azure Machine Learning, Accord.NET, EmguCV, Keras"
@@ -89,10 +98,13 @@
         "label": "Low code / no code",
         "value": "Microsoft Power Apps, Dataverse, Microsoft 365 integrations"
       },
-      { "label": "Source control", "value": "Git, Subversion, TFS, GitHub, Bitbucket" },
+      {
+        "label": "Source control",
+        "value": "Git, Subversion, TFS, GitHub, Bitbucket"
+      },
       {
         "label": "Preferred AI stack",
-        "value": "Claude Code CLI, superpowers, my own skill set"
+        "value": "Claude Code CLI, superpowers, [Matt Pocock](https://github.com/mattpocock)'s skills, my own skill set"
       },
       {
         "label": "Other",
@@ -101,16 +113,36 @@
     ]
   },
   "softSkills": {
-    "list": ["Integrity", "Persistence", "Autonomy", "Creativity", "Deep Focus"]
+    "list": [
+      "Integrity",
+      "Persistence",
+      "Autonomy",
+      "Creativity",
+      "Deep Focus"
+    ]
   },
   "education": {
     "list": [
-      { "name": "Jagiellonian University - Psychology - Master", "period": "2009 - 2016" },
-      { "name": "Polish/French Bilingual High School", "period": "2004 - 2008" }
+      {
+        "name": "Jagiellonian University - Psychology - Master",
+        "period": "2009 - 2016"
+      },
+      {
+        "name": "Polish/French Bilingual High School",
+        "period": "2004 - 2008"
+      }
     ]
   },
   "workExperience": {
-    "order": ["stonex", "happyteam", "smh", "ju", "opengi", "transactor", "igexao"],
+    "order": [
+      "stonex",
+      "happyteam",
+      "smh",
+      "ju",
+      "opengi",
+      "transactor",
+      "igexao"
+    ],
     "items": {
       "stonex": {
         "title": "StoneX Financial Services - Senior Software Developer",
@@ -150,7 +182,11 @@
     }
   },
   "languages": {
-    "list": ["Polish - native", "English - C2", "French - basic"]
+    "list": [
+      "Polish - native",
+      "English - C2",
+      "French - B2"
+    ]
   },
   "conferences": {
     "list": [

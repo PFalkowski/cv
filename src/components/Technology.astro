@@ -1,5 +1,6 @@
 ---
 import Section from './Section.astro';
+import RichText from './RichText.astro';
 
 interface Props {
 	t: any;
@@ -14,7 +15,7 @@ const { t } = Astro.props;
 			t.technology.groups.map((group: { label: string; value: string }) => (
 				<div class="tech-group">
 					<dt>{group.label}</dt>
-					<dd>{group.value}</dd>
+					<dd><RichText text={group.value} /></dd>
 				</div>
 			))
 		}
