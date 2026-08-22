@@ -96,7 +96,13 @@ const App = () => {
 
 
   const WorkExperience = () => (
-    <Section id="workExperience">      
+    <Section id="workExperience">
+      <p><strong>{useTranslation("workExperience.stonex.title")}</strong> - {useTranslation("workExperience.stonex.period")}</p>
+      <p>{useTranslation("workExperience.stonex.description")}</p>
+
+      <p><strong>{useTranslation("workExperience.happyteam.title")}</strong> - {useTranslation("workExperience.happyteam.period")}</p>
+      <p>{useTranslation("workExperience.happyteam.description")}</p>
+
       <p><strong>{useTranslation("workExperience.smh.title")}</strong> - {useTranslation("workExperience.smh.period")}</p>
       <p>{useTranslation("workExperience.smh.description")}</p>
       
@@ -140,6 +146,7 @@ const App = () => {
     const azureYears = currentYear - 2017;
     const noSqlYears = currentYear - 2018;
     const mlYears = currentYear - 2018;
+    const aiYears = currentYear - 2023;
   
     return (
       <Section id="technicalSkills">
@@ -150,7 +157,8 @@ const App = () => {
           { name: "SQL + EF", level: 50, years: 5 },
           { name: 'NoSQL (CosmosDB, Mongo)', years: noSqlYears, level: Math.min((noSqlYears * 10), 100) },
           { name: 'WPF in MVVM', years: 4, level: 40 },
-          { name: 'ML (ML.NET, Accord.NET, Keras, GPT API)', years: mlYears, level: Math.min((mlYears * 10), 100)  }
+          { name: 'ML (ML.NET, Accord.NET, Keras, GPT API)', years: mlYears, level: Math.min((mlYears * 10), 100)  },
+          { name: 'AI-assisted development (Claude Code, Azure OpenAI)', years: aiYears, level: Math.min((aiYears * 10), 100) }
         ].map((skill, index) => (
           <div className="skill" key={index}>
             <div>{skill.name}</div>
@@ -223,6 +231,12 @@ const App = () => {
       <p>
         {useTranslationWithMarkdown("otherProjects.squizzu")}
       </p>
+      <p>
+        {useTranslationWithMarkdown("otherProjects.falsegreen")}
+      </p>
+      <p>
+        {useTranslationWithMarkdown("otherProjects.skills")}
+      </p>
       <p>{useTranslation("otherProjects.otherVentures")}</p>
       <p>{useTranslation("otherProjects.nugetIntro")}</p>
       <ul>
@@ -245,6 +259,11 @@ const App = () => {
           <strong>
             <ExternalLink url="https://www.nuget.org/packages/ProgressReporting">ProgressReporting</ExternalLink>
           </strong> - {useTranslation("otherProjects.nugetPackages.progressReporting")}
+        </li>
+        <li>
+          <strong>
+            <ExternalLink url="https://github.com/PFalkowski/StocksData">StocksData</ExternalLink>
+          </strong> - {useTranslation("otherProjects.nugetPackages.stocksData")}
         </li>
       </ul>
       <p>{useTranslationWithMarkdown("otherProjects.nugetFooter")}</p>
