@@ -1,49 +1,69 @@
 /**
  * Technical skill bars.
  *
- * There is exactly one number per skill: when it started. Everything the page
- * shows is derived from it.
+ * Each skill is a list of periods it was actually used in. Everything shown —
+ * the year count and the bar length — is derived from that list, so there is
+ * one place to edit and nothing that can drift out of agreement with itself.
  *
- * The React version drew the bar from `level`, which was `years * 10` — an
- * arithmetic accident wearing the costume of a self-assessment. The migration
- * kept those values by hand so nothing moved visually, and that turned out to
- * be worse: once the year counts were corrected, the bars still reflected the
- * old, wrong years. ASP.NET Web API and SQL + EF both read "12 years" while
- * drawing bars of 60% and 50%.
+ * Why periods rather than a single start year: real experience has gaps. SQL
+ * ran through Transactor and Open GI, went quiet through the CosmosDB years at
+ * Seville More Helory, and came back at StoneX. A single `since: 2014` would
+ * count the quiet stretch and overstate; a hand-typed `years: 6` would be right
+ * today and wrong next year. A list of periods is true at both ends.
  *
- * So the bar is now a picture of the years and nothing else. It cannot
- * disagree with the number printed beside it, and there is no hidden opinion
- * to keep up to date. `until` closes a skill that is no longer current;
- * without it the count runs to the build year, so nothing freezes.
+ * An open period — `null` as the end — runs to the build year, so current
+ * skills advance on their own and nothing freezes.
  *
  * `id` keys into the `skills` object in each locale file.
  */
 
-/** @typedef {{id: string, since: number, until?: number}} Skill */
+/** @typedef {[number, number | null]} Period */
+/** @typedef {{id: string, periods: Period[]}} Skill */
 
 /** @type {Skill[]} */
 export const SKILLS = [
-	{ id: 'csharp', since: 2014 },
-	{ id: 'azure', since: 2017 },
-	{ id: 'webapi', since: 2014 },
-	{ id: 'sqlEf', since: 2014 },
-	{ id: 'nosql', since: 2018 },
-	{ id: 'wpf', since: 2014, until: 2019 },
-	{ id: 'ml', since: 2018 },
-	{ id: 'ai', since: 2023 },
+	{ id: 'csharp', periods: [[2014, null]] },
+	{ id: 'azure', periods: [[2017, null]] },
+	// Web API and Core counted together: Transactor and Open GI, then Seville
+	// More Helory and StoneX. The gap is the 2019-2020 research year.
+	{ id: 'aspnet', periods: [[2014, 2019], [2020, null]] },
+	// Transactor and Open GI, then quiet through the CosmosDB years, then StoneX.
+	{ id: 'sqlEf', periods: [[2014, 2019], [2025, null]] },
+	{ id: 'nosql', periods: [[2018, null]] },
+	{ id: 'wpf', periods: [[2014, 2019]] },
+	{ id: 'ml', periods: [[2018, null]] },
+	{ id: 'ai', periods: [[2023, null]] },
 ];
 
 /**
- * Resolve a skill's year count against a fixed "now", so the number is decided
- * at build time and every page of a given build agrees.
+ * Sum a skill's periods, merging any that overlap so shared years are counted
+ * once. Without the merge, two periods describing the same stretch of work
+ * would quietly double it.
  *
  * @param {Skill} skill
  * @param {number} currentYear
  * @returns {number}
  */
 export function yearsOf(skill, currentYear) {
-	if (typeof skill.since !== 'number') return 0;
-	return (skill.until ?? currentYear) - skill.since;
+	const spans = skill.periods
+		.map(([from, to]) => [from, to ?? currentYear])
+		.filter(([from, to]) => to > from)
+		.sort((a, b) => a[0] - b[0]);
+
+	let total = 0;
+	let open = null;
+
+	for (const [from, to] of spans) {
+		if (open && from <= open[1]) {
+			open[1] = Math.max(open[1], to);
+			continue;
+		}
+		if (open) total += open[1] - open[0];
+		open = [from, to];
+	}
+	if (open) total += open[1] - open[0];
+
+	return total;
 }
 
 /**
