@@ -1,0 +1,602 @@
+/* ---- reset ---- */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* ---- palette ---- */
+/*
+   Light is the base. Dark is defined twice on purpose:
+     - @media (prefers-color-scheme: dark) guarded by :not([data-theme="light"])
+       so the OS preference applies until the reader overrides it;
+     - [data-theme="dark"] so an explicit override wins on an OS set to light.
+   Never give a colour its ONLY definition inside a media query.
+
+   The React version hard-coded every colour inline and referenced a
+   'Montserrat' font that was never loaded, so the page actually rendered in the
+   browser's generic sans-serif. The stack below is what it should have been.
+*/
+:root {
+	color-scheme: light;
+
+	--page-bg: #f0f2f5;
+	--surface: #ffffff;
+	--ink: #2b2f36;
+	--ink-muted: #5a606a;
+	--accent: #0056b3;
+	--accent-ink: #ffffff;
+	--sidebar-bg: #0056b3;
+	--sidebar-ink: #ffffff;
+	--sidebar-ink-muted: #d8e6f7;
+	--rule: #dcdfe4;
+	--track: #d8dce2;
+	--shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	--shadow-side: 4px 0 15px rgba(0, 0, 0, 0.1);
+
+	--font-body:
+		-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+		sans-serif;
+
+	--measure: 78ch;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) {
+		color-scheme: dark;
+
+		--page-bg: #0c0f14;
+		--surface: #12161c;
+		--ink: #e3e8ef;
+		--ink-muted: #a2acba;
+		--accent: #7cb8ff;
+		--accent-ink: #06121f;
+		--sidebar-bg: #14243a;
+		--sidebar-ink: #eaf1fb;
+		--sidebar-ink-muted: #b6c8e0;
+		--rule: #262d38;
+		--track: #2a323d;
+		--shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+		--shadow-side: 4px 0 15px rgba(0, 0, 0, 0.6);
+	}
+}
+
+:root[data-theme='dark'] {
+	color-scheme: dark;
+
+	--page-bg: #0c0f14;
+	--surface: #12161c;
+	--ink: #e3e8ef;
+	--ink-muted: #a2acba;
+	--accent: #7cb8ff;
+	--accent-ink: #06121f;
+	--sidebar-bg: #14243a;
+	--sidebar-ink: #eaf1fb;
+	--sidebar-ink-muted: #b6c8e0;
+	--rule: #262d38;
+	--track: #2a323d;
+	--shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+	--shadow-side: 4px 0 15px rgba(0, 0, 0, 0.6);
+}
+
+::selection {
+	background: var(--accent);
+	color: var(--accent-ink);
+}
+
+/* ---- base ---- */
+body {
+	font-family: var(--font-body);
+	background-color: var(--page-bg);
+	color: var(--ink);
+	line-height: 1.7;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1 {
+	font-size: 1.5rem;
+	line-height: 1.25;
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	font-size: 1.375rem;
+	color: var(--accent);
+	margin-bottom: 1.25rem;
+	border-bottom: 2px solid var(--rule);
+	padding-bottom: 0.3rem;
+}
+
+h3 {
+	font-size: 1rem;
+	margin-bottom: 0.35rem;
+}
+
+p {
+	margin-bottom: 1.25rem;
+	max-width: var(--measure);
+}
+
+a {
+	color: inherit;
+}
+
+.content a {
+	color: var(--accent);
+	font-weight: 600;
+}
+
+:where(a, button):focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+	border-radius: 3px;
+}
+
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	z-index: 10;
+	padding: 0.6rem 1rem;
+	background: var(--surface);
+	color: var(--ink);
+}
+
+.skip-link:focus {
+	left: 0;
+}
+
+/* ---- layout ---- */
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	background-color: var(--surface);
+	box-shadow: var(--shadow);
+}
+
+.sidebar {
+	background-color: var(--sidebar-bg);
+	color: var(--sidebar-ink);
+	padding: 1.25rem;
+}
+
+.sidebar .tagline {
+	color: var(--sidebar-ink-muted);
+	margin-bottom: 0;
+}
+
+.content {
+	padding: 1.25rem;
+}
+
+.section {
+	margin-bottom: 2.5rem;
+}
+
+.section:last-of-type {
+	margin-bottom: 0;
+}
+
+@media (min-width: 1000px) {
+	.container {
+		flex-direction: row;
+	}
+
+	.sidebar {
+		width: 260px;
+		flex: 0 0 260px;
+		box-shadow: var(--shadow-side);
+	}
+
+	.content {
+		flex: 1;
+		padding: 2.5rem;
+		min-width: 0;
+	}
+}
+
+/* ---- lists ---- */
+.plain-list {
+	list-style: disc;
+	padding-left: 1.25rem;
+	margin-bottom: 1.25rem;
+}
+
+.plain-list li {
+	margin-bottom: 0.6rem;
+	max-width: var(--measure);
+}
+
+.plain-list.inline {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 1.5rem;
+	list-style: none;
+	padding-left: 0;
+}
+
+.plain-list.inline li {
+	margin-bottom: 0;
+}
+
+/* ---- contact ---- */
+.contact-info {
+	list-style: none;
+	padding: 0;
+	margin-top: 1.25rem;
+}
+
+.contact-item {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin-bottom: 0.9rem;
+	font-size: 0.875rem;
+}
+
+.contact-item .icon {
+	flex: 0 0 auto;
+}
+
+.contact-item a {
+	color: var(--sidebar-ink);
+	text-decoration: none;
+	word-break: break-word;
+}
+
+.contact-item a:hover {
+	text-decoration: underline;
+}
+
+/* ---- skills ---- */
+.skill-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.skill {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.35rem 0.6rem;
+	margin-bottom: 0.75rem;
+}
+
+.skill-name {
+	flex: 1 1 100%;
+}
+
+.bar {
+	display: block;
+	flex: 1 1 60%;
+	background-color: var(--track);
+	border-radius: 5px;
+	overflow: hidden;
+	height: 10px;
+}
+
+.progress {
+	display: block;
+	background-color: var(--accent);
+	height: 100%;
+	border-radius: 5px;
+}
+
+.skill-years {
+	flex: 0 0 auto;
+	color: var(--ink-muted);
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+@media (min-width: 1000px) {
+	.skill {
+		flex-wrap: nowrap;
+	}
+
+	.skill-name {
+		flex: 0 0 320px;
+	}
+
+	.skill-years {
+		min-width: 70px;
+		text-align: right;
+	}
+}
+
+/* ---- technology groups ---- */
+.tech-groups {
+	margin: 0;
+}
+
+.tech-group {
+	display: grid;
+	gap: 0 1rem;
+	margin-bottom: 0.6rem;
+}
+
+.tech-group dt {
+	font-weight: 600;
+	color: var(--ink);
+}
+
+.tech-group dd {
+	margin: 0;
+	color: var(--ink-muted);
+}
+
+@media (min-width: 1000px) {
+	.tech-group {
+		grid-template-columns: 180px 1fr;
+	}
+}
+
+/* ---- work experience ---- */
+.jobs {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.job {
+	margin-bottom: 1.75rem;
+}
+
+.job:last-child {
+	margin-bottom: 0;
+}
+
+.job-period {
+	font-weight: 400;
+	color: var(--ink-muted);
+	white-space: nowrap;
+}
+
+.gh-chart {
+	margin-top: 0.5rem;
+}
+
+/* ---- consent ---- */
+.consent {
+	margin-top: 2.5rem;
+	font-size: 0.75rem;
+	color: var(--ink-muted);
+}
+
+/* ---- controls ---- */
+/*
+   The React switcher was absolutely positioned over whatever happened to be
+   behind it, which below 1000px is the blue sidebar — the active chip used the
+   same blue and disappeared into it. The cluster now sits in normal flow on
+   narrow screens and only floats over the white content column on wide ones,
+   so its own surface is predictable in both cases.
+*/
+.controls {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	background: var(--surface);
+	border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 1000px) {
+	.controls {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 2;
+		padding: 0;
+		border-bottom: none;
+		background: none;
+	}
+}
+
+.language-switcher {
+	display: flex;
+	gap: 0.25rem;
+}
+
+.lang {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.2rem 0.55rem;
+	border: 1px solid var(--rule);
+	border-radius: 4px;
+	font-size: 0.8125rem;
+	text-decoration: none;
+	color: var(--ink-muted);
+	background: var(--surface);
+}
+
+.lang:hover {
+	color: var(--accent);
+	border-color: var(--accent);
+}
+
+.lang.active {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: var(--accent-ink);
+	font-weight: 600;
+}
+
+.theme-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	border: 1px solid var(--rule);
+	border-radius: 4px;
+	background: var(--surface);
+	color: var(--ink-muted);
+	cursor: pointer;
+	transition:
+		color 0.15s ease,
+		border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+	color: var(--accent);
+	border-color: var(--accent);
+}
+
+/* Show the theme you would switch TO. */
+.icon--sun {
+	display: none;
+}
+
+:root[data-theme='dark'] .icon--sun {
+	display: block;
+}
+
+:root[data-theme='dark'] .icon--moon {
+	display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) .icon--sun {
+		display: block;
+	}
+
+	:root:not([data-theme='light']) .icon--moon {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+	}
+}
+
+/* ---- print ---- */
+/*
+   Paper is always light, whatever the reader picked on screen. The React
+   version's print block targeted #soft-skills and #conferences, neither of
+   which ever existed in the markup — the real ids were softSkills and
+   conferencesSection — so its soft-skill and conference rules never applied.
+*/
+@media print {
+	/*
+	   All three selectors, not just :root. An explicit choice sets
+	   [data-theme] on the html element, and :root[data-theme='dark'] (0,1,1)
+	   outranks a bare :root (0,0,1) — so a reader who had picked dark mode
+	   printed the dark palette onto paper. Matching the specificity and
+	   coming later in the sheet is what actually forces light here.
+	*/
+	:root,
+	:root[data-theme='dark'],
+	:root[data-theme='light'] {
+		color-scheme: light;
+		--page-bg: #ffffff;
+		--surface: #ffffff;
+		--ink: #000000;
+		--ink-muted: #333333;
+		--accent: #000000;
+		--sidebar-bg: #f0f0f0;
+		--sidebar-ink: #000000;
+		--sidebar-ink-muted: #333333;
+		--rule: #999999;
+		--track: #eeeeee;
+		--shadow: none;
+		--shadow-side: none;
+	}
+
+	body {
+		background: #fff;
+		color: #000;
+	}
+
+	.controls,
+	.skip-link {
+		display: none !important;
+	}
+
+	.container {
+		width: 100% !important;
+		max-width: none !important;
+		box-shadow: none !important;
+	}
+
+	.contact-item a {
+		word-break: normal;
+	}
+
+	/*
+	   The phone and email images are white text on transparency, which reads on
+	   the blue sidebar in light mode and the navy one in dark mode. Print turns
+	   the sidebar light grey, so invert them to black.
+	*/
+	.contact-item img {
+		filter: invert(1);
+	}
+
+	.bar,
+	.progress {
+		-webkit-print-color-adjust: exact !important;
+		print-color-adjust: exact !important;
+	}
+
+	.bar {
+		border: 1px solid #999;
+	}
+
+	.progress {
+		background-color: #666 !important;
+	}
+
+	.skill {
+		flex-wrap: nowrap;
+		page-break-inside: avoid;
+	}
+
+	.skill-name {
+		flex: 0 0 320px;
+	}
+
+	#softSkills .plain-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1.25rem;
+		list-style: none;
+		padding-left: 0;
+	}
+
+	h2 {
+		page-break-after: avoid;
+		page-break-inside: avoid;
+	}
+
+	.section,
+	.job {
+		page-break-inside: avoid;
+	}
+
+	.gh-chart {
+		display: none;
+	}
+}

@@ -1,0 +1,45 @@
+---
+import Section from './Section.astro';
+import RichText from './RichText.astro';
+
+interface Props {
+	t: any;
+}
+
+const { t } = Astro.props;
+---
+
+<Section id="otherProjects" title={t.sections.otherProjects}>
+	{
+		t.otherProjects.paragraphs.map((paragraph: string) => (
+			<p>
+				<RichText text={paragraph} />
+			</p>
+		))
+	}
+
+	<p>{t.otherProjects.nugetIntro}</p>
+	<ul class="plain-list">
+		{
+			t.otherProjects.packages.map((pkg: { name: string; url: string; description: string }) => (
+				<li>
+					<a href={pkg.url} target="_blank" rel="noopener noreferrer">
+						<strong>{pkg.name}</strong>
+					</a>{' '}
+					— {pkg.description}
+				</li>
+			))
+		}
+	</ul>
+	<p><RichText text={t.otherProjects.nugetFooter} /></p>
+
+	<p>{t.otherProjects.githubActivity}</p>
+	<img
+		class="gh-chart"
+		src="https://ghchart.rshah.org/PFalkowski"
+		alt={t.otherProjects.githubActivity}
+		loading="lazy"
+		width="663"
+		height="104"
+	/>
+</Section>

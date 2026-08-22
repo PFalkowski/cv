@@ -1,0 +1,167 @@
+---
+import '../styles/cv.css';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import ContactInfo from '../components/ContactInfo.astro';
+import Section from '../components/Section.astro';
+import RichText from '../components/RichText.astro';
+import TechnicalSkills from '../components/TechnicalSkills.astro';
+import Technology from '../components/Technology.astro';
+import WorkExperience from '../components/WorkExperience.astro';
+import SimpleList from '../components/SimpleList.astro';
+import OtherProjects from '../components/OtherProjects.astro';
+import { LOCALE_ORDER, localePath } from '../lib/i18n.js';
+
+interface Props {
+	t: any;
+}
+
+const { t } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const canonical = new URL(localePath(base, t.lang), Astro.site);
+
+// Fixed at build time so every page in one build reports the same year.
+const currentYear = new Date().getFullYear();
+
+const person = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: t.header.name,
+	jobTitle: t.header.title,
+	url: canonical.href,
+	sameAs: [
+		'https://github.com/pfalkowski',
+		'https://pl.linkedin.com/in/piotrfalkowski',
+		'https://stackoverflow.com/users/3922292',
+		'https://www.nuget.org/profiles/PFalkowski',
+		'https://falsegreen.dev',
+	],
+};
+---
+
+<!doctype html>
+<html lang={t.lang}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{t.meta.title}</title>
+		<meta name="description" content={t.meta.description} />
+		<link rel="canonical" href={canonical.href} />
+		{
+			LOCALE_ORDER.map((lang) => (
+				<link rel="alternate" hreflang={lang} href={new URL(localePath(base, lang), Astro.site).href} />
+			))
+		}
+		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+		<link rel="apple-touch-icon" href={`${base}logo192.png`} />
+		<link rel="manifest" href={`${base}manifest.json`} />
+
+		<meta property="og:type" content="profile" />
+		<meta property="og:title" content={t.meta.title} />
+		<meta property="og:description" content={t.meta.description} />
+		<meta property="og:url" content={canonical.href} />
+		<meta property="og:locale" content={t.lang === 'pl' ? 'pl_PL' : 'en_GB'} />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={t.meta.title} />
+		<meta name="twitter:description" content={t.meta.description} />
+
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="#ffffff" data-theme-color />
+
+		<script is:inline>
+			// Runs before first paint so the page never flashes the wrong theme.
+			// An explicit choice lives in localStorage; with none, the OS decides.
+			(function () {
+				var KEY = 'cv-theme';
+				var COLORS = { light: '#ffffff', dark: '#12161c' };
+				var root = document.documentElement;
+				var query = window.matchMedia('(prefers-color-scheme: dark)');
+
+				function stored() {
+					try {
+						var v = localStorage.getItem(KEY);
+						return v === 'light' || v === 'dark' ? v : null;
+					} catch (e) {
+						// private mode, or site data blocked: fall back to the OS
+						return null;
+					}
+				}
+
+				function apply(theme) {
+					root.setAttribute('data-theme', theme);
+					var meta = document.querySelector('[data-theme-color]');
+					if (meta) meta.setAttribute('content', COLORS[theme]);
+					window.__theme = theme;
+					document.dispatchEvent(new CustomEvent('themechange', { detail: { theme: theme } }));
+				}
+
+				window.__setTheme = function (theme) {
+					try {
+						localStorage.setItem(KEY, theme);
+					} catch (e) {
+						// the choice just will not survive this page
+					}
+					apply(theme);
+				};
+
+				// Track the OS only while the reader has not overridden it.
+				var onChange = function (e) {
+					if (!stored()) apply(e.matches ? 'dark' : 'light');
+				};
+				if (query.addEventListener) query.addEventListener('change', onChange);
+				else if (query.addListener) query.addListener(onChange);
+
+				apply(stored() || (query.matches ? 'dark' : 'light'));
+			})();
+		</script>
+
+		<script type="application/ld+json" set:html={JSON.stringify(person)} />
+	</head>
+	<body>
+		<a class="skip-link" href="#content">{t.a11y.skipToContent}</a>
+
+		<div class="container">
+			<div class="controls">
+				<ThemeToggle toDark={t.a11y.themeToggleToDark} toLight={t.a11y.themeToggleToLight} />
+				<LanguageSwitcher current={t.lang} label={t.a11y.languageSwitcher} />
+			</div>
+
+			<aside class="sidebar">
+				<h1>{t.header.name}</h1>
+				<p class="tagline">{t.header.title}</p>
+				<ContactInfo t={t} />
+			</aside>
+
+			<main class="content" id="content">
+				<Section id="aboutMe" title={t.sections.aboutMe}>
+					{t.about.paragraphs.map((paragraph: string) => <p><RichText text={paragraph} /></p>)}
+				</Section>
+
+				<TechnicalSkills t={t} currentYear={currentYear} />
+				<Technology t={t} />
+				<SimpleList id="softSkills" title={t.sections.softSkills} items={t.softSkills.list} inline />
+
+				<Section id="educationSection" title={t.sections.educationSection}>
+					<ul class="plain-list">
+						{
+							t.education.list.map((entry: { name: string; period: string }) => (
+								<li>
+									<strong>{entry.name}</strong> <span class="job-period">{entry.period}</span>
+								</li>
+							))
+						}
+					</ul>
+				</Section>
+
+				<WorkExperience t={t} />
+				<OtherProjects t={t} />
+
+				<SimpleList id="languageSection" title={t.sections.languageSection} items={t.languages.list} />
+				<SimpleList id="conferencesSection" title={t.sections.conferencesSection} items={t.conferences.list} />
+				<SimpleList id="additionalInfo" title={t.sections.additionalInfo} items={t.additionalInfo.list} />
+
+				<p class="consent"><em>{t.consent}</em></p>
+			</main>
+		</div>
+	</body>
+</html>

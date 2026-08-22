@@ -1,0 +1,29 @@
+---
+import Section from './Section.astro';
+import RichText from './RichText.astro';
+
+/**
+ * Soft skills, languages, conferences and additional information were four
+ * near-identical components in the React version. They are one component here.
+ */
+interface Props {
+	id: string;
+	title: string;
+	items: string[];
+	inline?: boolean;
+}
+
+const { id, title, items, inline = false } = Astro.props;
+---
+
+<Section id={id} title={title}>
+	<ul class:list={['plain-list', { inline }]}>
+		{
+			items.map((item) => (
+				<li>
+					<RichText text={item} />
+				</li>
+			))
+		}
+	</ul>
+</Section>

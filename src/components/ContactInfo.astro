@@ -1,0 +1,49 @@
+---
+import Icon from './Icon.astro';
+import phoneImage from '../assets/images/phone.png';
+import emailImage from '../assets/images/email.png';
+
+interface Props {
+	t: any;
+}
+
+const { t } = Astro.props;
+
+/**
+ * Phone and email stay as images on purpose: both are drawn with [six] and
+ * [at] substitutions so a naive scraper gets nothing useful. The alt text
+ * repeats exactly what the image shows, so a screen reader reader is no worse
+ * off than a sighted one and nothing new is exposed.
+ */
+const LINKS = [
+	{ icon: 'package', url: 'https://nuget.org/profiles/pfalkowski', text: 'nuget.org/profiles/pfalkowski' },
+	{ icon: 'github', url: 'https://github.com/pfalkowski', text: 'github.com/pfalkowski' },
+	{
+		icon: 'stackoverflow',
+		url: 'https://stackoverflow.com/users/3922292',
+		text: 'stackoverflow.com/users/3922292',
+	},
+	{ icon: 'linkedin', url: 'https://pl.linkedin.com/in/piotrfalkowski', text: 'linkedin.com/in/piotrfalkowski' },
+] as const;
+---
+
+<ul class="contact-info">
+	<li class="contact-item">
+		<Icon name="phone" />
+		<img src={phoneImage.src} width={phoneImage.width} height={phoneImage.height} alt={t.a11y.phoneImage} />
+	</li>
+	<li class="contact-item">
+		<Icon name="envelope" />
+		<img src={emailImage.src} width={emailImage.width} height={emailImage.height} alt={t.a11y.emailImage} />
+	</li>
+	{
+		LINKS.map((link) => (
+			<li class="contact-item">
+				<Icon name={link.icon} />
+				<a href={link.url} target="_blank" rel="noopener noreferrer me">
+					{link.text}
+				</a>
+			</li>
+		))
+	}
+</ul>

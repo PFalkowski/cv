@@ -1,0 +1,43 @@
+---
+import Section from './Section.astro';
+import { SKILLS, yearsOf } from '../data/skills.js';
+
+interface Props {
+	t: any;
+	currentYear: number;
+}
+
+const { t, currentYear } = Astro.props;
+
+const rows = SKILLS.map((skill) => ({
+	name: t.skills[skill.id],
+	level: skill.level,
+	years: yearsOf(skill, currentYear),
+}));
+---
+
+<Section id="technicalSkills" title={t.sections.technicalSkills}>
+	<ul class="skill-list">
+		{
+			rows.map((row) => (
+				<li class="skill">
+					<span class="skill-name">{row.name}</span>
+					<span
+						class="bar"
+						role="meter"
+						aria-valuemin="0"
+						aria-valuemax="100"
+						aria-valuenow={row.level}
+						aria-valuetext={`${row.level}% ${t.a11y.skillLevel}`}
+						aria-label={row.name}
+					>
+						<span class="progress" style={`width: ${row.level}%`} />
+					</span>
+					<span class="skill-years">
+						{row.years} {t.skills.yearsSuffix}
+					</span>
+				</li>
+			))
+		}
+	</ul>
+</Section>

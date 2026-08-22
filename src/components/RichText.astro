@@ -1,0 +1,22 @@
+---
+import { parseInlineLinks } from '../lib/markdown.js';
+
+interface Props {
+	text: string;
+}
+
+const { text } = Astro.props;
+const parts = parseInlineLinks(text);
+---
+
+{
+	parts.map((part) =>
+		part.type === 'link' ? (
+			<a href={part.url} target="_blank" rel="noopener noreferrer">
+				{part.text}
+			</a>
+		) : (
+			part.value
+		)
+	)
+}

@@ -1,0 +1,36 @@
+---
+import { LOCALES, LOCALE_ORDER, localePath } from '../lib/i18n.js';
+
+interface Props {
+	current: string;
+	label: string;
+}
+
+const { current, label } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+/**
+ * Real links, not click handlers on divs. Each locale is its own static page,
+ * so the switcher is keyboard-reachable, works without JavaScript, and gives
+ * crawlers a Polish page to index.
+ *
+ * The flags are gone deliberately. They came from flagcdn.com (a third external
+ * host), they carried no text label, and a flag is a country, not a language.
+ */
+---
+
+<nav class="language-switcher" aria-label={label}>
+	{
+		LOCALE_ORDER.map((lang) => (
+			<a
+				href={localePath(base, lang)}
+				class:list={['lang', { active: lang === current }]}
+				hreflang={lang}
+				lang={lang}
+				aria-current={lang === current ? 'page' : undefined}
+			>
+				{LOCALES[lang].label}
+			</a>
+		))
+	}
+</nav>

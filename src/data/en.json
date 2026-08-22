@@ -1,0 +1,247 @@
+{
+  "lang": "en",
+  "label": "English",
+  "meta": {
+    "title": "Piotr Falkowski — CV",
+    "description": "Senior backend software developer with over a decade in .NET, Azure and machine learning. Curriculum vitae."
+  },
+  "sections": {
+    "aboutMe": "About Me",
+    "technicalSkills": "Technical Skills",
+    "technology": "Technology",
+    "softSkills": "Soft Skills",
+    "educationSection": "Education",
+    "workExperience": "Work Experience",
+    "languageSection": "Languages",
+    "conferencesSection": "Conferences & Trainings",
+    "additionalInfo": "Additional Information",
+    "otherProjects": "Other Projects"
+  },
+  "header": {
+    "name": "Piotr Falkowski",
+    "title": "Senior Backend Software Developer with over a decade of experience."
+  },
+  "a11y": {
+    "languageSwitcher": "Language",
+    "skillLevel": "self-assessed level",
+    "themeToggleToDark": "Switch to dark theme",
+    "themeToggleToLight": "Switch to light theme",
+    "phoneImage": "Phone number, written as +48 [six]68 315 1[two]6",
+    "emailImage": "Email address, written as piotr.falkowski.fm[at]gmail.com",
+    "skipToContent": "Skip to content"
+  },
+  "about": {
+    "paragraphs": [
+      "Driven, passionate, problem solver. I taught myself C++ to analyze financial time series using ML. Then it snowballed into .NET and countless other technologies. I’ve seen a lot, maybe even too much sometimes. I drew conclusions and now I focus on clarity, maintainability and impact.",
+      "Beyond my full-time work I develop the stock market analysis tool [Stock-Today](https://stock-today.com), I am CTO of [Squizzu](https://squizzu.com), I maintain several open source libraries and I write [False Green](https://falsegreen.dev), a blog about verification that looked green and wasn't."
+    ]
+  },
+  "consent": "I hereby agree for processing the following personal information for the purposes of recruitment processes only.",
+  "skills": {
+    "csharp": "C#",
+    "azure": "Azure Cloud",
+    "webapi": "ASP.NET Web API",
+    "sqlEf": "SQL + EF",
+    "nosql": "NoSQL (CosmosDB, Mongo)",
+    "wpf": "WPF in MVVM",
+    "ml": "ML (ML.NET, Accord.NET, Keras, GPT API)",
+    "ai": "AI-assisted development (Claude Code, Azure OpenAI)",
+    "yearsSuffix": "years"
+  },
+  "technology": {
+    "groups": [
+      {
+        "label": "General",
+        "value": "OOP, microservices, (modular) monolith, SOLID, TDD, REST, Clean Architecture, DDD"
+      },
+      {
+        "label": "Languages",
+        "value": "C#, C++, Python, Ruby, R, JS, VB"
+      },
+      {
+        "label": "Cloud",
+        "value": "Azure (App Services, Service Bus, Azure AI Search, Azure ML, Azure OpenAI, Key Vault, CosmosDB, Blob and File Storage, Cache for Redis), Azure DevOps, Heroku"
+      },
+      {
+        "label": "DevOps",
+        "value": "Azure DevOps (Pipelines, Releases), GitHub Actions, Docker, Terraform, Kubernetes"
+      },
+      {
+        "label": "Databases",
+        "value": "MS SQL, CosmosDB, SQLite, Postgres, MongoDB + Atlas Search"
+      },
+      {
+        "label": "Message brokers",
+        "value": "Azure Service Bus, RabbitMQ, MSMQ"
+      },
+      {
+        "label": ".NET ecosystem",
+        "value": "ASP.NET Core, WPF (MVVM, Telerik), ML.NET, Entity Framework, ADO.NET, WinForms, WebForms"
+      },
+      {
+        "label": "Observability",
+        "value": "Grafana, Application Insights, OpenTelemetry, Datadog"
+      },
+      {
+        "label": "Testing",
+        "value": "Postman, Burp, NUnit, xUnit, MSTest, Vegeta, NBomber, Playwright"
+      },
+      {
+        "label": "Project management",
+        "value": "Azure DevOps, Jira, Trello, Notion"
+      },
+      {
+        "label": "Machine learning",
+        "value": "Azure OpenAI, ML.NET, Azure Machine Learning, Accord.NET, EmguCV, Keras"
+      },
+      {
+        "label": "Low code / no code",
+        "value": "Microsoft Power Apps, Dataverse, Microsoft 365 integrations"
+      },
+      {
+        "label": "Source control",
+        "value": "Git, Subversion, TFS, GitHub, Bitbucket"
+      },
+      {
+        "label": "Preferred AI stack",
+        "value": "Claude Code CLI, superpowers, [Matt Pocock](https://github.com/mattpocock)'s skills, [my own skill set](https://github.com/PFalkowski/skills)"
+      },
+      {
+        "label": "Other",
+        "value": "Swagger, Zendesk, Cloud9, SonarCloud, GhostDoc, ReSharper, JSON, XSLT, XSD"
+      }
+    ]
+  },
+  "softSkills": {
+    "list": [
+      "Integrity",
+      "Persistence",
+      "Autonomy",
+      "Creativity",
+      "Deep Focus"
+    ]
+  },
+  "education": {
+    "list": [
+      {
+        "name": "Jagiellonian University - Psychology - Master",
+        "period": "2009 - 2016"
+      },
+      {
+        "name": "Polish/French Bilingual High School",
+        "period": "2004 - 2008"
+      }
+    ]
+  },
+  "workExperience": {
+    "order": [
+      "stonex",
+      "happyteam",
+      "smh",
+      "ju",
+      "opengi",
+      "transactor",
+      "igexao"
+    ],
+    "items": {
+      "stonex": {
+        "title": "StoneX Financial Services - Senior Software Developer",
+        "period": "since 2025",
+        "description": "Migrating legacy client-facing cloud applications to a modular monolith in Domain-Driven Design and Clean Architecture. Removed the code review bottleneck in the team's SDLC and optimized DataGrid search by 10x. AI-first development with the emphasis on end-to-end and integration tests."
+      },
+      "happyteam": {
+        "title": "Happy Team - Senior Software Developer",
+        "period": "2025",
+        "description": "Built the backend for a .NET MAUI mobile app from the ground up: a serverless API in Azure Functions talking to CosmosDb, a proxy service, and the whole supporting infrastructure described in Terraform. Designed for testability, ease of maintenance, performance and scalability."
+      },
+      "smh": {
+        "title": "Seville More Helory Polska - Senior Software Developer",
+        "period": "2020 - 2025",
+        "description": "Implemented, documented and unit tested GIT inspired document version control in C# ASP.NET / CosmosDb / Azure AI (Cognitive) Search + Azure Service Bus + Redis + SignalR + SonarCloud. Cut Azure Redis Cache costs by implementing an intermediate cache layer based on CosmosDb. Designed and implemented the backend for a bespoke legal Q&A, FAQ, provisions, rights and clauses lifecycle management process that secured a key client, increasing company revenue by over 10%. C# Web.API + CosmosDb + React + Service Bus."
+      },
+      "ju": {
+        "title": "Jagiellonian University - Researcher",
+        "period": "2019 - 2020",
+        "description": "I developed an electroencephalogram (EEG) monkey brain activity classifier and an Arduino-based tactile stimulator. The stimulator features 2 gloves with 5 effectors, each controllable separately via COM [source](https://github.com/PFalkowski/HapticStimulatorPCA9685). For classification I used Python's Keras, achieving accuracy above 0.8 after applying FFT and other transformations to raw EEG time series [source](https://github.com/PFalkowski/KerasClassifierEeg)."
+      },
+      "opengi": {
+        "title": "Open GI - Software Developer",
+        "period": "2017 - 2019",
+        "description": "Took part in modernizing a legacy desktop monolith by splitting and migrating logic into microservices while heavily unit-testing existing functionality, moving slowly by first hosting the old Windows application over Azure Virtual Desktop. Used ASP.NET Core, WCF, RabbitMQ, WWF, Azure IaaS, MongoDB, MS SQL, SonarQube, Docker."
+      },
+      "transactor": {
+        "title": "Transactor Poland - Junior Software Developer",
+        "period": "2014 - 2017",
+        "description": "Started as a Junior Software Developer and was promoted to Regular after successfully delivering the first project — a WPF business intelligence application that aggregated data from multiple APIs, providing significant value to the customer at a low cost. C#, WPF, XSLT, XSD, SQLite, MS SQL. Developed, refactored, bug fixed, and unit tested an end-to-end insurance lifetime management system. Participated in multiple third-party integrations, including payment providers and data enrichment services, ensuring interoperability between systems. T-SQL, WCF, ASP.NET API, WPF, Windows Forms, VB.NET, MS SQL, WWF, SignalR, SOAP, Azure DevOps (VSTS at the time), Trello, Jira and Zendesk."
+      },
+      "igexao": {
+        "title": "IGE+XAO - Intern",
+        "period": "2014",
+        "description": "Implemented a database-wide undo T-SQL procedure ahead of schedule, using a C# code generator driven by the table schema. Maintained a C++ CAD desktop app."
+      }
+    }
+  },
+  "languages": {
+    "list": [
+      "Polish - native",
+      "English - C2",
+      "French - B2"
+    ]
+  },
+  "conferences": {
+    "list": [
+      "2025 - Niebezpiecznik - Attacking and Securing Web Apps",
+      "2021 - MEGA Sekurak Hacking Party",
+      "2020 - AzureDay",
+      "2019 - MEGA Sekurak Hacking Party",
+      "2018 - .NET DeveloperDays",
+      "2014 - Scrum Workshop"
+    ]
+  },
+  "additionalInfo": {
+    "list": [
+      "Category B driving license.",
+      "Knowledge in psychology.",
+      "Hobbies: economics (personal finance and quantitative analysis), board games, squash, running, bodybuilding."
+    ]
+  },
+  "otherProjects": {
+    "paragraphs": [
+      "Stock market quant and fundamental analysis tool [Stock-Today](https://stock-today.com), giving daily updated insights for both speculative trading and long-term investing. Hosting: Azure, back end: C#, MS SQL, ML.NET, front end: pure HTML, CSS and JS.",
+      "I am CTO of [Squizzu](https://squizzu.com), a tech quiz platform built with React and C# leveraging generative AI. I architected and implemented most of the data model, set up CosmosDB and Key Vault integrations and I own the Azure OpenAI integration.",
+      "I write and publish [False Green](https://falsegreen.dev), a blog about verification that looked green and wasn't — each post is a real incident where a check passed while the system stayed broken. Astro static site, deployed to Azure Static Web Apps by GitHub Actions over Terraform-managed infrastructure.",
+      "I maintain a public set of [Claude Code skills](https://github.com/PFalkowski/skills) — over 30 repeatable workflows for code review, triage, handoff and release hygiene, installable as a Claude Code plugin.",
+      "Throughout my journey I have also explored other startup ventures, including an online course platform and a calendar tool built with Power Apps. While these projects didn't achieve long-term success, they provided valuable lessons and skills such as proficiency in the Power Platform."
+    ],
+    "nugetIntro": "Notable open source packages I maintain:",
+    "packages": [
+      {
+        "name": "LoggerLite",
+        "url": "https://www.nuget.org/packages/LoggerLite",
+        "description": "A lightweight logging framework supporting JSON, XML, YAML, and console output, with built-in debouncing."
+      },
+      {
+        "name": "OnTheFlyStats",
+        "url": "https://www.nuget.org/packages/OnTheFlyStats",
+        "description": "Allows on-the-fly computation of statistics such as means and variance, with O(1) access."
+      },
+      {
+        "name": "Extensions.Standard",
+        "url": "https://www.nuget.org/packages/Extensions.Standard",
+        "description": "A collection of extension methods for common programming tasks such as interpolation and partitioning."
+      },
+      {
+        "name": "ProgressReporting",
+        "url": "https://www.nuget.org/packages/ProgressReporting",
+        "description": "A library for estimating completion time and reporting progress in iterative operations and data transfers."
+      },
+      {
+        "name": "StocksData",
+        "url": "https://github.com/PFalkowski/StocksData",
+        "description": "A .NET Standard library for simulating stock trading strategies against historical market data. Published on NuGet as the Stocks.Data.* packages."
+      }
+    ],
+    "nugetFooter": "These and other packages are available on [NuGet.org](https://www.nuget.org/profiles/PFalkowski).",
+    "githubActivity": "My GitHub activity"
+  }
+}

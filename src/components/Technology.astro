@@ -1,0 +1,23 @@
+---
+import Section from './Section.astro';
+import RichText from './RichText.astro';
+
+interface Props {
+	t: any;
+}
+
+const { t } = Astro.props;
+---
+
+<Section id="technology" title={t.sections.technology}>
+	<dl class="tech-groups">
+		{
+			t.technology.groups.map((group: { label: string; value: string }) => (
+				<div class="tech-group">
+					<dt>{group.label}</dt>
+					<dd><RichText text={group.value} /></dd>
+				</div>
+			))
+		}
+	</dl>
+</Section>
