@@ -32,7 +32,7 @@
   "about": {
     "paragraphs": [
       "Driven, passionate, problem solver. I taught myself C++ to analyze financial time series using ML. Then it snowballed into .NET and countless other technologies. I’ve seen a lot, maybe even too much sometimes. I drew conclusions and now I focus on clarity, maintainability and impact.",
-      "Beyond my full-time work I develop the stock market analysis tool [Stock-Today](https://stock-today.com), I am CTO of [Squizzu](https://squizzu.com), I maintain several open source libraries and I write [False Green](https://falsegreen.dev), a blog about verification that looked green and wasn't."
+      "Beyond my full-time work I develop the stock market analysis tool [Stock-Today](https://stock-today.com), I am CTO of [Squizzu](https://squizzu.com), I maintain several open source libraries and I write [False Green](https://falsegreen.dev), a blog about agentic AI pitfalls described by themself."
     ]
   },
   "consent": "I hereby agree for processing the following personal information for the purposes of recruitment processes only.",
@@ -83,7 +83,7 @@
       },
       {
         "label": "Testing",
-        "value": "Postman, Burp, NUnit, xUnit, MSTest, Vegeta, NBomber, Playwright"
+        "value": "Postman, Burp, NUnit, xUnit, MSTest, Vegeta, NBomber, Playwright, SoapUI, Bruno"
       },
       {
         "label": "Project management",

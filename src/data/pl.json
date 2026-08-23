@@ -32,7 +32,7 @@
   "about": {
     "paragraphs": [
       "Pasjonat rozwiązywania problemów z ponad 10-letnim doświadczeniem zawodowym. Moja przygoda rozpoczęła się 15 lat temu od nauczenia się C++ w celu analizy cen akcji na giełdzie przy pomocy uczenia maszynowego, ostatecznie przechodząc na .NET, gdzie odnalazłem powołanie. Stawiam na przejrzystość, łatwość utrzymania i realny wpływ.",
-      "Poza pracą etatową rozwijam narzędzie do analizy giełdowej [Stock-Today](https://stock-today.com), pełnię funkcję CTO platformy quizowej [Squizzu](https://squizzu.com), utrzymuję wiele bibliotek open source i prowadzę bloga [False Green](https://falsegreen.dev) o weryfikacji, która wyglądała na zieloną, a nią nie była."
+      "Poza pracą etatową rozwijam narzędzie do analizy giełdowej [Stock-Today](https://stock-today.com), pełnię funkcję CTO platformy quizowej [Squizzu](https://squizzu.com), utrzymuję wiele bibliotek open source i prowadzę bloga [False Green](https://falsegreen.dev) o wpadkach agentów AI przez nich samych."
     ]
   },
   "consent": "Wyrażam zgodę na przetwarzanie moich danych osobowych wyłącznie do celów rekrutacji.",
@@ -83,7 +83,7 @@
       },
       {
         "label": "Testowanie",
-        "value": "Postman, Burp, NUnit, xUnit, MSTest, Vegeta, NBomber, Playwright"
+        "value": "Postman, Burp, NUnit, xUnit, MSTest, Vegeta, NBomber, Playwright, SoapUI, Bruno"
       },
       {
         "label": "Zarządzanie projektami",
