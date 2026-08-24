@@ -1,0 +1,16 @@
+{
+  "short_name": "Piotr Falkowski CV",
+  "name": "Piotr Falkowski CV",
+  "icons": [
+    {
+      "src": "github-avatar.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
