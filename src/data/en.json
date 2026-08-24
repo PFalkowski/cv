@@ -3,7 +3,7 @@
   "label": "English",
   "meta": {
     "title": "Piotr Falkowski — CV",
-    "description": "Senior backend / agent orchestrator & human oracle. Curriculum vitae."
+    "description": "Senior / agent orchestrator & human oracle. Curriculum vitae."
   },
   "sections": {
     "aboutMe": "About Me",
@@ -20,8 +20,8 @@
   "header": {
     "name": "Piotr Falkowski",
     "title": {
-      "prefix": "Senior Backend",
-      "struck": "Software Developer with over a decade of experience.",
+      "prefix": "Senior",
+      "struck": "Backend Software Developer with over a decade of experience.",
       "replacement": "agent orchestrator & human oracle"
     }
   },
