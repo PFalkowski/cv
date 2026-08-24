@@ -1,12 +1,28 @@
 ---
 import Section from './Section.astro';
 import RichText from './RichText.astro';
+import { getGithubContributions } from '../lib/github-contributions.js';
 
 interface Props {
 	t: any;
 }
 
 const { t } = Astro.props;
+const { cells, columns } = await getGithubContributions();
+const monthFormatter = new Intl.DateTimeFormat(t.lang === 'pl' ? 'pl-PL' : 'en-GB', {
+	month: 'short',
+	timeZone: 'UTC',
+});
+const months = [];
+let previousMonth = '';
+
+for (const cell of cells.filter((entry) => entry.row === 0)) {
+	if (!cell.date) continue;
+	const month = cell.date.slice(0, 7);
+	if (month === previousMonth) continue;
+	previousMonth = month;
+	months.push({ column: cell.column + 1, label: monthFormatter.format(new Date(`${cell.date}T00:00:00Z`)) });
+}
 ---
 
 <Section id="otherProjects" title={t.sections.otherProjects}>
@@ -33,9 +49,24 @@ const { t } = Astro.props;
 	</ul>
 	<p><RichText text={t.otherProjects.nugetFooter} /></p>
 
-	<p>
-		<a href="https://github.com/PFalkowski" target="_blank" rel="noopener noreferrer">
-			{t.otherProjects.githubActivity}
-		</a>
-	</p>
+	<a class="github-activity-link" href="https://github.com/PFalkowski" target="_blank" rel="noopener noreferrer">
+		<span class="github-activity-label">{t.otherProjects.githubActivity}</span>
+		<span class="github-calendar" style={`--github-columns: ${columns}`}>
+			<span class="github-calendar-scroll">
+				<span class="github-months" aria-hidden="true">
+					{months.map((month) => <span style={`grid-column: ${month.column}`}>{month.label}</span>)}
+				</span>
+				<span class="github-grid" aria-hidden="true">
+					{cells.map((cell) => (
+						<span class="github-cell github-day" data-level={cell.level} title={cell.label}></span>
+					))}
+				</span>
+			</span>
+			<span class="github-legend" aria-hidden="true">
+				<span>{t.otherProjects.githubActivityLess}</span>
+				{[0, 1, 2, 3, 4].map((level) => <span class="github-cell" data-level={level}></span>)}
+				<span>{t.otherProjects.githubActivityMore}</span>
+			</span>
+		</span>
+	</a>
 </Section>

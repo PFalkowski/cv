@@ -52,8 +52,8 @@ const person = {
 				<link rel="alternate" hreflang={lang} href={new URL(localePath(base, lang), Astro.site).href} />
 			))
 		}
-		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
-		<link rel="apple-touch-icon" href={`${base}logo192.png`} />
+		<link rel="icon" type="image/png" href={`${base}github-avatar.png`} />
+		<link rel="apple-touch-icon" href={`${base}github-avatar.png`} />
 		<link rel="manifest" href={`${base}manifest.json`} />
 
 		<meta property="og:type" content="profile" />
@@ -127,6 +127,7 @@ const person = {
 			</div>
 
 			<aside class="sidebar">
+				<img class="profile-avatar" src={`${base}github-avatar.png`} alt="" width="128" height="128" />
 				<h1>{t.header.name}</h1>
 				<p class="tagline">{t.header.title}</p>
 				<ContactInfo t={t} />

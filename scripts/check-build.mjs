@@ -43,6 +43,9 @@ for (const page of PAGES) {
 	check(html.includes(`<html lang="${page.lang}"`), `${page.lang}: html element does not declare lang`);
 	check(/rel="canonical"/.test(html), `${page.lang}: no canonical link`);
 	check(/application\/ld\+json/.test(html), `${page.lang}: no JSON-LD block`);
+	check(html.includes('github-avatar.png'), `${page.lang}: GitHub avatar is missing`);
+	check((html.match(/class="github-cell github-day"/g) ?? []).length >= 365, `${page.lang}: GitHub activity grid is incomplete`);
+	check(!html.includes('ghchart.rshah.org'), `${page.lang}: legacy GitHub chart service is still referenced`);
 
 	for (const needle of page.mustContain) {
 		check(html.includes(needle), `${page.lang}: expected to find "${needle}"`);
