@@ -184,6 +184,15 @@ a {
 	margin-bottom: 0;
 }
 
+.profile-avatar {
+	width: 128px;
+	height: 128px;
+	margin-bottom: 1rem;
+	border: 3px solid var(--sidebar-ink-muted);
+	border-radius: 50%;
+	object-fit: cover;
+}
+
 .content {
 	padding: 1.25rem;
 }
