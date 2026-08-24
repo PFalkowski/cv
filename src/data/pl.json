@@ -3,7 +3,7 @@
   "label": "Polski",
   "meta": {
     "title": "Piotr Falkowski — CV",
-    "description": "Senior backend developer z ponad dekadą doświadczenia w .NET, Azure i uczeniu maszynowym. Życiorys zawodowy."
+    "description": "Senior backend / agent orchestrator & human oracle. Życiorys zawodowy."
   },
   "sections": {
     "aboutMe": "O mnie",
@@ -19,7 +19,11 @@
   },
   "header": {
     "name": "Piotr Falkowski",
-    "title": "Senior backend developer z ponad dekadą doświadczenia."
+    "title": {
+      "prefix": "Senior backend",
+      "struck": "developer z ponad dekadą doświadczenia.",
+      "replacement": "agent orchestrator & human oracle"
+    }
   },
   "a11y": {
     "languageSwitcher": "Język",
@@ -67,11 +71,11 @@
       },
       {
         "label": "Bazy danych",
-        "value": "MS SQL, CosmosDB, SQLite, Postgres, MongoDB + Atlas Search"
+        "value": "MS SQL, CosmosDB, SQLite, Postgres, MongoDB + Atlas Search, Parquet"
       },
       {
         "label": "Brokery wiadomości",
-        "value": "Azure Service Bus, RabbitMQ, MSMQ"
+        "value": "Azure Service Bus, RabbitMQ, MSMQ, Kafka"
       },
       {
         "label": "Ekosystem .NET",
