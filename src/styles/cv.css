@@ -372,10 +372,6 @@ a {
 	white-space: nowrap;
 }
 
-.gh-chart {
-	margin-top: 0.5rem;
-}
-
 /* ---- consent ---- */
 .consent {
 	margin-top: 2.5rem;
@@ -596,7 +592,4 @@ a {
 		page-break-inside: avoid;
 	}
 
-	.gh-chart {
-		display: none;
-	}
 }

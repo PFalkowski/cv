@@ -33,13 +33,9 @@ const { t } = Astro.props;
 	</ul>
 	<p><RichText text={t.otherProjects.nugetFooter} /></p>
 
-	<p>{t.otherProjects.githubActivity}</p>
-	<img
-		class="gh-chart"
-		src="https://ghchart.rshah.org/PFalkowski"
-		alt={t.otherProjects.githubActivity}
-		loading="lazy"
-		width="663"
-		height="104"
-	/>
+	<p>
+		<a href="https://github.com/PFalkowski" target="_blank" rel="noopener noreferrer">
+			{t.otherProjects.githubActivity}
+		</a>
+	</p>
 </Section>

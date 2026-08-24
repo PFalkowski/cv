@@ -51,5 +51,5 @@ GitHub Pages serves. Pull requests build but do not deploy. There is no manual p
 ## Print
 
 The page is meant to print. `@media print` forces the light palette regardless of the reader's
-theme, hides the controls and the GitHub activity chart, and keeps sections and jobs from
+theme, hides the controls, and keeps sections and jobs from
 splitting across pages.
