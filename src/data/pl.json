@@ -241,6 +241,8 @@
       }
     ],
     "nugetFooter": "Te i inne pakiety są dostępne na [NuGet.org](https://www.nuget.org/profiles/PFalkowski).",
-    "githubActivity": "Moja aktywność na GitHub"
+    "githubActivity": "Moja aktywność na GitHub",
+    "githubActivityLess": "Mniej",
+    "githubActivityMore": "Więcej"
   }
 }

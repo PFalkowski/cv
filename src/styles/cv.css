@@ -47,6 +47,11 @@ svg {
 	--sidebar-ink-muted: #d8e6f7;
 	--rule: #dcdfe4;
 	--track: #d8dce2;
+	--github-level-0: #ebedf0;
+	--github-level-1: #9be9a8;
+	--github-level-2: #40c463;
+	--github-level-3: #30a14e;
+	--github-level-4: #216e39;
 	--shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 	--shadow-side: 4px 0 15px rgba(0, 0, 0, 0.1);
 
@@ -72,6 +77,11 @@ svg {
 		--sidebar-ink-muted: #b6c8e0;
 		--rule: #262d38;
 		--track: #2a323d;
+		--github-level-0: #161b22;
+		--github-level-1: #0e4429;
+		--github-level-2: #006d32;
+		--github-level-3: #26a641;
+		--github-level-4: #39d353;
 		--shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 		--shadow-side: 4px 0 15px rgba(0, 0, 0, 0.6);
 	}
@@ -91,6 +101,11 @@ svg {
 	--sidebar-ink-muted: #b6c8e0;
 	--rule: #262d38;
 	--track: #2a323d;
+	--github-level-0: #161b22;
+	--github-level-1: #0e4429;
+	--github-level-2: #006d32;
+	--github-level-3: #26a641;
+	--github-level-4: #39d353;
 	--shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 	--shadow-side: 4px 0 15px rgba(0, 0, 0, 0.6);
 }
@@ -191,6 +206,84 @@ a {
 	border: 3px solid var(--sidebar-ink-muted);
 	border-radius: 50%;
 	object-fit: cover;
+}
+
+.github-activity-link {
+	display: block;
+	max-width: 42rem;
+	text-decoration: none;
+}
+
+.github-activity-label {
+	display: block;
+	margin-bottom: 0.6rem;
+}
+
+.github-calendar-scroll {
+	display: block;
+	max-width: 100%;
+	overflow-x: auto;
+	padding-bottom: 0.25rem;
+}
+
+.github-months,
+.github-grid {
+	display: grid;
+	grid-template-columns: repeat(var(--github-columns), minmax(0, 1fr));
+	min-width: 38rem;
+}
+
+.github-months {
+	grid-template-rows: 1rem;
+	margin-bottom: 0.2rem;
+	color: var(--ink-muted);
+	font-size: 0.75rem;
+}
+
+.github-months > span {
+	grid-row: 1;
+	white-space: nowrap;
+}
+
+.github-grid {
+	grid-template-rows: repeat(7, 0.7rem);
+	gap: 0.2rem;
+}
+
+.github-cell {
+	min-width: 0;
+	border-radius: 2px;
+	background-color: var(--github-level-0);
+}
+
+.github-cell[data-level='1'] {
+	background-color: var(--github-level-1);
+}
+
+.github-cell[data-level='2'] {
+	background-color: var(--github-level-2);
+}
+
+.github-cell[data-level='3'] {
+	background-color: var(--github-level-3);
+}
+
+.github-cell[data-level='4'] {
+	background-color: var(--github-level-4);
+}
+
+.github-legend {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	margin-top: 0.4rem;
+	color: var(--ink-muted);
+	font-size: 0.75rem;
+}
+
+.github-legend .github-cell {
+	width: 0.7rem;
+	height: 0.7rem;
 }
 
 .content {
@@ -599,6 +692,10 @@ a {
 	.section,
 	.job {
 		page-break-inside: avoid;
+	}
+
+	.github-calendar {
+		display: none;
 	}
 
 }

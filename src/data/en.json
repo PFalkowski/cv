@@ -241,6 +241,8 @@
       }
     ],
     "nugetFooter": "These and other packages are available on [NuGet.org](https://www.nuget.org/profiles/PFalkowski).",
-    "githubActivity": "My GitHub activity"
+    "githubActivity": "My GitHub activity",
+    "githubActivityLess": "Less",
+    "githubActivityMore": "More"
   }
 }
