@@ -1,7 +1,6 @@
 ---
 import '../styles/cv.css';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
-import ThemeToggle from '../components/ThemeToggle.astro';
 import ContactInfo from '../components/ContactInfo.astro';
 import Section from '../components/Section.astro';
 import RichText from '../components/RichText.astro';
@@ -72,7 +71,12 @@ const person = {
 
 		<script is:inline>
 			// Runs before first paint so the page never flashes the wrong theme.
-			// An explicit choice lives in localStorage; with none, the OS decides.
+			// Three literal modes are stored — light, auto, dark — not just the
+			// two concrete themes; "auto" keeps tracking the OS live (see
+			// onChange below) so the <meta name="theme-color"> stays correct
+			// without a reload, which is also why this stays the sole writer of
+			// data-theme and localStorage rather than letting <theme-switch>
+			// manage them itself (its manage-dom="false" below opts out of that).
 			(function () {
 				var KEY = 'cv-theme';
 				var COLORS = { light: '#ffffff', dark: '#12161c' };
@@ -82,40 +86,61 @@ const person = {
 				function stored() {
 					try {
 						var v = localStorage.getItem(KEY);
-						return v === 'light' || v === 'dark' ? v : null;
+						return v === 'light' || v === 'dark' || v === 'auto' ? v : null;
 					} catch (e) {
-						// private mode, or site data blocked: fall back to the OS
+						// private mode, or site data blocked: fall back to auto
 						return null;
 					}
 				}
 
-				function apply(theme) {
-					root.setAttribute('data-theme', theme);
-					var meta = document.querySelector('[data-theme-color]');
-					if (meta) meta.setAttribute('content', COLORS[theme]);
-					window.__theme = theme;
-					document.dispatchEvent(new CustomEvent('themechange', { detail: { theme: theme } }));
+				function resolve(mode) {
+					return mode === 'auto' ? (query.matches ? 'dark' : 'light') : mode;
 				}
 
-				window.__setTheme = function (theme) {
+				function apply(mode) {
+					var resolved = resolve(mode);
+					root.setAttribute('data-theme', resolved);
+					var meta = document.querySelector('[data-theme-color]');
+					if (meta) meta.setAttribute('content', COLORS[resolved]);
+					window.__theme = resolved;
+					window.__themeMode = mode;
+					var el = document.querySelector('theme-switch');
+					if (el && el.render) el.render(mode);
+					document.dispatchEvent(new CustomEvent('themechange', { detail: { theme: resolved, mode: mode } }));
+				}
+
+				window.__setTheme = function (mode) {
 					try {
-						localStorage.setItem(KEY, theme);
+						localStorage.setItem(KEY, mode);
 					} catch (e) {
 						// the choice just will not survive this page
 					}
-					apply(theme);
+					apply(mode);
 				};
 
-				// Track the OS only while the reader has not overridden it.
-				var onChange = function (e) {
-					if (!stored()) apply(e.matches ? 'dark' : 'light');
+				// Track the OS live, but only while parked in auto.
+				var onChange = function () {
+					if (window.__themeMode === 'auto') apply('auto');
 				};
 				if (query.addEventListener) query.addEventListener('change', onChange);
 				else if (query.addListener) query.addListener(onChange);
 
-				apply(stored() || (query.matches ? 'dark' : 'light'));
+				apply(stored() || 'auto');
 			})();
 		</script>
+
+		<!-- <theme-switch>'s own change events (bubbled to document) are the only
+		     way this page learns about a click/drag/keypress inside its shadow
+		     DOM; forward them into the bootstrap above, which stays in charge of
+		     data-theme, localStorage and the theme-color meta tag. -->
+		<script is:inline>
+			document.addEventListener('change', function (event) {
+				if (event.target && event.target.tagName === 'THEME-SWITCH' && window.__setTheme) {
+					window.__setTheme(event.detail.value);
+				}
+			});
+		</script>
+		<script type="module" src="https://cdn.jsdelivr.net/gh/PFalkowski/theme-switch@v1.2.0/theme-switch.js"></script>
 
 		<script type="application/ld+json" set:html={JSON.stringify(person)} />
 	</head>
@@ -124,7 +149,18 @@ const person = {
 
 		<div class="container">
 			<div class="controls">
-				<ThemeToggle toDark={t.a11y.themeToggleToDark} toLight={t.a11y.themeToggleToLight} />
+				<theme-switch
+					manage-dom="false"
+					group-label={t.a11y.themeToggleGroup}
+					label-light={t.a11y.themeToggleLight}
+					label-auto={t.a11y.themeToggleAuto}
+					label-dark={t.a11y.themeToggleDark}
+				></theme-switch>
+				<script is:inline>
+					// Set before the element upgrades, so it never visibly starts on
+					// "Auto" and then jumps once the bootstrap script's own state is read.
+					document.currentScript.previousElementSibling.setAttribute('value', window.__themeMode || 'auto');
+				</script>
 				<LanguageSwitcher current={t.lang} label={t.a11y.languageSwitcher} />
 			</div>
 

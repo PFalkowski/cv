@@ -27,8 +27,10 @@
   },
   "a11y": {
     "languageSwitcher": "Language",
-    "themeToggleToDark": "Switch to dark theme",
-    "themeToggleToLight": "Switch to light theme",
+    "themeToggleGroup": "Theme",
+    "themeToggleLight": "Light",
+    "themeToggleAuto": "Auto",
+    "themeToggleDark": "Dark",
     "phoneImage": "Phone number, written as +48 [six]68 315 1[two]6",
     "emailImage": "Email address, written as piotr.falkowski.fm[at]gmail.com",
     "skipToContent": "Skip to content"
