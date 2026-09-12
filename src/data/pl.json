@@ -27,8 +27,10 @@
   },
   "a11y": {
     "languageSwitcher": "Język",
-    "themeToggleToDark": "Przełącz na motyw ciemny",
-    "themeToggleToLight": "Przełącz na motyw jasny",
+    "themeToggleGroup": "Motyw",
+    "themeToggleLight": "Jasny",
+    "themeToggleAuto": "Auto",
+    "themeToggleDark": "Ciemny",
     "phoneImage": "Numer telefonu, zapisany jako +48 [six]68 315 1[two]6",
     "emailImage": "Adres e-mail, zapisany jako piotr.falkowski.fm[at]gmail.com",
     "skipToContent": "Przejdź do treści"
